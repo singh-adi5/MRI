@@ -340,47 +340,60 @@ def main():
     )
 
     temporal_df = pd.concat([customer_temporal, seller_temporal], ignore_index=True, sort=False)
-    temporal_df = temporal_df.fillna(0)
 
-    # Normalize temporal signals
-    signal_cols = [
+    # Signals whose NaN means "not measurable" must keep their NaN. Counts and
+    # window lengths, by contrast, are genuinely zero for an entity that simply
+    # has no events of that kind, so those are filled.
+    unmeasurable_cols = [
         "order_velocity_per_hour",
-        "order_burst_ratio",
         "refund_velocity_per_hour",
         "login_velocity_per_hour",
-        "failed_attempt_density",
-        "unique_devices",
-        "unique_regions",
         "seller_order_velocity_per_hour",
-        "seller_order_burst_ratio"
+        "order_burst_ratio",
+        "seller_order_burst_ratio",
+        "failed_attempt_density",
+    ]
+    fill_cols = [c for c in temporal_df.columns if c not in unmeasurable_cols]
+    temporal_df[fill_cols] = temporal_df[fill_cols].fillna(0)
+
+    # (normalised column, source column, weight)
+    signal_spec = [
+        ("norm_order_velocity", "order_velocity_per_hour", 0.15),
+        ("norm_order_burst", "order_burst_ratio", 0.15),
+        ("norm_refund_velocity", "refund_velocity_per_hour", 0.15),
+        ("norm_login_velocity", "login_velocity_per_hour", 0.15),
+        ("norm_failed_density", "failed_attempt_density", 0.10),
+        ("norm_unique_devices", "unique_devices", 0.10),
+        ("norm_unique_regions", "unique_regions", 0.05),
+        ("norm_seller_velocity", "seller_order_velocity_per_hour", 0.075),
+        ("norm_seller_burst", "seller_order_burst_ratio", 0.075),
     ]
 
-    for col in signal_cols:
-        if col not in temporal_df.columns:
-            temporal_df[col] = 0
+    for _, source_col, _ in signal_spec:
+        if source_col not in temporal_df.columns:
+            temporal_df[source_col] = np.nan if source_col in unmeasurable_cols else 0
 
-    temporal_df["norm_order_velocity"] = normalize(pd.to_numeric(temporal_df["order_velocity_per_hour"], errors="coerce").fillna(0))
-    temporal_df["norm_order_burst"] = normalize(pd.to_numeric(temporal_df["order_burst_ratio"], errors="coerce").fillna(0))
-    temporal_df["norm_refund_velocity"] = normalize(pd.to_numeric(temporal_df["refund_velocity_per_hour"], errors="coerce").fillna(0))
-    temporal_df["norm_login_velocity"] = normalize(pd.to_numeric(temporal_df["login_velocity_per_hour"], errors="coerce").fillna(0))
-    temporal_df["norm_failed_density"] = normalize(pd.to_numeric(temporal_df["failed_attempt_density"], errors="coerce").fillna(0))
-    temporal_df["norm_unique_devices"] = normalize(pd.to_numeric(temporal_df["unique_devices"], errors="coerce").fillna(0))
-    temporal_df["norm_unique_regions"] = normalize(pd.to_numeric(temporal_df["unique_regions"], errors="coerce").fillna(0))
-    temporal_df["norm_seller_velocity"] = normalize(pd.to_numeric(temporal_df["seller_order_velocity_per_hour"], errors="coerce").fillna(0))
-    temporal_df["norm_seller_burst"] = normalize(pd.to_numeric(temporal_df["seller_order_burst_ratio"], errors="coerce").fillna(0))
+    # Report measurability explicitly so an analyst can tell "no burst" from
+    # "not enough history to say", and so the suppression is auditable.
+    for col in ["order_velocity_per_hour", "refund_velocity_per_hour",
+                "login_velocity_per_hour", "seller_order_velocity_per_hour"]:
+        measurable = pd.to_numeric(temporal_df[col], errors="coerce").notna()
+        temporal_df[col.replace("_per_hour", "_measurable")] = measurable
+        log(f"  {col}: {int((~measurable).sum())}/{len(temporal_df)} entities below "
+            f"the {MIN_EVENTS_FOR_VELOCITY}-event / {MIN_OBSERVATION_HOURS}h floor -> no velocity signal")
 
-    # Fused temporal risk score
-    temporal_df["temporal_risk_score"] = (
-        0.15 * temporal_df["norm_order_velocity"] +
-        0.15 * temporal_df["norm_order_burst"] +
-        0.15 * temporal_df["norm_refund_velocity"] +
-        0.15 * temporal_df["norm_login_velocity"] +
-        0.10 * temporal_df["norm_failed_density"] +
-        0.10 * temporal_df["norm_unique_devices"] +
-        0.05 * temporal_df["norm_unique_regions"] +
-        0.075 * temporal_df["norm_seller_velocity"] +
-        0.075 * temporal_df["norm_seller_burst"]
-    )
+    temporal_score = pd.Series(0.0, index=temporal_df.index)
+    for norm_col, source_col, weight in signal_spec:
+        values = pd.to_numeric(temporal_df[source_col], errors="coerce")
+        # normalize() ranks only the entities where the signal exists; NaN stays NaN.
+        temporal_df[norm_col] = normalize(values)
+        # An unmeasurable signal contributes nothing while keeping its weight in
+        # the denominator. Renormalising per row would do the opposite of the
+        # intent: an entity with one event would be scored on its one available
+        # signal alone and float back to the top, which is the bug being fixed.
+        temporal_score = temporal_score + weight * temporal_df[norm_col].fillna(0.0)
+
+    temporal_df["temporal_risk_score"] = temporal_score
 
     temporal_df["temporal_risk_score"] = temporal_df["temporal_risk_score"].round(6)
     temporal_df["temporal_risk_band"] = temporal_df["temporal_risk_score"].apply(assign_band)

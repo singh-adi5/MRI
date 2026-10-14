@@ -1,197 +1,1800 @@
 refund_id,order_id,refund_date,refund_reason,refund_status
-1,2,2026-04-09 14:29:06,defective,rejected
-2,20,2026-01-27 12:32:16,defective,approved
-3,21,2026-02-07 02:51:32,fraud,approved
-4,25,2026-03-06 11:31:34,late delivery,rejected
-5,26,2026-02-18 21:17:48,late delivery,approved
-6,36,2026-01-26 03:32:09,fraud,approved
-7,39,2025-12-26 07:53:54,fraud,approved
-8,40,2026-01-01 21:12:52,defective,rejected
-9,43,2026-02-15 00:42:15,changed mind,approved
-10,44,2026-02-16 14:47:43,changed mind,approved
-11,47,2026-03-22 16:28:04,changed mind,rejected
-12,49,2026-03-02 02:48:51,defective,rejected
-13,56,2026-01-30 15:09:21,late delivery,approved
-14,68,2026-02-16 10:53:59,late delivery,approved
-15,71,2026-02-22 17:17:13,changed mind,approved
-16,75,2026-02-22 15:57:21,late delivery,approved
-17,76,2026-02-19 18:39:32,late delivery,approved
-18,79,2026-03-19 14:47:40,changed mind,approved
-19,90,2026-01-23 12:00:26,late delivery,approved
-20,91,2026-03-03 11:10:23,changed mind,approved
-21,96,2026-01-13 12:55:51,defective,pending
-22,98,2026-04-02 16:03:25,changed mind,approved
-23,101,2026-03-11 23:27:41,late delivery,approved
-24,106,2026-02-05 09:14:05,defective,approved
-25,124,2026-01-05 18:09:05,fraud,approved
-26,126,2026-01-13 19:04:52,changed mind,approved
-27,134,2026-02-05 17:46:50,changed mind,approved
-28,137,2026-02-25 16:14:27,defective,approved
-29,141,2026-01-12 15:03:43,defective,approved
-30,146,2026-03-14 04:34:40,fraud,approved
-31,155,2026-01-13 15:03:51,changed mind,approved
-32,156,2026-01-14 11:59:19,defective,approved
-33,166,2026-03-09 06:53:26,fraud,approved
-34,171,2026-02-19 16:12:19,changed mind,approved
-35,172,2026-02-25 14:46:45,defective,approved
-36,178,2026-02-09 03:11:25,late delivery,rejected
-37,180,2026-02-01 03:36:44,late delivery,approved
-38,181,2026-01-17 07:07:01,defective,approved
-39,195,2026-02-17 06:58:36,changed mind,approved
-40,200,2026-02-12 08:50:57,defective,approved
-41,202,2026-01-26 22:04:37,late delivery,approved
-42,206,2026-03-23 04:51:20,changed mind,rejected
-43,209,2026-01-12 08:00:02,changed mind,approved
-44,217,2026-02-21 12:48:07,defective,approved
-45,228,2026-03-23 04:03:39,changed mind,approved
-46,231,2026-02-06 14:38:03,changed mind,approved
-47,236,2026-02-01 21:00:30,fraud,approved
-48,240,2026-03-18 13:52:11,late delivery,pending
-49,241,2026-01-02 02:17:57,defective,rejected
-50,248,2026-01-17 11:03:05,fraud,approved
-51,250,2026-01-10 05:49:36,defective,pending
-52,259,2026-01-08 20:18:06,late delivery,approved
-53,262,2026-02-21 07:32:38,defective,approved
-54,276,2026-03-07 20:30:12,defective,approved
-55,277,2026-01-23 05:53:33,late delivery,approved
-56,282,2026-03-14 06:43:38,changed mind,approved
-57,283,2026-03-21 21:46:10,fraud,approved
-58,284,2026-03-18 04:50:12,changed mind,pending
-59,292,2026-01-29 13:55:23,fraud,pending
-60,299,2026-04-04 17:34:06,late delivery,rejected
-61,301,2026-02-10 05:53:40,fraud,pending
-62,302,2026-03-08 20:29:24,defective,approved
-63,311,2026-02-20 16:01:38,defective,rejected
-64,328,2026-03-30 11:54:50,defective,approved
-65,330,2026-01-17 22:38:55,fraud,approved
-66,333,2026-02-07 00:31:31,changed mind,rejected
-67,339,2026-02-19 10:39:47,late delivery,rejected
-68,352,2026-04-04 01:26:51,late delivery,approved
-69,358,2026-01-21 07:29:08,changed mind,rejected
-70,378,2026-02-09 06:57:15,changed mind,rejected
-71,380,2026-02-09 22:39:55,fraud,approved
-72,390,2026-01-12 21:33:26,defective,approved
-73,391,2026-02-09 01:17:44,defective,approved
-74,392,2026-03-20 00:07:57,defective,approved
-75,395,2026-03-25 04:09:22,changed mind,rejected
-76,397,2026-01-02 08:49:54,fraud,approved
-77,407,2026-01-11 19:58:26,defective,approved
-78,411,2026-03-10 20:06:19,changed mind,approved
-79,414,2026-03-07 04:29:48,changed mind,approved
-80,415,2026-02-01 22:45:03,defective,approved
-81,416,2026-03-28 02:58:31,late delivery,pending
-82,419,2026-03-22 19:08:34,fraud,approved
-83,420,2026-03-16 18:08:03,defective,pending
-84,422,2026-02-06 08:45:51,late delivery,pending
-85,426,2026-02-28 05:59:20,changed mind,approved
-86,437,2026-02-05 05:01:26,fraud,pending
-87,438,2026-02-07 00:24:44,defective,approved
-88,443,2026-01-10 04:38:43,fraud,approved
-89,444,2025-12-31 18:38:36,late delivery,approved
-90,446,2026-01-29 05:15:02,defective,rejected
-91,448,2026-03-14 19:31:05,fraud,approved
-92,455,2025-12-27 16:28:13,fraud,approved
-93,465,2026-02-24 12:31:35,changed mind,approved
-94,467,2026-01-18 21:41:17,fraud,approved
-95,474,2026-02-14 23:25:53,defective,pending
-96,480,2026-02-14 04:52:38,late delivery,approved
-97,483,2026-02-08 10:35:13,late delivery,approved
-98,487,2026-03-20 19:08:17,changed mind,approved
-99,491,2026-03-11 14:58:01,fraud,approved
-100,493,2026-02-04 09:51:24,defective,approved
-101,494,2026-01-25 06:01:25,changed mind,pending
-102,502,2026-03-21 00:02:00,changed mind,rejected
-103,507,2026-01-15 08:45:42,changed mind,approved
-104,510,2026-03-25 12:58:27,fraud,approved
-105,512,2026-03-02 19:08:51,late delivery,approved
-106,514,2026-01-21 05:37:05,fraud,approved
-107,520,2026-01-22 02:48:26,changed mind,approved
-108,529,2026-01-03 16:31:21,late delivery,approved
-109,530,2026-01-23 04:45:42,fraud,pending
-110,538,2026-01-27 21:37:24,defective,approved
-111,541,2026-04-02 18:47:23,changed mind,approved
-112,547,2026-02-22 23:08:01,fraud,approved
-113,569,2026-01-11 02:43:12,late delivery,approved
-114,573,2026-02-21 19:28:59,fraud,pending
-115,577,2026-01-21 18:40:32,late delivery,pending
-116,582,2025-12-25 02:22:12,fraud,approved
-117,589,2026-01-27 19:37:27,fraud,rejected
-118,592,2026-01-09 17:14:59,changed mind,approved
-119,599,2026-01-21 02:11:04,late delivery,approved
-120,611,2026-01-21 13:03:13,fraud,approved
-121,623,2026-01-15 12:09:25,fraud,rejected
-122,624,2026-02-12 11:57:45,changed mind,rejected
-123,626,2026-02-16 05:21:05,fraud,approved
-124,628,2026-03-25 09:35:48,fraud,approved
-125,631,2026-02-12 03:01:52,late delivery,pending
-126,638,2026-01-20 16:20:01,fraud,pending
-127,646,2026-01-07 03:53:52,fraud,approved
-128,654,2026-02-17 09:28:40,defective,rejected
-129,668,2026-01-13 08:46:45,defective,pending
-130,675,2026-01-16 00:14:27,fraud,pending
-131,679,2026-03-20 20:36:27,fraud,rejected
-132,682,2026-02-09 03:28:37,defective,approved
-133,690,2026-03-03 07:09:08,late delivery,rejected
-134,692,2026-03-04 22:44:44,late delivery,approved
-135,695,2026-02-16 17:13:19,defective,approved
-136,699,2026-01-17 06:39:23,late delivery,pending
-137,704,2026-02-05 14:52:25,changed mind,approved
-138,712,2026-02-23 07:26:32,late delivery,pending
-139,726,2025-12-16 13:11:25,fraud,rejected
-140,727,2026-02-07 15:41:15,defective,approved
-141,728,2026-03-07 16:08:35,late delivery,approved
-142,739,2026-01-17 14:57:01,fraud,approved
-143,742,2026-02-09 07:04:04,defective,approved
-144,745,2026-03-15 17:42:41,fraud,approved
-145,748,2026-03-19 22:01:51,defective,approved
-146,768,2026-02-04 21:26:51,defective,approved
-147,770,2026-02-20 15:27:56,changed mind,approved
-148,775,2026-03-24 01:34:38,changed mind,approved
-149,783,2026-02-14 11:51:36,fraud,approved
-150,789,2026-03-16 22:07:57,defective,approved
-151,791,2026-01-12 02:19:12,late delivery,approved
-152,798,2026-02-02 05:59:44,fraud,approved
-153,799,2026-02-15 09:29:09,defective,approved
-154,802,2026-03-20 22:26:32,defective,rejected
-155,807,2026-02-28 12:14:30,changed mind,approved
-156,808,2026-01-26 16:46:15,late delivery,approved
-157,817,2026-01-14 17:38:03,late delivery,approved
-158,825,2026-02-02 17:05:05,fraud,approved
-159,826,2026-03-01 19:16:01,defective,approved
-160,827,2026-03-18 21:05:42,late delivery,pending
-161,832,2025-12-25 11:17:21,fraud,pending
-162,835,2026-01-24 13:54:21,late delivery,pending
-163,836,2026-01-22 20:24:17,changed mind,approved
-164,837,2025-12-30 22:51:11,defective,pending
-165,838,2026-02-06 22:28:35,defective,approved
-166,844,2026-03-02 20:51:19,defective,approved
-167,846,2026-04-02 15:16:08,defective,approved
-168,851,2026-02-27 15:00:48,fraud,approved
-169,856,2026-01-02 08:21:03,changed mind,approved
-170,862,2026-01-23 05:40:50,late delivery,approved
-171,869,2026-03-08 17:35:02,fraud,rejected
-172,875,2026-03-07 10:37:24,changed mind,approved
-173,876,2026-02-19 18:22:25,changed mind,approved
-174,877,2026-02-12 18:53:12,fraud,approved
-175,885,2025-12-29 22:37:46,changed mind,pending
-176,894,2026-01-12 15:58:35,defective,approved
-177,901,2026-03-12 05:01:44,changed mind,pending
-178,904,2026-01-03 14:24:54,changed mind,approved
-179,905,2026-03-19 06:54:08,changed mind,rejected
-180,906,2025-12-30 21:46:00,late delivery,approved
-181,910,2026-03-01 18:23:57,fraud,approved
-182,911,2026-03-30 19:42:09,late delivery,approved
-183,922,2026-03-07 15:40:50,changed mind,approved
-184,940,2026-04-10 10:39:55,late delivery,approved
-185,941,2026-01-15 13:16:06,changed mind,approved
-186,944,2026-01-31 23:39:15,changed mind,pending
-187,948,2026-01-18 17:49:18,late delivery,approved
-188,950,2026-01-28 18:30:53,defective,pending
-189,951,2026-02-21 09:15:34,defective,approved
-190,973,2026-03-08 18:04:07,fraud,approved
-191,979,2026-01-15 17:53:55,fraud,approved
-192,983,2025-12-29 18:04:38,changed mind,approved
-193,989,2026-01-22 18:33:51,changed mind,approved
-194,993,2026-03-23 10:38:47,defective,approved
-195,994,2026-03-27 03:19:37,fraud,rejected
-196,999,2026-02-15 02:57:50,defective,approved
+1,12,2025-09-18 20:05:03,defective,approved
+2,95,2025-09-21 07:01:07,defective,approved
+3,66,2025-09-21 11:34:17,late delivery,approved
+4,37,2025-09-22 22:06:50,defective,approved
+5,53,2025-09-22 23:44:04,late delivery,rejected
+6,85,2025-09-23 06:44:06,changed mind,approved
+7,3,2025-09-23 15:37:42,defective,approved
+8,60,2025-09-24 05:50:21,late delivery,approved
+9,79,2025-09-25 12:11:53,defective,approved
+10,19,2025-09-26 11:00:40,changed mind,approved
+11,186,2025-09-26 11:22:26,late delivery,pending
+12,203,2025-09-27 18:53:58,changed mind,pending
+13,183,2025-09-27 23:44:54,changed mind,pending
+14,207,2025-09-28 06:36:04,late delivery,pending
+15,163,2025-09-28 23:44:21,defective,approved
+16,49,2025-09-29 03:47:25,changed mind,approved
+17,193,2025-09-29 08:59:19,defective,pending
+18,255,2025-09-29 09:31:07,late delivery,approved
+19,234,2025-09-29 11:08:23,changed mind,approved
+20,101,2025-09-29 22:06:24,late delivery,approved
+21,147,2025-09-30 17:41:02,changed mind,approved
+22,236,2025-10-01 00:45:26,changed mind,approved
+23,27,2025-10-01 10:32:18,changed mind,approved
+24,280,2025-10-01 15:37:14,defective,approved
+25,40,2025-10-01 17:41:25,changed mind,approved
+26,181,2025-10-02 00:35:46,late delivery,rejected
+27,208,2025-10-02 05:52:54,late delivery,approved
+28,303,2025-10-02 16:16:43,changed mind,approved
+29,127,2025-10-02 22:57:27,defective,approved
+30,269,2025-10-03 04:08:43,defective,pending
+31,240,2025-10-03 14:52:22,defective,approved
+32,334,2025-10-04 14:43:10,defective,approved
+33,369,2025-10-04 19:04:59,defective,rejected
+34,332,2025-10-05 05:58:41,defective,pending
+35,310,2025-10-05 08:27:24,changed mind,approved
+36,162,2025-10-05 15:34:55,late delivery,approved
+37,349,2025-10-05 18:06:40,late delivery,approved
+38,158,2025-10-05 21:49:29,defective,approved
+39,262,2025-10-05 23:40:17,late delivery,approved
+40,429,2025-10-06 13:34:46,changed mind,approved
+41,395,2025-10-07 08:29:00,defective,approved
+42,476,2025-10-07 21:22:57,fraud,rejected
+43,565,2025-10-08 00:53:57,changed mind,approved
+44,534,2025-10-08 12:10:19,late delivery,pending
+45,601,2025-10-09 04:53:07,defective,pending
+46,575,2025-10-09 20:41:51,late delivery,approved
+47,290,2025-10-09 22:04:41,late delivery,approved
+48,411,2025-10-10 04:25:31,changed mind,approved
+49,23,2025-10-10 22:01:37,changed mind,approved
+50,298,2025-10-11 01:21:35,late delivery,approved
+51,501,2025-10-11 04:06:01,defective,approved
+52,597,2025-10-11 23:08:45,late delivery,approved
+53,602,2025-10-12 05:28:05,changed mind,approved
+54,166,2025-10-13 03:09:42,changed mind,approved
+55,230,2025-10-13 18:51:42,late delivery,pending
+56,617,2025-10-13 18:55:00,late delivery,pending
+57,667,2025-10-14 01:57:51,defective,approved
+58,606,2025-10-14 06:25:56,defective,approved
+59,389,2025-10-14 14:50:19,changed mind,approved
+60,542,2025-10-14 17:58:37,defective,pending
+61,707,2025-10-14 19:15:17,changed mind,approved
+62,470,2025-10-15 19:58:39,late delivery,rejected
+63,735,2025-10-16 07:03:53,changed mind,approved
+64,625,2025-10-16 21:13:00,defective,approved
+65,489,2025-10-16 23:10:22,changed mind,approved
+66,564,2025-10-17 04:10:45,late delivery,approved
+67,767,2025-10-17 08:33:24,late delivery,approved
+68,728,2025-10-17 11:09:41,defective,approved
+69,674,2025-10-17 19:05:53,late delivery,pending
+70,626,2025-10-17 19:09:31,changed mind,approved
+71,591,2025-10-18 00:33:55,defective,pending
+72,609,2025-10-18 00:35:00,defective,approved
+73,732,2025-10-18 06:02:56,changed mind,approved
+74,514,2025-10-18 16:41:15,changed mind,approved
+75,382,2025-10-18 17:50:02,late delivery,pending
+76,589,2025-10-19 01:59:20,defective,approved
+77,566,2025-10-19 03:47:00,defective,approved
+78,848,2025-10-19 10:34:26,fraud,approved
+79,526,2025-10-19 13:21:23,fraud,approved
+80,863,2025-10-19 22:34:44,changed mind,approved
+81,644,2025-10-20 06:44:26,changed mind,approved
+82,956,2025-10-20 17:54:46,late delivery,approved
+83,560,2025-10-21 02:38:56,defective,approved
+84,692,2025-10-21 07:00:01,late delivery,rejected
+85,243,2025-10-22 00:07:47,late delivery,approved
+86,368,2025-10-22 19:54:50,defective,rejected
+87,892,2025-10-22 22:21:50,changed mind,approved
+88,850,2025-10-23 02:39:51,defective,approved
+89,951,2025-10-23 23:41:41,changed mind,pending
+90,868,2025-10-24 08:03:18,defective,approved
+91,990,2025-10-24 12:08:36,late delivery,rejected
+92,901,2025-10-25 09:17:03,late delivery,rejected
+93,948,2025-10-25 10:25:52,fraud,approved
+94,1024,2025-10-25 16:24:33,fraud,pending
+95,822,2025-10-26 14:11:50,late delivery,approved
+96,722,2025-10-27 11:16:21,defective,approved
+97,880,2025-10-27 12:18:27,defective,approved
+98,785,2025-10-27 16:56:51,defective,pending
+99,1142,2025-10-27 18:54:11,changed mind,approved
+100,1045,2025-10-27 19:20:31,late delivery,approved
+101,89,2025-10-27 23:01:00,changed mind,pending
+102,1092,2025-10-28 03:47:53,defective,approved
+103,308,2025-10-28 05:50:30,late delivery,approved
+104,1165,2025-10-28 06:08:30,defective,approved
+105,847,2025-10-28 07:06:30,changed mind,approved
+106,1054,2025-10-28 23:50:30,changed mind,approved
+107,571,2025-10-30 02:22:59,defective,approved
+108,752,2025-10-30 08:39:00,changed mind,approved
+109,1144,2025-10-30 23:07:36,changed mind,approved
+110,836,2025-10-31 14:44:12,changed mind,approved
+111,1252,2025-10-31 20:44:43,changed mind,approved
+112,987,2025-10-31 23:21:02,late delivery,approved
+113,1245,2025-11-01 01:13:43,late delivery,approved
+114,1127,2025-11-01 10:23:43,late delivery,pending
+115,1059,2025-11-01 15:25:23,changed mind,approved
+116,769,2025-11-02 03:40:00,defective,approved
+117,552,2025-11-02 05:31:33,changed mind,pending
+118,1218,2025-11-03 04:27:09,changed mind,approved
+119,1382,2025-11-03 22:09:45,late delivery,approved
+120,1147,2025-11-04 02:05:57,late delivery,approved
+121,1269,2025-11-04 08:12:14,defective,approved
+122,1278,2025-11-04 11:24:11,fraud,approved
+123,584,2025-11-05 08:25:23,defective,approved
+124,1392,2025-11-05 08:49:44,changed mind,approved
+125,1223,2025-11-05 17:01:06,late delivery,approved
+126,1320,2025-11-05 18:01:12,changed mind,approved
+127,1086,2025-11-05 22:01:24,late delivery,approved
+128,1101,2025-11-06 18:33:10,changed mind,approved
+129,1211,2025-11-06 23:40:02,defective,rejected
+130,1417,2025-11-07 03:19:46,changed mind,rejected
+131,1456,2025-11-07 09:07:48,changed mind,pending
+132,1412,2025-11-07 23:28:27,late delivery,approved
+133,1371,2025-11-08 02:00:40,changed mind,approved
+134,1404,2025-11-08 12:58:56,changed mind,approved
+135,766,2025-11-08 20:37:22,changed mind,approved
+136,1305,2025-11-09 11:28:30,changed mind,approved
+137,1251,2025-11-09 13:28:12,changed mind,approved
+138,1063,2025-11-09 16:19:18,defective,approved
+139,1219,2025-11-10 01:32:32,changed mind,approved
+140,1586,2025-11-10 02:52:29,defective,approved
+141,1268,2025-11-10 16:29:44,late delivery,approved
+142,1675,2025-11-11 23:09:19,late delivery,approved
+143,1418,2025-11-11 23:31:01,fraud,approved
+144,954,2025-11-12 14:17:14,changed mind,approved
+145,1709,2025-11-12 18:56:30,defective,rejected
+146,1151,2025-11-12 20:29:37,defective,approved
+147,1544,2025-11-12 21:59:38,changed mind,approved
+148,1501,2025-11-13 14:17:38,changed mind,approved
+149,1384,2025-11-13 15:34:55,changed mind,approved
+150,1311,2025-11-13 16:29:07,changed mind,approved
+151,1688,2025-11-14 08:09:47,changed mind,pending
+152,1216,2025-11-14 15:29:20,late delivery,approved
+153,1784,2025-11-14 19:20:23,changed mind,approved
+154,1520,2025-11-15 06:55:57,defective,approved
+155,1407,2025-11-15 12:55:26,changed mind,approved
+156,1479,2025-11-15 15:24:41,late delivery,pending
+157,1746,2025-11-15 16:17:21,changed mind,approved
+158,1183,2025-11-16 05:28:57,defective,approved
+159,1628,2025-11-16 12:48:47,late delivery,rejected
+160,1670,2025-11-16 13:04:47,defective,approved
+161,1207,2025-11-16 20:25:33,defective,approved
+162,1629,2025-11-17 07:13:44,late delivery,approved
+163,1622,2025-11-17 18:38:31,defective,approved
+164,1837,2025-11-18 09:58:51,late delivery,approved
+165,1731,2025-11-18 16:23:21,fraud,approved
+166,1888,2025-11-18 22:03:43,defective,approved
+167,1632,2025-11-19 00:04:17,late delivery,approved
+168,1921,2025-11-19 09:25:00,changed mind,rejected
+169,1230,2025-11-19 10:37:19,late delivery,approved
+170,1430,2025-11-19 14:12:36,changed mind,approved
+171,1941,2025-11-19 19:43:11,changed mind,approved
+172,1594,2025-11-19 22:58:28,late delivery,approved
+173,1715,2025-11-20 09:32:27,changed mind,pending
+174,1364,2025-11-20 16:36:17,changed mind,rejected
+175,1098,2025-11-21 15:07:05,defective,rejected
+176,1849,2025-11-21 20:46:52,defective,approved
+177,1973,2025-11-22 04:05:25,late delivery,approved
+178,2044,2025-11-22 11:27:08,fraud,pending
+179,1785,2025-11-22 16:31:39,changed mind,approved
+180,1933,2025-11-22 17:37:26,changed mind,approved
+181,1954,2025-11-22 19:25:27,defective,approved
+182,1935,2025-11-23 00:08:10,late delivery,pending
+183,1926,2025-11-24 10:53:30,defective,approved
+184,1965,2025-11-24 13:23:36,late delivery,approved
+185,1693,2025-11-24 21:05:12,defective,approved
+186,1827,2025-11-25 04:27:06,late delivery,approved
+187,2041,2025-11-25 14:00:53,changed mind,approved
+188,2032,2025-11-25 15:46:30,fraud,rejected
+189,2096,2025-11-25 18:31:02,changed mind,rejected
+190,2071,2025-11-25 20:07:45,defective,approved
+191,1832,2025-11-25 22:06:41,defective,pending
+192,1595,2025-11-25 22:51:31,late delivery,pending
+193,1986,2025-11-25 23:49:45,changed mind,approved
+194,1875,2025-11-26 04:03:10,changed mind,pending
+195,2146,2025-11-26 14:33:52,late delivery,approved
+196,1760,2025-11-26 17:22:54,changed mind,approved
+197,1754,2025-11-27 01:06:22,late delivery,approved
+198,1903,2025-11-27 08:19:25,late delivery,approved
+199,1811,2025-11-27 08:47:45,changed mind,approved
+200,1679,2025-11-27 12:18:16,late delivery,approved
+201,2185,2025-11-27 20:39:59,defective,rejected
+202,1817,2025-11-28 00:51:29,fraud,approved
+203,2014,2025-11-28 22:08:00,fraud,approved
+204,1831,2025-11-28 23:25:34,changed mind,approved
+205,2317,2025-11-29 05:37:59,defective,rejected
+206,2115,2025-11-29 14:52:31,late delivery,approved
+207,2108,2025-11-29 21:18:20,defective,approved
+208,2089,2025-11-29 21:36:07,fraud,approved
+209,2120,2025-11-30 00:43:16,late delivery,pending
+210,2231,2025-11-30 04:42:49,late delivery,approved
+211,2373,2025-11-30 13:14:23,defective,rejected
+212,2196,2025-12-01 11:27:06,late delivery,approved
+213,1873,2025-12-01 13:20:38,changed mind,pending
+214,1518,2025-12-01 15:43:08,changed mind,approved
+215,2140,2025-12-01 23:15:05,defective,approved
+216,1868,2025-12-02 04:37:51,late delivery,approved
+217,2250,2025-12-02 06:03:09,defective,approved
+218,2295,2025-12-02 08:16:28,defective,approved
+219,2290,2025-12-02 17:37:25,changed mind,approved
+220,2416,2025-12-02 21:23:00,changed mind,approved
+221,2148,2025-12-02 22:40:19,changed mind,pending
+222,2398,2025-12-03 03:35:44,late delivery,approved
+223,2100,2025-12-03 10:21:26,changed mind,approved
+224,2325,2025-12-03 16:13:02,late delivery,rejected
+225,2144,2025-12-03 20:36:43,changed mind,approved
+226,2177,2025-12-03 20:44:21,defective,rejected
+227,2271,2025-12-04 07:19:43,late delivery,approved
+228,2414,2025-12-04 10:23:32,changed mind,rejected
+229,2033,2025-12-04 21:33:58,late delivery,approved
+230,2525,2025-12-04 23:01:10,late delivery,approved
+231,2520,2025-12-04 23:09:02,defective,pending
+232,1752,2025-12-05 09:44:49,changed mind,rejected
+233,2567,2025-12-05 22:10:54,changed mind,approved
+234,2464,2025-12-06 01:34:35,changed mind,approved
+235,2631,2025-12-06 02:36:14,defective,pending
+236,2559,2025-12-06 17:02:22,fraud,approved
+237,2410,2025-12-06 21:20:37,defective,approved
+238,2616,2025-12-07 11:28:20,defective,approved
+239,2558,2025-12-08 02:12:33,late delivery,pending
+240,2442,2025-12-08 07:18:18,fraud,approved
+241,2635,2025-12-08 10:47:08,defective,approved
+242,2669,2025-12-08 15:27:46,late delivery,pending
+243,2602,2025-12-09 08:05:51,changed mind,approved
+244,1815,2025-12-09 15:52:42,defective,approved
+245,2154,2025-12-09 19:51:13,defective,approved
+246,2234,2025-12-10 00:22:51,defective,pending
+247,2695,2025-12-10 04:16:16,changed mind,approved
+248,2083,2025-12-10 14:34:00,fraud,approved
+249,2632,2025-12-11 00:03:13,defective,approved
+250,1865,2025-12-11 05:06:08,late delivery,approved
+251,2704,2025-12-11 10:15:14,changed mind,approved
+252,2659,2025-12-11 11:11:25,defective,approved
+253,2809,2025-12-11 12:15:24,defective,approved
+254,2667,2025-12-12 09:34:35,changed mind,pending
+255,2771,2025-12-12 10:52:39,changed mind,approved
+256,2336,2025-12-12 15:22:52,late delivery,approved
+257,2429,2025-12-13 17:33:55,changed mind,rejected
+258,1999,2025-12-13 18:19:34,changed mind,approved
+259,2145,2025-12-13 19:03:21,defective,approved
+260,2533,2025-12-14 02:30:24,changed mind,approved
+261,2605,2025-12-14 13:51:11,late delivery,approved
+262,2640,2025-12-14 17:41:54,defective,pending
+263,2834,2025-12-14 18:47:21,defective,pending
+264,2797,2025-12-14 18:47:48,changed mind,pending
+265,2774,2025-12-14 19:07:06,late delivery,rejected
+266,2783,2025-12-14 22:49:35,defective,approved
+267,3015,2025-12-15 04:02:06,late delivery,approved
+268,2923,2025-12-15 06:41:38,changed mind,approved
+269,2894,2025-12-15 07:10:10,changed mind,approved
+270,2571,2025-12-15 09:50:00,defective,pending
+271,2458,2025-12-15 13:34:05,changed mind,pending
+272,2477,2025-12-15 15:53:25,late delivery,approved
+273,2853,2025-12-15 16:14:21,fraud,rejected
+274,2440,2025-12-15 17:38:28,changed mind,rejected
+275,2919,2025-12-15 18:48:07,late delivery,approved
+276,2391,2025-12-15 19:57:16,defective,approved
+277,2773,2025-12-16 05:03:23,changed mind,pending
+278,2786,2025-12-16 07:12:15,defective,approved
+279,2849,2025-12-16 11:56:23,defective,approved
+280,2591,2025-12-16 17:07:24,fraud,rejected
+281,2569,2025-12-16 20:04:15,defective,approved
+282,2960,2025-12-17 01:08:33,defective,approved
+283,2828,2025-12-17 09:53:43,defective,rejected
+284,3030,2025-12-17 10:54:34,changed mind,approved
+285,2672,2025-12-17 17:24:12,defective,rejected
+286,2984,2025-12-17 21:57:25,defective,pending
+287,2690,2025-12-18 05:59:27,fraud,approved
+288,2878,2025-12-18 06:22:55,changed mind,approved
+289,2873,2025-12-18 13:57:57,defective,approved
+290,2880,2025-12-18 22:49:03,late delivery,approved
+291,2778,2025-12-19 12:19:49,late delivery,approved
+292,2647,2025-12-19 17:49:18,defective,approved
+293,3016,2025-12-19 18:40:30,late delivery,approved
+294,2207,2025-12-20 02:20:55,changed mind,pending
+295,3104,2025-12-20 04:00:47,late delivery,approved
+296,2531,2025-12-20 10:48:58,changed mind,approved
+297,2908,2025-12-20 11:04:35,changed mind,approved
+298,2298,2025-12-20 17:02:01,changed mind,rejected
+299,3098,2025-12-20 21:59:34,defective,approved
+300,3106,2025-12-21 10:35:42,changed mind,approved
+301,2770,2025-12-22 03:08:09,fraud,approved
+302,2339,2025-12-22 04:11:17,changed mind,pending
+303,2999,2025-12-22 05:09:47,changed mind,pending
+304,3186,2025-12-22 18:26:13,defective,approved
+305,3069,2025-12-22 18:44:32,changed mind,approved
+306,2946,2025-12-22 19:41:31,defective,rejected
+307,2807,2025-12-23 00:03:36,late delivery,approved
+308,3245,2025-12-23 02:40:54,changed mind,rejected
+309,3041,2025-12-23 05:08:41,defective,approved
+310,2838,2025-12-23 05:19:35,late delivery,pending
+311,2512,2025-12-23 07:47:39,changed mind,pending
+312,3168,2025-12-23 10:07:13,late delivery,approved
+313,2855,2025-12-23 12:56:49,defective,approved
+314,3339,2025-12-23 16:08:06,defective,rejected
+315,2102,2025-12-23 16:39:07,changed mind,approved
+316,3315,2025-12-24 00:50:51,defective,pending
+317,2748,2025-12-24 01:11:40,late delivery,approved
+318,3027,2025-12-24 02:40:13,late delivery,approved
+319,2811,2025-12-24 04:02:17,fraud,pending
+320,3076,2025-12-24 23:41:50,defective,rejected
+321,3359,2025-12-25 03:53:35,changed mind,pending
+322,3288,2025-12-25 07:55:13,late delivery,approved
+323,2747,2025-12-25 09:39:04,changed mind,approved
+324,3081,2025-12-26 00:27:30,defective,approved
+325,3236,2025-12-26 04:12:29,changed mind,approved
+326,3240,2025-12-26 13:30:21,defective,approved
+327,3473,2025-12-27 00:41:08,defective,pending
+328,3378,2025-12-27 10:56:50,defective,pending
+329,3366,2025-12-27 16:55:41,defective,approved
+330,3379,2025-12-27 19:21:51,changed mind,pending
+331,3324,2025-12-27 22:30:34,defective,approved
+332,3163,2025-12-28 07:29:12,changed mind,pending
+333,3442,2025-12-28 08:12:27,changed mind,rejected
+334,2901,2025-12-28 13:08:22,defective,approved
+335,3519,2025-12-28 13:12:54,defective,approved
+336,3250,2025-12-29 00:32:04,defective,approved
+337,3100,2025-12-29 07:32:16,late delivery,rejected
+338,3158,2025-12-29 13:12:52,defective,pending
+339,3167,2025-12-29 23:37:31,late delivery,pending
+340,3532,2025-12-30 06:13:50,defective,approved
+341,3244,2025-12-30 11:04:58,changed mind,rejected
+342,3700,2025-12-30 20:50:59,late delivery,pending
+343,3432,2025-12-30 21:03:17,late delivery,approved
+344,3222,2025-12-30 22:34:03,defective,approved
+345,3815,2025-12-31 02:16:19,late delivery,approved
+346,3483,2025-12-31 02:59:14,late delivery,pending
+347,3642,2025-12-31 07:17:53,changed mind,approved
+348,3096,2025-12-31 11:32:28,changed mind,rejected
+349,3360,2025-12-31 13:38:46,defective,approved
+350,3697,2026-01-01 04:53:23,defective,rejected
+351,3634,2026-01-01 16:13:10,changed mind,rejected
+352,3938,2026-01-01 21:30:37,defective,approved
+353,3706,2026-01-02 00:11:40,late delivery,approved
+354,3645,2026-01-02 01:38:14,defective,pending
+355,3807,2026-01-02 03:12:44,changed mind,approved
+356,3425,2026-01-02 03:30:37,fraud,approved
+357,3253,2026-01-02 06:26:25,defective,approved
+358,3718,2026-01-02 12:11:31,late delivery,approved
+359,2950,2026-01-02 14:53:16,changed mind,approved
+360,3382,2026-01-02 15:46:12,late delivery,approved
+361,3466,2026-01-02 15:48:24,changed mind,approved
+362,3627,2026-01-02 16:02:35,defective,approved
+363,3556,2026-01-02 17:07:44,defective,approved
+364,3672,2026-01-02 21:26:17,defective,approved
+365,3827,2026-01-03 01:14:15,defective,pending
+366,3496,2026-01-03 05:42:20,changed mind,approved
+367,3070,2026-01-03 06:57:26,late delivery,pending
+368,3155,2026-01-03 07:37:01,changed mind,approved
+369,3522,2026-01-03 13:01:12,defective,approved
+370,3798,2026-01-03 17:22:17,defective,approved
+371,3505,2026-01-03 18:51:22,changed mind,approved
+372,3492,2026-01-04 00:27:05,defective,approved
+373,3563,2026-01-04 02:41:51,changed mind,approved
+374,3418,2026-01-04 03:20:10,late delivery,approved
+375,3631,2026-01-04 03:21:11,changed mind,approved
+376,3115,2026-01-04 03:58:22,defective,approved
+377,3064,2026-01-04 04:57:29,late delivery,approved
+378,3608,2026-01-04 07:17:42,late delivery,pending
+379,4072,2026-01-05 04:37:29,late delivery,approved
+380,3957,2026-01-05 13:15:19,fraud,approved
+381,3668,2026-01-05 20:23:54,defective,approved
+382,3800,2026-01-05 22:51:05,defective,approved
+383,3197,2026-01-06 14:12:43,defective,approved
+384,3164,2026-01-06 20:29:53,fraud,pending
+385,2645,2026-01-06 23:00:43,late delivery,approved
+386,3750,2026-01-07 01:30:19,defective,pending
+387,3636,2026-01-07 02:53:30,defective,approved
+388,3734,2026-01-07 08:59:44,defective,approved
+389,3902,2026-01-07 10:17:45,defective,approved
+390,4171,2026-01-07 17:16:07,defective,rejected
+391,3043,2026-01-07 18:52:12,changed mind,approved
+392,3857,2026-01-07 23:36:42,defective,approved
+393,3127,2026-01-08 01:36:14,changed mind,approved
+394,3741,2026-01-09 08:47:16,fraud,approved
+395,4260,2026-01-09 10:26:32,late delivery,approved
+396,3620,2026-01-09 13:12:07,defective,approved
+397,3160,2026-01-09 13:44:00,changed mind,approved
+398,3780,2026-01-09 18:15:03,changed mind,approved
+399,4180,2026-01-09 20:02:29,late delivery,approved
+400,4027,2026-01-09 21:15:16,fraud,rejected
+401,3712,2026-01-09 21:28:04,late delivery,pending
+402,4226,2026-01-09 22:55:17,late delivery,pending
+403,4128,2026-01-10 00:29:29,late delivery,approved
+404,4073,2026-01-10 01:27:27,changed mind,approved
+405,3771,2026-01-10 04:32:23,defective,approved
+406,3002,2026-01-10 11:57:26,changed mind,approved
+407,3998,2026-01-10 13:06:19,late delivery,rejected
+408,2987,2026-01-10 13:29:02,fraud,pending
+409,4119,2026-01-11 08:03:35,fraud,approved
+410,3930,2026-01-11 09:22:22,changed mind,approved
+411,4400,2026-01-11 13:36:46,late delivery,approved
+412,4093,2026-01-11 15:09:24,late delivery,pending
+413,3907,2026-01-11 15:32:10,defective,approved
+414,4123,2026-01-11 21:52:49,changed mind,approved
+415,4328,2026-01-12 02:42:09,late delivery,rejected
+416,3872,2026-01-12 04:35:47,defective,approved
+417,4497,2026-01-12 11:33:06,defective,rejected
+418,4084,2026-01-12 13:24:42,changed mind,approved
+419,4491,2026-01-12 21:18:21,changed mind,approved
+420,4399,2026-01-12 22:00:32,late delivery,rejected
+421,4414,2026-01-13 01:48:17,defective,rejected
+422,3593,2026-01-13 04:52:47,changed mind,approved
+423,3965,2026-01-13 08:22:44,defective,approved
+424,4409,2026-01-13 09:40:38,late delivery,rejected
+425,4536,2026-01-13 12:32:39,changed mind,approved
+426,3384,2026-01-13 16:13:20,late delivery,approved
+427,4255,2026-01-14 00:45:15,changed mind,approved
+428,4626,2026-01-14 05:54:39,fraud,approved
+429,4628,2026-01-14 18:32:55,defective,approved
+430,4607,2026-01-14 23:31:58,fraud,rejected
+431,4610,2026-01-15 03:14:30,changed mind,pending
+432,4659,2026-01-15 08:23:21,changed mind,approved
+433,4564,2026-01-15 09:44:23,defective,approved
+434,4754,2026-01-15 14:14:06,defective,approved
+435,4382,2026-01-15 23:29:46,changed mind,approved
+436,3369,2026-01-16 00:03:08,defective,rejected
+437,3841,2026-01-16 03:43:57,fraud,approved
+438,4045,2026-01-16 05:45:51,defective,approved
+439,4315,2026-01-16 11:17:41,changed mind,pending
+440,3321,2026-01-16 12:24:10,defective,pending
+441,4619,2026-01-16 14:28:51,late delivery,rejected
+442,4691,2026-01-16 14:55:05,changed mind,approved
+443,4865,2026-01-16 21:17:04,changed mind,approved
+444,4736,2026-01-17 02:45:59,defective,approved
+445,4712,2026-01-17 03:50:57,defective,approved
+446,4457,2026-01-17 04:31:59,changed mind,pending
+447,4463,2026-01-17 05:47:41,defective,rejected
+448,4687,2026-01-17 09:04:59,late delivery,approved
+449,4471,2026-01-17 13:28:03,changed mind,rejected
+450,4714,2026-01-17 20:38:36,fraud,pending
+451,4733,2026-01-17 20:53:59,changed mind,approved
+452,4379,2026-01-17 22:57:35,fraud,rejected
+453,3689,2026-01-17 23:49:18,late delivery,approved
+454,4951,2026-01-18 03:15:00,changed mind,pending
+455,3805,2026-01-18 04:13:54,fraud,approved
+456,4846,2026-01-18 10:29:47,late delivery,approved
+457,4529,2026-01-18 16:47:00,defective,approved
+458,4903,2026-01-18 17:17:44,changed mind,approved
+459,4715,2026-01-18 19:14:28,defective,rejected
+460,4988,2026-01-18 21:26:42,changed mind,approved
+461,4826,2026-01-19 02:26:29,changed mind,approved
+462,4513,2026-01-19 05:32:42,defective,pending
+463,4655,2026-01-19 10:14:53,changed mind,approved
+464,4467,2026-01-19 13:56:14,defective,approved
+465,4676,2026-01-19 14:21:10,defective,approved
+466,3729,2026-01-19 14:57:03,changed mind,approved
+467,4844,2026-01-19 18:38:28,late delivery,approved
+468,4398,2026-01-19 23:22:18,late delivery,approved
+469,4716,2026-01-20 01:01:29,fraud,approved
+470,4195,2026-01-20 01:30:02,defective,approved
+471,3999,2026-01-20 07:09:12,defective,approved
+472,5087,2026-01-20 08:25:07,late delivery,approved
+473,4819,2026-01-20 08:48:08,changed mind,approved
+474,3960,2026-01-20 10:11:26,defective,approved
+475,4201,2026-01-20 11:32:45,late delivery,pending
+476,4447,2026-01-20 11:45:52,changed mind,approved
+477,4646,2026-01-20 12:12:08,fraud,approved
+478,4341,2026-01-20 13:13:04,late delivery,approved
+479,5173,2026-01-20 15:02:09,changed mind,approved
+480,4878,2026-01-20 16:14:09,defective,approved
+481,4694,2026-01-20 20:58:12,defective,approved
+482,4791,2026-01-20 22:42:52,defective,approved
+483,5307,2026-01-21 00:42:45,late delivery,approved
+484,4233,2026-01-21 02:21:31,changed mind,approved
+485,5059,2026-01-21 11:45:39,late delivery,approved
+486,5295,2026-01-21 18:00:48,changed mind,pending
+487,4408,2026-01-21 19:56:16,defective,approved
+488,5294,2026-01-21 21:19:48,defective,approved
+489,5223,2026-01-21 23:12:22,late delivery,approved
+490,4900,2026-01-22 03:27:33,late delivery,approved
+491,4913,2026-01-22 06:12:31,changed mind,approved
+492,4886,2026-01-22 06:58:26,changed mind,approved
+493,4837,2026-01-22 10:16:21,changed mind,rejected
+494,4654,2026-01-22 11:06:14,changed mind,approved
+495,4973,2026-01-22 11:42:12,changed mind,pending
+496,5326,2026-01-22 12:54:56,defective,approved
+497,5004,2026-01-22 23:38:56,defective,rejected
+498,4859,2026-01-23 00:01:04,late delivery,rejected
+499,4108,2026-01-23 00:11:57,late delivery,approved
+500,4961,2026-01-23 00:41:27,late delivery,approved
+501,5062,2026-01-23 01:22:26,changed mind,approved
+502,5023,2026-01-23 03:23:12,late delivery,approved
+503,4787,2026-01-23 05:36:57,late delivery,rejected
+504,4508,2026-01-23 05:41:53,changed mind,approved
+505,5101,2026-01-23 06:39:14,late delivery,pending
+506,4394,2026-01-23 07:14:14,late delivery,approved
+507,5533,2026-01-23 07:53:56,changed mind,approved
+508,5272,2026-01-23 08:38:54,changed mind,pending
+509,5013,2026-01-23 08:58:49,defective,approved
+510,4286,2026-01-23 09:16:04,changed mind,rejected
+511,5218,2026-01-23 09:25:30,defective,approved
+512,5107,2026-01-23 16:27:29,changed mind,approved
+513,5330,2026-01-23 17:30:44,defective,approved
+514,4678,2026-01-24 00:01:30,fraud,pending
+515,5115,2026-01-24 02:43:39,changed mind,approved
+516,4843,2026-01-24 02:46:28,defective,approved
+517,5311,2026-01-24 02:57:14,defective,approved
+518,5439,2026-01-24 07:24:07,changed mind,approved
+519,3218,2026-01-24 09:14:18,fraud,pending
+520,5081,2026-01-24 09:23:30,defective,approved
+521,5161,2026-01-24 11:24:57,defective,pending
+522,5067,2026-01-24 12:00:44,changed mind,rejected
+523,5068,2026-01-24 12:25:49,late delivery,pending
+524,5378,2026-01-24 13:47:56,changed mind,pending
+525,5032,2026-01-24 16:44:40,late delivery,approved
+526,5257,2026-01-24 16:59:22,late delivery,pending
+527,5033,2026-01-24 19:43:24,defective,pending
+528,5609,2026-01-24 20:50:25,late delivery,approved
+529,5208,2026-01-24 20:56:55,late delivery,approved
+530,4727,2026-01-24 23:52:57,late delivery,rejected
+531,5217,2026-01-25 00:02:17,late delivery,approved
+532,3633,2026-01-25 01:29:19,late delivery,approved
+533,4589,2026-01-25 02:22:57,changed mind,approved
+534,4993,2026-01-25 02:44:53,late delivery,approved
+535,4851,2026-01-25 03:39:11,late delivery,approved
+536,4574,2026-01-25 03:47:50,defective,approved
+537,4772,2026-01-25 07:04:52,defective,rejected
+538,5082,2026-01-25 07:20:15,defective,pending
+539,4184,2026-01-25 11:36:42,defective,rejected
+540,5035,2026-01-25 15:24:50,fraud,approved
+541,5463,2026-01-25 16:17:28,defective,approved
+542,5289,2026-01-25 18:08:02,fraud,approved
+543,5512,2026-01-25 19:43:30,fraud,approved
+544,4808,2026-01-25 19:54:28,late delivery,rejected
+545,5063,2026-01-25 22:03:09,late delivery,approved
+546,5649,2026-01-25 23:27:02,defective,rejected
+547,4185,2026-01-26 03:33:38,changed mind,approved
+548,5021,2026-01-26 09:39:20,late delivery,approved
+549,5725,2026-01-26 10:40:35,defective,approved
+550,5702,2026-01-26 12:24:20,defective,approved
+551,4584,2026-01-26 18:19:03,changed mind,approved
+552,5370,2026-01-27 00:15:07,changed mind,approved
+553,5697,2026-01-27 00:30:35,changed mind,approved
+554,5003,2026-01-27 01:15:11,late delivery,approved
+555,5689,2026-01-27 06:21:28,defective,approved
+556,5137,2026-01-27 09:06:07,defective,approved
+557,5652,2026-01-27 09:43:44,changed mind,approved
+558,5469,2026-01-27 11:11:17,late delivery,approved
+559,4580,2026-01-27 13:24:39,changed mind,pending
+560,4531,2026-01-27 20:03:09,late delivery,approved
+561,5162,2026-01-27 20:34:53,fraud,approved
+562,4571,2026-01-27 22:31:19,defective,rejected
+563,5388,2026-01-27 23:06:24,defective,approved
+564,4147,2026-01-28 01:45:59,changed mind,pending
+565,5319,2026-01-28 06:48:03,late delivery,approved
+566,5210,2026-01-28 08:34:22,changed mind,approved
+567,4532,2026-01-28 14:58:12,defective,approved
+568,4894,2026-01-28 15:57:05,changed mind,pending
+569,4333,2026-01-28 17:52:17,changed mind,approved
+570,5078,2026-01-28 21:10:19,late delivery,approved
+571,4573,2026-01-28 21:35:16,late delivery,approved
+572,5813,2026-01-28 21:48:12,defective,approved
+573,5496,2026-01-28 23:28:08,late delivery,pending
+574,5580,2026-01-29 00:14:55,defective,pending
+575,5621,2026-01-29 01:53:29,defective,approved
+576,5873,2026-01-29 04:24:37,late delivery,approved
+577,5645,2026-01-29 04:44:20,changed mind,pending
+578,5499,2026-01-29 06:54:51,changed mind,approved
+579,5510,2026-01-29 13:05:27,defective,approved
+580,5665,2026-01-29 16:45:17,late delivery,approved
+581,5595,2026-01-29 20:26:42,defective,approved
+582,5415,2026-01-29 22:49:29,late delivery,approved
+583,5446,2026-01-30 00:12:00,late delivery,approved
+584,5590,2026-01-30 05:00:59,changed mind,pending
+585,4643,2026-01-30 06:25:28,defective,approved
+586,5927,2026-01-30 06:47:09,late delivery,pending
+587,5237,2026-01-30 06:52:26,defective,approved
+588,5193,2026-01-30 07:28:56,late delivery,approved
+589,5511,2026-01-30 10:36:18,defective,approved
+590,5299,2026-01-30 11:21:29,late delivery,approved
+591,6134,2026-01-30 12:28:14,fraud,rejected
+592,5349,2026-01-30 23:57:36,defective,approved
+593,5695,2026-01-31 00:08:16,defective,pending
+594,5587,2026-01-31 00:52:17,changed mind,approved
+595,5594,2026-01-31 01:04:11,defective,approved
+596,5747,2026-01-31 03:33:03,late delivery,pending
+597,5858,2026-01-31 07:02:06,defective,approved
+598,6052,2026-01-31 09:59:03,defective,approved
+599,5857,2026-01-31 19:59:57,late delivery,approved
+600,6125,2026-01-31 20:55:18,late delivery,pending
+601,5845,2026-01-31 21:18:20,defective,approved
+602,5406,2026-01-31 23:10:37,changed mind,pending
+603,5043,2026-02-01 00:20:42,defective,rejected
+604,5396,2026-02-01 07:06:09,changed mind,pending
+605,6149,2026-02-01 07:45:12,changed mind,approved
+606,6307,2026-02-01 11:14:52,changed mind,pending
+607,5985,2026-02-01 14:36:21,late delivery,rejected
+608,5971,2026-02-01 19:55:29,changed mind,approved
+609,6263,2026-02-02 05:14:33,changed mind,approved
+610,5674,2026-02-02 05:40:57,late delivery,rejected
+611,4767,2026-02-02 09:58:58,late delivery,approved
+612,5216,2026-02-02 10:49:10,late delivery,approved
+613,5245,2026-02-02 11:22:39,defective,pending
+614,5797,2026-02-02 13:03:20,defective,approved
+615,4920,2026-02-02 13:44:11,changed mind,pending
+616,5862,2026-02-02 14:39:19,late delivery,pending
+617,6001,2026-02-02 20:00:28,changed mind,pending
+618,5765,2026-02-03 04:04:24,changed mind,approved
+619,6470,2026-02-03 06:07:48,changed mind,pending
+620,5551,2026-02-03 10:10:45,changed mind,approved
+621,5763,2026-02-03 13:38:51,changed mind,pending
+622,6339,2026-02-03 14:40:48,changed mind,pending
+623,4671,2026-02-03 14:58:19,changed mind,approved
+624,4702,2026-02-03 15:03:35,late delivery,approved
+625,5240,2026-02-03 15:25:13,defective,approved
+626,6621,2026-02-03 18:28:05,changed mind,approved
+627,5699,2026-02-04 02:33:14,late delivery,approved
+628,4962,2026-02-04 07:20:51,changed mind,approved
+629,5254,2026-02-04 07:35:06,defective,approved
+630,5712,2026-02-04 08:16:41,late delivery,approved
+631,6547,2026-02-04 11:12:06,changed mind,approved
+632,6467,2026-02-04 14:10:27,late delivery,approved
+633,5920,2026-02-04 15:08:32,late delivery,rejected
+634,6674,2026-02-04 16:02:46,late delivery,approved
+635,5989,2026-02-04 19:06:43,defective,approved
+636,5654,2026-02-04 19:12:15,defective,approved
+637,6390,2026-02-04 20:14:18,changed mind,pending
+638,6340,2026-02-04 23:56:58,changed mind,pending
+639,5923,2026-02-05 03:39:50,changed mind,approved
+640,6282,2026-02-05 12:49:29,late delivery,approved
+641,6719,2026-02-05 14:55:42,defective,approved
+642,5998,2026-02-05 21:39:28,defective,pending
+643,6038,2026-02-06 02:23:12,changed mind,approved
+644,6317,2026-02-06 03:56:48,changed mind,rejected
+645,6469,2026-02-06 04:32:26,changed mind,approved
+646,5369,2026-02-06 05:23:42,changed mind,pending
+647,5794,2026-02-06 07:45:18,late delivery,rejected
+648,6555,2026-02-06 09:11:58,defective,approved
+649,6373,2026-02-06 13:22:15,defective,approved
+650,5995,2026-02-06 13:30:30,changed mind,pending
+651,6063,2026-02-07 02:47:20,changed mind,approved
+652,6903,2026-02-07 03:38:09,changed mind,approved
+653,5657,2026-02-07 03:48:46,changed mind,rejected
+654,6665,2026-02-07 03:58:08,fraud,approved
+655,6275,2026-02-07 05:32:01,changed mind,pending
+656,5598,2026-02-07 05:38:26,changed mind,approved
+657,6175,2026-02-07 05:44:57,changed mind,approved
+658,6120,2026-02-07 08:49:02,defective,approved
+659,5969,2026-02-07 09:51:32,fraud,approved
+660,6657,2026-02-07 14:54:26,defective,approved
+661,5395,2026-02-07 15:45:00,defective,approved
+662,6392,2026-02-07 19:57:57,defective,approved
+663,6615,2026-02-07 20:32:20,defective,approved
+664,6670,2026-02-07 21:10:17,changed mind,rejected
+665,6947,2026-02-07 21:26:09,defective,approved
+666,6627,2026-02-07 22:25:38,defective,approved
+667,6561,2026-02-08 00:54:10,defective,approved
+668,6156,2026-02-08 01:27:14,defective,approved
+669,4141,2026-02-08 01:47:44,defective,rejected
+670,5427,2026-02-08 03:26:32,defective,approved
+671,6783,2026-02-08 07:11:08,late delivery,approved
+672,6066,2026-02-08 11:11:50,defective,approved
+673,6818,2026-02-08 11:39:39,defective,approved
+674,6840,2026-02-08 13:54:18,late delivery,approved
+675,5221,2026-02-08 14:37:35,defective,pending
+676,5895,2026-02-08 14:45:44,defective,pending
+677,6490,2026-02-08 15:20:22,defective,pending
+678,6907,2026-02-08 15:47:39,changed mind,pending
+679,5818,2026-02-08 15:53:43,defective,approved
+680,6296,2026-02-08 16:04:51,defective,pending
+681,6179,2026-02-08 16:31:49,fraud,approved
+682,6427,2026-02-08 18:37:44,defective,pending
+683,6859,2026-02-08 20:44:26,changed mind,approved
+684,6705,2026-02-09 00:59:47,late delivery,approved
+685,6750,2026-02-09 01:18:26,defective,pending
+686,7040,2026-02-09 08:52:49,changed mind,approved
+687,6793,2026-02-09 11:08:52,late delivery,approved
+688,6742,2026-02-09 13:11:43,late delivery,approved
+689,5975,2026-02-09 16:35:00,changed mind,rejected
+690,6466,2026-02-09 17:27:51,late delivery,pending
+691,6735,2026-02-09 17:55:46,late delivery,approved
+692,6400,2026-02-09 19:36:23,changed mind,approved
+693,6352,2026-02-09 19:41:35,defective,approved
+694,6384,2026-02-09 19:58:45,late delivery,pending
+695,6591,2026-02-09 21:13:40,changed mind,approved
+696,7294,2026-02-09 22:44:43,late delivery,pending
+697,5276,2026-02-09 22:48:43,defective,approved
+698,6394,2026-02-09 23:19:19,changed mind,pending
+699,7021,2026-02-10 02:52:18,changed mind,approved
+700,7115,2026-02-10 03:07:42,late delivery,rejected
+701,7032,2026-02-10 05:01:27,changed mind,approved
+702,6996,2026-02-10 07:53:42,defective,approved
+703,6012,2026-02-10 12:19:59,fraud,pending
+704,6513,2026-02-10 13:07:46,defective,approved
+705,6215,2026-02-10 16:30:45,changed mind,approved
+706,7410,2026-02-10 17:25:14,fraud,approved
+707,5052,2026-02-10 18:07:08,late delivery,approved
+708,6377,2026-02-10 22:11:11,changed mind,rejected
+709,5935,2026-02-11 01:38:33,defective,approved
+710,7046,2026-02-11 03:18:16,late delivery,approved
+711,6195,2026-02-11 03:52:08,late delivery,approved
+712,6785,2026-02-11 04:39:56,defective,approved
+713,7454,2026-02-11 06:45:13,changed mind,rejected
+714,6540,2026-02-11 10:04:27,changed mind,pending
+715,6815,2026-02-11 10:58:42,defective,rejected
+716,6386,2026-02-11 11:19:33,changed mind,pending
+717,5726,2026-02-11 13:19:56,defective,approved
+718,7171,2026-02-11 15:09:18,late delivery,approved
+719,6977,2026-02-11 23:07:47,changed mind,approved
+720,6819,2026-02-12 01:21:19,late delivery,approved
+721,6189,2026-02-12 05:41:19,late delivery,approved
+722,7227,2026-02-12 07:19:40,defective,rejected
+723,6851,2026-02-12 07:44:08,late delivery,approved
+724,7192,2026-02-12 10:46:14,defective,approved
+725,7082,2026-02-12 11:30:14,defective,approved
+726,6150,2026-02-12 11:38:21,changed mind,approved
+727,6906,2026-02-12 16:59:33,late delivery,pending
+728,7423,2026-02-12 19:06:37,late delivery,approved
+729,6695,2026-02-12 19:43:12,late delivery,pending
+730,5114,2026-02-12 23:09:19,changed mind,pending
+731,7034,2026-02-13 00:13:47,changed mind,approved
+732,6955,2026-02-13 00:59:12,defective,pending
+733,7460,2026-02-13 03:01:31,defective,approved
+734,7393,2026-02-13 03:41:28,defective,approved
+735,7602,2026-02-13 05:46:28,late delivery,pending
+736,7326,2026-02-13 06:56:43,changed mind,approved
+737,7044,2026-02-13 09:25:15,late delivery,pending
+738,7452,2026-02-13 09:37:19,changed mind,approved
+739,6480,2026-02-13 10:45:44,changed mind,approved
+740,7438,2026-02-13 10:52:57,changed mind,approved
+741,6402,2026-02-13 11:34:04,changed mind,approved
+742,7029,2026-02-13 14:44:06,late delivery,approved
+743,7265,2026-02-13 16:26:41,defective,pending
+744,7296,2026-02-13 16:31:58,defective,pending
+745,7341,2026-02-13 16:44:08,late delivery,approved
+746,6822,2026-02-13 17:21:18,defective,pending
+747,7340,2026-02-13 19:27:14,defective,approved
+748,7292,2026-02-13 20:44:27,fraud,rejected
+749,7204,2026-02-14 02:35:53,late delivery,approved
+750,7049,2026-02-14 03:50:12,defective,approved
+751,7539,2026-02-14 07:13:45,defective,approved
+752,7246,2026-02-14 07:50:35,changed mind,pending
+753,7723,2026-02-14 08:55:28,late delivery,approved
+754,7324,2026-02-14 10:58:08,late delivery,approved
+755,6628,2026-02-14 13:35:37,late delivery,pending
+756,7818,2026-02-14 13:44:07,late delivery,pending
+757,7752,2026-02-14 15:07:34,late delivery,approved
+758,7709,2026-02-14 15:12:35,defective,approved
+759,6975,2026-02-14 16:02:52,defective,approved
+760,7120,2026-02-14 18:21:34,late delivery,approved
+761,7028,2026-02-14 19:20:30,changed mind,pending
+762,7542,2026-02-14 19:53:50,late delivery,approved
+763,7357,2026-02-14 20:15:01,defective,approved
+764,7135,2026-02-14 20:38:58,changed mind,approved
+765,7089,2026-02-14 22:22:06,changed mind,approved
+766,6759,2026-02-15 00:47:12,changed mind,approved
+767,6908,2026-02-15 02:03:20,defective,approved
+768,7293,2026-02-15 02:21:56,changed mind,approved
+769,6898,2026-02-15 04:56:47,defective,approved
+770,7236,2026-02-15 05:00:15,defective,approved
+771,6988,2026-02-15 10:19:48,defective,rejected
+772,5614,2026-02-15 11:20:00,defective,pending
+773,7828,2026-02-15 13:45:18,changed mind,approved
+774,7814,2026-02-15 17:14:22,defective,pending
+775,7523,2026-02-15 17:22:52,late delivery,approved
+776,7553,2026-02-15 17:36:58,changed mind,approved
+777,7603,2026-02-15 20:02:52,changed mind,approved
+778,8077,2026-02-15 20:26:31,changed mind,approved
+779,6890,2026-02-16 00:23:01,defective,approved
+780,7550,2026-02-16 03:23:44,late delivery,pending
+781,6784,2026-02-16 04:51:20,fraud,approved
+782,7302,2026-02-16 06:12:55,changed mind,rejected
+783,7848,2026-02-16 07:12:11,changed mind,pending
+784,7909,2026-02-16 08:54:19,changed mind,approved
+785,7867,2026-02-16 09:09:51,late delivery,rejected
+786,7600,2026-02-16 12:54:26,changed mind,pending
+787,7391,2026-02-16 13:09:24,defective,pending
+788,7200,2026-02-16 13:23:00,fraud,approved
+789,6577,2026-02-16 15:44:59,changed mind,approved
+790,7707,2026-02-16 15:47:36,changed mind,rejected
+791,6922,2026-02-16 21:50:03,late delivery,approved
+792,7017,2026-02-16 21:56:25,defective,pending
+793,6736,2026-02-16 22:41:08,changed mind,approved
+794,7319,2026-02-17 02:06:01,changed mind,approved
+795,7287,2026-02-17 03:28:46,changed mind,rejected
+796,7047,2026-02-17 04:16:46,defective,approved
+797,7356,2026-02-17 04:35:34,fraud,pending
+798,7908,2026-02-17 05:25:39,changed mind,approved
+799,6966,2026-02-17 06:16:28,changed mind,approved
+800,7957,2026-02-17 07:27:01,changed mind,approved
+801,6864,2026-02-17 09:10:48,defective,pending
+802,6813,2026-02-17 09:50:23,fraud,approved
+803,7896,2026-02-17 10:56:05,late delivery,approved
+804,7568,2026-02-17 12:01:07,changed mind,approved
+805,5792,2026-02-17 12:36:55,late delivery,approved
+806,7675,2026-02-17 12:42:40,fraud,pending
+807,7695,2026-02-17 12:55:37,changed mind,approved
+808,8273,2026-02-17 14:10:48,defective,pending
+809,7859,2026-02-17 14:31:04,changed mind,approved
+810,7533,2026-02-17 17:09:32,changed mind,approved
+811,8319,2026-02-17 17:52:10,changed mind,approved
+812,5627,2026-02-17 20:38:11,changed mind,approved
+813,6501,2026-02-17 21:16:20,late delivery,approved
+814,8349,2026-02-17 21:18:45,defective,approved
+815,7358,2026-02-17 22:20:12,changed mind,approved
+816,7824,2026-02-17 22:24:37,late delivery,approved
+817,8285,2026-02-17 23:29:52,changed mind,approved
+818,7854,2026-02-18 03:14:45,late delivery,approved
+819,7224,2026-02-18 03:20:22,late delivery,pending
+820,8053,2026-02-18 04:56:00,late delivery,approved
+821,7571,2026-02-18 05:13:34,defective,approved
+822,8068,2026-02-18 07:53:33,late delivery,approved
+823,5941,2026-02-18 08:16:36,fraud,approved
+824,8023,2026-02-18 12:34:11,changed mind,approved
+825,7809,2026-02-18 12:51:20,changed mind,approved
+826,8195,2026-02-18 13:17:23,changed mind,approved
+827,7253,2026-02-18 15:43:51,late delivery,approved
+828,7290,2026-02-18 17:02:16,late delivery,approved
+829,6620,2026-02-18 18:38:43,defective,pending
+830,7424,2026-02-18 20:09:29,defective,approved
+831,7221,2026-02-18 20:17:03,defective,approved
+832,6673,2026-02-18 21:04:16,defective,rejected
+833,6669,2026-02-19 02:41:06,changed mind,approved
+834,7623,2026-02-19 04:37:25,defective,approved
+835,8057,2026-02-19 05:02:47,changed mind,approved
+836,7720,2026-02-19 07:32:15,late delivery,pending
+837,8282,2026-02-19 07:55:25,defective,approved
+838,7668,2026-02-19 07:57:06,changed mind,approved
+839,7626,2026-02-19 09:24:12,changed mind,pending
+840,7375,2026-02-19 10:37:59,changed mind,approved
+841,5849,2026-02-19 10:38:11,changed mind,pending
+842,7795,2026-02-19 11:20:33,late delivery,approved
+843,8109,2026-02-19 13:20:59,defective,approved
+844,8270,2026-02-19 16:34:40,late delivery,approved
+845,8170,2026-02-19 18:58:39,changed mind,approved
+846,8364,2026-02-19 21:00:35,late delivery,pending
+847,8115,2026-02-19 21:06:32,changed mind,approved
+848,5582,2026-02-19 21:09:44,changed mind,approved
+849,8389,2026-02-20 00:31:28,defective,pending
+850,6994,2026-02-20 00:50:35,defective,approved
+851,8486,2026-02-20 02:04:47,late delivery,rejected
+852,8193,2026-02-20 07:33:03,changed mind,approved
+853,7696,2026-02-20 09:46:11,changed mind,approved
+854,8058,2026-02-20 11:29:36,changed mind,rejected
+855,7883,2026-02-20 11:35:09,defective,pending
+856,5646,2026-02-20 11:43:37,late delivery,approved
+857,8293,2026-02-20 12:23:03,late delivery,approved
+858,8148,2026-02-20 12:34:59,defective,approved
+859,7704,2026-02-20 13:11:49,late delivery,approved
+860,8083,2026-02-20 13:59:37,defective,approved
+861,8229,2026-02-20 16:01:20,defective,approved
+862,8468,2026-02-20 17:16:03,defective,approved
+863,8398,2026-02-20 17:29:06,changed mind,rejected
+864,8452,2026-02-20 18:32:43,defective,approved
+865,7641,2026-02-20 20:18:34,late delivery,rejected
+866,8491,2026-02-21 00:07:05,changed mind,rejected
+867,7991,2026-02-21 00:15:55,changed mind,approved
+868,8020,2026-02-21 00:19:45,late delivery,approved
+869,8038,2026-02-21 01:04:42,fraud,approved
+870,6900,2026-02-21 03:05:16,changed mind,approved
+871,8521,2026-02-21 03:05:52,late delivery,pending
+872,8236,2026-02-21 03:13:48,changed mind,rejected
+873,7616,2026-02-21 07:55:13,late delivery,approved
+874,7360,2026-02-21 08:03:19,defective,approved
+875,6720,2026-02-21 08:31:28,changed mind,approved
+876,7699,2026-02-21 09:27:54,late delivery,approved
+877,8045,2026-02-21 11:03:17,late delivery,approved
+878,8835,2026-02-21 11:42:54,fraud,approved
+879,8209,2026-02-21 13:08:52,fraud,approved
+880,8302,2026-02-21 13:17:48,changed mind,approved
+881,7654,2026-02-21 13:28:05,late delivery,approved
+882,7482,2026-02-21 15:59:39,defective,approved
+883,8510,2026-02-21 16:54:12,changed mind,pending
+884,7636,2026-02-21 18:09:27,defective,rejected
+885,7409,2026-02-21 20:38:37,late delivery,approved
+886,7479,2026-02-21 21:19:22,changed mind,approved
+887,8244,2026-02-21 22:59:52,defective,approved
+888,6622,2026-02-21 23:36:37,defective,pending
+889,8187,2026-02-21 23:47:37,defective,approved
+890,8478,2026-02-22 00:14:38,changed mind,approved
+891,8123,2026-02-22 00:23:19,defective,approved
+892,8880,2026-02-22 01:13:36,late delivery,approved
+893,8787,2026-02-22 01:32:41,late delivery,rejected
+894,8262,2026-02-22 02:14:14,changed mind,approved
+895,8415,2026-02-22 03:07:58,changed mind,approved
+896,8813,2026-02-22 03:30:17,late delivery,approved
+897,7768,2026-02-22 03:57:50,defective,approved
+898,8722,2026-02-22 04:22:48,changed mind,approved
+899,6940,2026-02-22 04:50:03,late delivery,approved
+900,8239,2026-02-22 05:03:32,changed mind,approved
+901,8212,2026-02-22 05:42:38,changed mind,rejected
+902,7466,2026-02-22 05:42:57,changed mind,rejected
+903,7742,2026-02-22 05:59:30,late delivery,approved
+904,8052,2026-02-22 08:36:45,changed mind,approved
+905,8859,2026-02-22 08:47:35,fraud,pending
+906,8042,2026-02-22 09:34:29,late delivery,approved
+907,8764,2026-02-22 09:38:04,late delivery,pending
+908,8007,2026-02-22 11:47:44,defective,pending
+909,8660,2026-02-22 15:08:32,changed mind,pending
+910,8250,2026-02-22 15:54:05,late delivery,pending
+911,8272,2026-02-22 17:27:20,defective,approved
+912,8033,2026-02-22 18:02:11,defective,approved
+913,7858,2026-02-22 18:26:30,late delivery,approved
+914,7837,2026-02-22 18:28:28,defective,pending
+915,8871,2026-02-22 18:36:05,late delivery,pending
+916,7921,2026-02-22 20:27:20,late delivery,approved
+917,8643,2026-02-22 21:13:43,late delivery,pending
+918,8213,2026-02-22 23:34:54,changed mind,approved
+919,8054,2026-02-23 00:17:48,defective,pending
+920,8972,2026-02-23 04:11:27,changed mind,approved
+921,7154,2026-02-23 05:36:32,changed mind,approved
+922,8716,2026-02-23 07:14:15,changed mind,approved
+923,8807,2026-02-23 07:19:40,changed mind,approved
+924,7794,2026-02-23 07:20:22,late delivery,approved
+925,5522,2026-02-23 07:37:45,changed mind,approved
+926,8529,2026-02-23 09:09:27,fraud,approved
+927,7235,2026-02-23 09:18:11,late delivery,approved
+928,8371,2026-02-23 09:19:44,changed mind,approved
+929,8184,2026-02-23 12:46:27,changed mind,approved
+930,8012,2026-02-23 13:22:44,changed mind,approved
+931,7196,2026-02-23 16:18:11,fraud,approved
+932,7711,2026-02-23 17:24:30,defective,approved
+933,7819,2026-02-23 17:47:44,changed mind,approved
+934,8727,2026-02-23 18:07:32,late delivery,approved
+935,7894,2026-02-23 18:16:04,late delivery,pending
+936,8205,2026-02-23 18:26:47,fraud,pending
+937,8487,2026-02-23 18:33:05,changed mind,approved
+938,7996,2026-02-23 20:59:15,defective,rejected
+939,7085,2026-02-23 22:01:38,changed mind,approved
+940,7966,2026-02-23 22:09:48,defective,approved
+941,8355,2026-02-23 22:38:15,defective,approved
+942,7815,2026-02-23 22:44:23,changed mind,rejected
+943,8363,2026-02-23 23:21:24,defective,approved
+944,7970,2026-02-23 23:49:59,fraud,approved
+945,5953,2026-02-24 01:07:11,defective,approved
+946,7804,2026-02-24 02:38:50,changed mind,approved
+947,7875,2026-02-24 02:46:24,late delivery,approved
+948,9310,2026-02-24 02:55:05,fraud,approved
+949,9114,2026-02-24 03:58:44,defective,approved
+950,8230,2026-02-24 04:32:05,changed mind,approved
+951,9126,2026-02-24 05:29:25,defective,approved
+952,8451,2026-02-24 06:29:34,defective,approved
+953,8400,2026-02-24 06:36:52,changed mind,approved
+954,8280,2026-02-24 08:33:04,defective,approved
+955,7598,2026-02-24 12:14:53,late delivery,approved
+956,8963,2026-02-24 13:11:24,changed mind,pending
+957,8792,2026-02-24 13:34:12,defective,approved
+958,6661,2026-02-24 13:58:35,changed mind,approved
+959,9131,2026-02-24 14:51:16,late delivery,rejected
+960,7447,2026-02-24 16:20:22,late delivery,rejected
+961,8153,2026-02-24 16:29:04,defective,rejected
+962,7430,2026-02-24 16:46:20,defective,approved
+963,8247,2026-02-24 18:06:08,defective,approved
+964,8659,2026-02-24 19:25:55,late delivery,approved
+965,8458,2026-02-24 20:13:25,late delivery,rejected
+966,7591,2026-02-24 20:55:44,late delivery,approved
+967,8728,2026-02-24 21:19:23,changed mind,approved
+968,8977,2026-02-24 21:28:10,defective,rejected
+969,9152,2026-02-24 22:12:43,defective,pending
+970,9278,2026-02-24 22:19:59,defective,approved
+971,8640,2026-02-24 22:47:22,defective,approved
+972,7724,2026-02-24 23:46:32,defective,pending
+973,8843,2026-02-25 00:37:36,late delivery,approved
+974,8556,2026-02-25 01:22:03,defective,approved
+975,8707,2026-02-25 02:02:35,changed mind,pending
+976,8755,2026-02-25 02:25:43,late delivery,pending
+977,8908,2026-02-25 02:30:50,defective,approved
+978,8523,2026-02-25 06:05:32,changed mind,rejected
+979,6169,2026-02-25 06:47:29,defective,approved
+980,8623,2026-02-25 08:11:20,defective,approved
+981,9477,2026-02-25 08:15:45,defective,pending
+982,8626,2026-02-25 09:44:38,defective,rejected
+983,9200,2026-02-25 10:02:25,fraud,approved
+984,7056,2026-02-25 10:28:55,changed mind,approved
+985,8892,2026-02-25 11:50:35,defective,approved
+986,8046,2026-02-25 12:25:07,changed mind,approved
+987,7922,2026-02-25 12:38:33,late delivery,approved
+988,9103,2026-02-25 13:34:27,defective,approved
+989,8704,2026-02-25 13:55:04,defective,approved
+990,7802,2026-02-25 14:15:06,late delivery,pending
+991,8501,2026-02-25 14:43:30,fraud,approved
+992,8702,2026-02-25 15:12:05,late delivery,approved
+993,8326,2026-02-25 15:25:20,defective,rejected
+994,8438,2026-02-25 16:48:47,fraud,approved
+995,8960,2026-02-25 17:32:26,defective,approved
+996,8883,2026-02-25 17:43:24,fraud,approved
+997,7617,2026-02-25 18:02:29,fraud,approved
+998,8276,2026-02-25 18:23:23,changed mind,approved
+999,8433,2026-02-25 18:57:38,changed mind,pending
+1000,8632,2026-02-25 19:43:12,fraud,pending
+1001,8633,2026-02-25 23:08:25,fraud,approved
+1002,8636,2026-02-25 23:15:53,defective,pending
+1003,9169,2026-02-25 23:36:11,defective,approved
+1004,9277,2026-02-26 00:35:03,defective,approved
+1005,7905,2026-02-26 00:35:29,defective,approved
+1006,9017,2026-02-26 01:15:49,late delivery,approved
+1007,8321,2026-02-26 02:23:08,changed mind,approved
+1008,9340,2026-02-26 03:41:04,late delivery,rejected
+1009,9458,2026-02-26 03:57:23,changed mind,approved
+1010,8222,2026-02-26 04:36:30,defective,approved
+1011,8552,2026-02-26 05:06:59,defective,approved
+1012,9446,2026-02-26 05:40:12,changed mind,pending
+1013,8460,2026-02-26 08:08:09,fraud,rejected
+1014,9240,2026-02-26 08:24:59,late delivery,approved
+1015,9772,2026-02-26 10:31:39,defective,approved
+1016,8932,2026-02-26 11:30:14,defective,pending
+1017,7075,2026-02-26 11:37:49,defective,approved
+1018,8844,2026-02-26 12:38:05,defective,pending
+1019,7399,2026-02-26 13:34:15,changed mind,approved
+1020,7997,2026-02-26 13:57:44,late delivery,approved
+1021,8289,2026-02-26 15:10:56,defective,approved
+1022,9250,2026-02-26 16:38:09,defective,approved
+1023,9399,2026-02-26 17:46:02,changed mind,approved
+1024,8145,2026-02-26 18:44:56,late delivery,approved
+1025,9599,2026-02-26 20:29:07,changed mind,approved
+1026,9323,2026-02-26 20:58:25,fraud,approved
+1027,8625,2026-02-26 21:04:19,late delivery,approved
+1028,9551,2026-02-26 21:18:30,late delivery,approved
+1029,9801,2026-02-26 21:37:18,late delivery,approved
+1030,9302,2026-02-26 21:45:11,late delivery,rejected
+1031,7796,2026-02-26 21:53:27,changed mind,approved
+1032,8942,2026-02-26 23:08:14,late delivery,approved
+1033,7953,2026-02-26 23:16:12,defective,approved
+1034,9067,2026-02-27 00:51:04,changed mind,approved
+1035,9487,2026-02-27 01:22:41,changed mind,rejected
+1036,8566,2026-02-27 01:40:42,defective,approved
+1037,8629,2026-02-27 02:13:06,late delivery,approved
+1038,9305,2026-02-27 02:16:25,changed mind,pending
+1039,7902,2026-02-27 02:25:04,changed mind,approved
+1040,9183,2026-02-27 02:30:48,defective,approved
+1041,7035,2026-02-27 03:58:08,late delivery,rejected
+1042,8365,2026-02-27 04:24:39,changed mind,approved
+1043,7839,2026-02-27 05:17:44,late delivery,approved
+1044,8430,2026-02-27 05:29:56,changed mind,approved
+1045,8795,2026-02-27 05:41:22,defective,approved
+1046,8463,2026-02-27 06:00:23,defective,pending
+1047,8317,2026-02-27 06:09:50,defective,approved
+1048,8757,2026-02-27 06:29:34,changed mind,approved
+1049,8173,2026-02-27 07:29:02,late delivery,approved
+1050,9597,2026-02-27 09:31:29,late delivery,approved
+1051,9837,2026-02-27 10:16:38,late delivery,rejected
+1052,9199,2026-02-27 11:05:59,late delivery,approved
+1053,9388,2026-02-27 11:24:41,changed mind,approved
+1054,8189,2026-02-27 11:38:15,late delivery,approved
+1055,7964,2026-02-27 12:16:02,defective,approved
+1056,8954,2026-02-27 12:25:48,late delivery,approved
+1057,6564,2026-02-27 12:57:57,changed mind,approved
+1058,9470,2026-02-27 13:22:34,changed mind,approved
+1059,8839,2026-02-27 14:17:21,defective,approved
+1060,7812,2026-02-27 14:17:24,late delivery,approved
+1061,8841,2026-02-27 14:38:39,late delivery,approved
+1062,9617,2026-02-27 15:14:21,changed mind,pending
+1063,9228,2026-02-27 16:00:42,late delivery,approved
+1064,8791,2026-02-27 16:03:36,late delivery,approved
+1065,8427,2026-02-27 16:48:36,defective,approved
+1066,9025,2026-02-27 16:54:01,defective,approved
+1067,7755,2026-02-27 17:28:41,changed mind,rejected
+1068,8274,2026-02-27 17:52:26,defective,approved
+1069,8555,2026-02-27 18:59:23,defective,pending
+1070,9501,2026-02-27 19:31:27,defective,approved
+1071,9432,2026-02-27 20:22:24,late delivery,approved
+1072,9135,2026-02-27 20:47:00,changed mind,rejected
+1073,9018,2026-02-27 20:54:00,changed mind,approved
+1074,9165,2026-02-27 20:59:30,late delivery,pending
+1075,9034,2026-02-27 21:42:33,changed mind,approved
+1076,10149,2026-02-27 22:11:54,changed mind,approved
+1077,8472,2026-02-27 22:15:58,late delivery,approved
+1078,9311,2026-02-27 22:53:48,late delivery,approved
+1079,9217,2026-02-27 23:23:02,defective,approved
+1080,8407,2026-02-27 23:25:15,late delivery,approved
+1081,9474,2026-02-28 00:05:23,fraud,approved
+1082,9136,2026-02-28 00:15:39,fraud,approved
+1083,9321,2026-02-28 01:05:45,changed mind,approved
+1084,9959,2026-02-28 01:13:07,changed mind,approved
+1085,8694,2026-02-28 01:30:32,defective,approved
+1086,10054,2026-02-28 01:33:00,late delivery,approved
+1087,9641,2026-02-28 02:06:25,changed mind,approved
+1088,8567,2026-02-28 02:16:26,changed mind,pending
+1089,8780,2026-02-28 02:24:48,late delivery,approved
+1090,8255,2026-02-28 04:09:29,defective,approved
+1091,8220,2026-02-28 05:59:03,late delivery,approved
+1092,8751,2026-02-28 06:14:57,defective,approved
+1093,8943,2026-02-28 07:41:50,changed mind,approved
+1094,9030,2026-02-28 07:54:35,late delivery,rejected
+1095,8897,2026-02-28 08:18:14,defective,approved
+1096,9513,2026-02-28 08:47:48,defective,pending
+1097,8235,2026-02-28 09:33:06,late delivery,pending
+1098,9156,2026-02-28 09:48:17,changed mind,approved
+1099,8781,2026-02-28 10:08:10,late delivery,pending
+1100,8494,2026-02-28 10:16:55,defective,approved
+1101,9997,2026-02-28 10:23:09,late delivery,approved
+1102,8746,2026-02-28 10:27:02,changed mind,approved
+1103,8476,2026-02-28 10:36:18,changed mind,approved
+1104,8201,2026-02-28 10:44:04,defective,approved
+1105,9451,2026-02-28 11:51:26,defective,pending
+1106,10133,2026-02-28 11:55:21,changed mind,approved
+1107,10013,2026-02-28 12:10:00,changed mind,pending
+1108,9262,2026-02-28 13:35:41,changed mind,approved
+1109,7420,2026-02-28 13:54:00,fraud,approved
+1110,9867,2026-02-28 14:27:46,late delivery,approved
+1111,8769,2026-02-28 15:08:26,changed mind,approved
+1112,8088,2026-02-28 16:08:06,defective,approved
+1113,9077,2026-02-28 17:35:11,changed mind,approved
+1114,8113,2026-02-28 18:15:30,late delivery,pending
+1115,9794,2026-02-28 20:08:48,changed mind,approved
+1116,9201,2026-02-28 20:36:15,defective,pending
+1117,9265,2026-02-28 20:56:02,changed mind,pending
+1118,9376,2026-02-28 21:12:52,changed mind,rejected
+1119,7967,2026-02-28 21:33:43,changed mind,approved
+1120,9618,2026-02-28 21:46:46,late delivery,pending
+1121,9056,2026-02-28 22:06:44,changed mind,approved
+1122,6663,2026-02-28 22:16:29,changed mind,approved
+1123,9659,2026-03-01 00:25:23,defective,approved
+1124,9760,2026-03-01 00:56:32,defective,rejected
+1125,9360,2026-03-01 02:04:08,defective,approved
+1126,9455,2026-03-01 02:24:34,changed mind,approved
+1127,7510,2026-03-01 02:28:44,changed mind,pending
+1128,9125,2026-03-01 02:45:10,changed mind,pending
+1129,9834,2026-03-01 03:09:56,changed mind,pending
+1130,9983,2026-03-01 03:30:00,defective,approved
+1131,9053,2026-03-01 03:44:56,late delivery,pending
+1132,8409,2026-03-01 03:53:11,defective,approved
+1133,8471,2026-03-01 04:44:30,defective,pending
+1134,8655,2026-03-01 04:51:03,late delivery,pending
+1135,9559,2026-03-01 07:43:03,defective,pending
+1136,9967,2026-03-01 08:33:08,defective,approved
+1137,9215,2026-03-01 08:33:09,changed mind,approved
+1138,10325,2026-03-01 09:43:41,defective,approved
+1139,9272,2026-03-01 09:52:09,defective,approved
+1140,9299,2026-03-01 10:53:53,late delivery,approved
+1141,9524,2026-03-01 11:28:23,changed mind,approved
+1142,9027,2026-03-01 11:40:49,changed mind,rejected
+1143,9101,2026-03-01 11:58:59,defective,pending
+1144,8788,2026-03-01 12:37:11,late delivery,pending
+1145,8703,2026-03-01 12:51:20,late delivery,approved
+1146,6830,2026-03-01 13:01:51,fraud,approved
+1147,10309,2026-03-01 13:02:05,late delivery,approved
+1148,9480,2026-03-01 13:29:02,changed mind,approved
+1149,8925,2026-03-01 13:38:14,defective,approved
+1150,10053,2026-03-01 14:00:15,fraud,approved
+1151,8025,2026-03-01 14:27:00,defective,pending
+1152,10270,2026-03-01 15:57:11,defective,approved
+1153,9117,2026-03-01 15:58:37,changed mind,approved
+1154,9591,2026-03-01 16:40:53,defective,approved
+1155,7667,2026-03-01 16:45:54,changed mind,pending
+1156,9665,2026-03-01 16:54:15,late delivery,pending
+1157,9988,2026-03-01 17:14:12,changed mind,approved
+1158,8725,2026-03-01 17:56:39,defective,rejected
+1159,8952,2026-03-01 19:33:19,defective,pending
+1160,9290,2026-03-01 19:38:52,changed mind,approved
+1161,9953,2026-03-01 20:45:03,defective,rejected
+1162,9239,2026-03-01 21:10:40,defective,approved
+1163,9783,2026-03-01 21:28:55,defective,approved
+1164,7901,2026-03-01 21:56:58,late delivery,approved
+1165,9587,2026-03-01 22:37:35,defective,approved
+1166,8669,2026-03-01 23:27:19,defective,approved
+1167,9468,2026-03-01 23:51:10,changed mind,pending
+1168,10273,2026-03-02 01:36:17,defective,approved
+1169,9826,2026-03-02 01:59:46,changed mind,rejected
+1170,9502,2026-03-02 02:03:02,defective,approved
+1171,9361,2026-03-02 02:53:47,changed mind,rejected
+1172,9260,2026-03-02 02:58:43,fraud,approved
+1173,8753,2026-03-02 03:02:56,defective,pending
+1174,9707,2026-03-02 03:18:57,defective,approved
+1175,9520,2026-03-02 03:23:56,defective,pending
+1176,9363,2026-03-02 03:58:12,defective,approved
+1177,8597,2026-03-02 04:44:13,late delivery,pending
+1178,8323,2026-03-02 05:06:59,late delivery,pending
+1179,10556,2026-03-02 06:55:27,defective,approved
+1180,8538,2026-03-02 07:17:14,changed mind,approved
+1181,10238,2026-03-02 07:23:54,fraud,approved
+1182,9845,2026-03-02 07:35:22,changed mind,approved
+1183,9857,2026-03-02 07:37:49,defective,approved
+1184,9683,2026-03-02 08:40:45,changed mind,approved
+1185,9174,2026-03-02 08:52:31,late delivery,approved
+1186,6583,2026-03-02 10:21:12,fraud,approved
+1187,9268,2026-03-02 10:30:51,late delivery,approved
+1188,9092,2026-03-02 11:01:25,changed mind,approved
+1189,10091,2026-03-02 11:29:01,changed mind,pending
+1190,8575,2026-03-02 12:03:55,changed mind,rejected
+1191,8637,2026-03-02 13:51:14,late delivery,approved
+1192,10401,2026-03-02 15:11:20,changed mind,pending
+1193,8936,2026-03-02 15:33:13,changed mind,approved
+1194,10138,2026-03-02 16:09:28,defective,approved
+1195,9338,2026-03-02 16:16:01,defective,pending
+1196,10121,2026-03-02 16:40:11,defective,approved
+1197,8587,2026-03-02 18:24:51,defective,approved
+1198,9680,2026-03-02 19:26:28,changed mind,approved
+1199,8798,2026-03-02 19:33:02,defective,approved
+1200,10040,2026-03-02 20:40:16,changed mind,pending
+1201,9195,2026-03-02 20:44:24,defective,approved
+1202,10036,2026-03-02 20:47:34,defective,pending
+1203,9485,2026-03-02 21:05:49,defective,approved
+1204,9494,2026-03-02 22:14:39,late delivery,approved
+1205,9564,2026-03-02 22:55:20,changed mind,approved
+1206,7564,2026-03-02 23:00:16,changed mind,rejected
+1207,9557,2026-03-02 23:02:20,changed mind,approved
+1208,10153,2026-03-02 23:10:41,defective,approved
+1209,10280,2026-03-02 23:26:47,late delivery,approved
+1210,8093,2026-03-02 23:37:29,changed mind,approved
+1211,8876,2026-03-03 00:00:12,defective,pending
+1212,9768,2026-03-03 00:02:31,late delivery,approved
+1213,10008,2026-03-03 01:01:14,defective,approved
+1214,9128,2026-03-03 01:12:17,changed mind,approved
+1215,9465,2026-03-03 01:20:56,late delivery,approved
+1216,9180,2026-03-03 01:21:39,late delivery,approved
+1217,10313,2026-03-03 01:30:50,fraud,pending
+1218,9426,2026-03-03 01:34:24,changed mind,approved
+1219,8602,2026-03-03 01:56:58,changed mind,approved
+1220,10242,2026-03-03 02:15:29,changed mind,pending
+1221,10274,2026-03-03 02:15:44,changed mind,approved
+1222,9505,2026-03-03 02:56:11,changed mind,approved
+1223,9908,2026-03-03 03:13:03,defective,approved
+1224,9142,2026-03-03 03:31:51,changed mind,pending
+1225,8951,2026-03-03 03:52:46,fraud,approved
+1226,9906,2026-03-03 04:19:41,defective,approved
+1227,9844,2026-03-03 05:04:59,late delivery,rejected
+1228,8676,2026-03-03 05:17:17,defective,approved
+1229,10526,2026-03-03 05:58:55,defective,pending
+1230,10180,2026-03-03 06:33:46,defective,pending
+1231,9504,2026-03-03 06:49:20,defective,pending
+1232,10360,2026-03-03 07:07:07,changed mind,approved
+1233,9496,2026-03-03 07:34:54,defective,approved
+1234,10702,2026-03-03 07:45:56,changed mind,approved
+1235,9530,2026-03-03 08:01:17,changed mind,approved
+1236,9755,2026-03-03 08:50:42,changed mind,rejected
+1237,10427,2026-03-03 09:26:46,late delivery,approved
+1238,9913,2026-03-03 09:33:29,defective,pending
+1239,9222,2026-03-03 09:53:14,late delivery,approved
+1240,8900,2026-03-03 10:12:52,late delivery,pending
+1241,9927,2026-03-03 10:17:39,defective,approved
+1242,9643,2026-03-03 10:43:10,late delivery,pending
+1243,8947,2026-03-03 10:57:31,defective,pending
+1244,9022,2026-03-03 11:45:39,changed mind,approved
+1245,9880,2026-03-03 12:17:40,changed mind,approved
+1246,8887,2026-03-03 12:40:51,late delivery,approved
+1247,7767,2026-03-03 13:16:27,changed mind,approved
+1248,10423,2026-03-03 13:28:01,changed mind,approved
+1249,7323,2026-03-03 14:28:01,defective,approved
+1250,9218,2026-03-03 14:46:44,changed mind,approved
+1251,9865,2026-03-03 14:52:26,defective,approved
+1252,10390,2026-03-03 15:26:22,changed mind,approved
+1253,10005,2026-03-03 16:55:50,defective,approved
+1254,10515,2026-03-03 17:01:36,defective,approved
+1255,9506,2026-03-03 17:07:45,defective,approved
+1256,10418,2026-03-03 17:10:50,late delivery,approved
+1257,9869,2026-03-03 17:31:07,defective,pending
+1258,9205,2026-03-03 17:47:15,fraud,pending
+1259,9984,2026-03-03 18:35:28,changed mind,pending
+1260,8875,2026-03-03 18:38:57,late delivery,approved
+1261,8450,2026-03-03 18:57:45,changed mind,pending
+1262,9293,2026-03-03 19:07:59,late delivery,approved
+1263,9757,2026-03-03 19:36:37,defective,approved
+1264,7461,2026-03-03 19:44:28,late delivery,approved
+1265,7852,2026-03-03 19:47:42,defective,approved
+1266,9649,2026-03-03 20:27:26,late delivery,approved
+1267,8304,2026-03-03 20:53:59,fraud,approved
+1268,10681,2026-03-03 20:59:55,changed mind,approved
+1269,7974,2026-03-03 21:31:24,changed mind,rejected
+1270,10220,2026-03-03 21:32:15,changed mind,approved
+1271,9241,2026-03-03 21:35:53,defective,pending
+1272,9264,2026-03-03 21:56:24,defective,pending
+1273,10357,2026-03-03 22:31:37,defective,approved
+1274,9799,2026-03-03 22:59:30,changed mind,approved
+1275,9996,2026-03-03 23:12:46,defective,pending
+1276,8984,2026-03-03 23:37:18,fraud,approved
+1277,10254,2026-03-03 23:46:04,defective,approved
+1278,9921,2026-03-04 00:24:02,changed mind,pending
+1279,9937,2026-03-04 00:43:55,fraud,approved
+1280,9413,2026-03-04 02:09:48,changed mind,approved
+1281,10162,2026-03-04 02:49:08,changed mind,approved
+1282,9762,2026-03-04 03:02:55,changed mind,approved
+1283,9971,2026-03-04 03:57:44,changed mind,pending
+1284,10404,2026-03-04 06:40:14,defective,approved
+1285,10101,2026-03-04 07:01:18,late delivery,approved
+1286,9697,2026-03-04 07:40:55,defective,pending
+1287,9824,2026-03-04 09:07:52,changed mind,approved
+1288,10272,2026-03-04 09:40:40,changed mind,approved
+1289,9817,2026-03-04 10:08:08,changed mind,pending
+1290,8268,2026-03-04 10:38:12,late delivery,approved
+1291,7872,2026-03-04 10:45:22,late delivery,approved
+1292,8921,2026-03-04 11:25:54,changed mind,approved
+1293,9223,2026-03-04 12:08:15,defective,approved
+1294,10546,2026-03-04 12:13:47,changed mind,approved
+1295,9424,2026-03-04 13:16:06,late delivery,pending
+1296,9330,2026-03-04 13:16:43,defective,approved
+1297,10918,2026-03-04 13:20:31,changed mind,pending
+1298,10470,2026-03-04 14:03:39,late delivery,approved
+1299,10486,2026-03-04 14:05:55,defective,approved
+1300,10452,2026-03-04 14:41:48,defective,approved
+1301,10152,2026-03-04 15:19:28,changed mind,approved
+1302,9194,2026-03-04 15:24:26,late delivery,approved
+1303,8998,2026-03-04 15:45:47,defective,rejected
+1304,10649,2026-03-04 16:04:44,changed mind,rejected
+1305,9866,2026-03-04 16:16:47,defective,approved
+1306,9584,2026-03-04 17:16:40,defective,approved
+1307,9827,2026-03-04 17:26:33,changed mind,approved
+1308,10510,2026-03-04 20:17:56,changed mind,approved
+1309,8332,2026-03-04 20:43:44,defective,pending
+1310,8034,2026-03-04 20:52:09,changed mind,pending
+1311,9885,2026-03-04 21:09:29,changed mind,pending
+1312,10888,2026-03-04 21:24:56,changed mind,pending
+1313,9350,2026-03-04 21:43:36,late delivery,rejected
+1314,9362,2026-03-04 21:56:57,late delivery,approved
+1315,9993,2026-03-04 22:48:25,defective,approved
+1316,10796,2026-03-04 22:51:53,defective,approved
+1317,9063,2026-03-04 23:35:04,defective,approved
+1318,8181,2026-03-05 00:23:38,changed mind,rejected
+1319,10092,2026-03-05 02:36:11,changed mind,pending
+1320,10097,2026-03-05 02:41:49,defective,approved
+1321,9743,2026-03-05 02:52:43,changed mind,approved
+1322,9478,2026-03-05 03:27:19,defective,pending
+1323,10912,2026-03-05 04:24:07,late delivery,approved
+1324,10549,2026-03-05 05:14:42,defective,approved
+1325,9810,2026-03-05 05:32:41,changed mind,approved
+1326,9786,2026-03-05 08:12:46,defective,approved
+1327,9076,2026-03-05 08:29:16,defective,approved
+1328,10591,2026-03-05 09:01:23,defective,pending
+1329,9976,2026-03-05 10:06:28,changed mind,approved
+1330,10638,2026-03-05 10:18:07,late delivery,pending
+1331,9632,2026-03-05 11:11:10,defective,approved
+1332,10801,2026-03-05 11:15:02,changed mind,approved
+1333,8385,2026-03-05 11:16:07,defective,approved
+1334,9537,2026-03-05 12:58:08,defective,pending
+1335,10492,2026-03-05 13:06:07,defective,pending
+1336,9854,2026-03-05 13:29:30,changed mind,pending
+1337,10927,2026-03-05 13:33:16,fraud,approved
+1338,8693,2026-03-05 14:02:22,changed mind,approved
+1339,10071,2026-03-05 14:23:37,changed mind,approved
+1340,10502,2026-03-05 14:53:48,late delivery,approved
+1341,10174,2026-03-05 15:24:32,changed mind,approved
+1342,10046,2026-03-05 16:02:32,defective,pending
+1343,10532,2026-03-05 17:37:02,defective,approved
+1344,9283,2026-03-05 18:01:16,fraud,approved
+1345,9863,2026-03-05 18:06:15,changed mind,approved
+1346,9723,2026-03-05 18:59:16,late delivery,approved
+1347,10672,2026-03-05 19:08:32,late delivery,approved
+1348,10387,2026-03-05 19:16:40,defective,approved
+1349,10758,2026-03-05 20:56:12,changed mind,approved
+1350,9708,2026-03-05 21:40:49,changed mind,approved
+1351,9681,2026-03-05 21:45:50,defective,approved
+1352,10923,2026-03-05 22:33:34,late delivery,pending
+1353,10104,2026-03-05 23:57:52,defective,approved
+1354,9484,2026-03-06 00:05:46,late delivery,approved
+1355,10246,2026-03-06 00:42:28,defective,approved
+1356,8022,2026-03-06 01:30:47,defective,approved
+1357,10512,2026-03-06 01:51:05,defective,approved
+1358,10147,2026-03-06 01:56:57,defective,approved
+1359,10925,2026-03-06 02:27:01,changed mind,rejected
+1360,8462,2026-03-06 02:38:49,late delivery,approved
+1361,10768,2026-03-06 02:50:06,late delivery,approved
+1362,8858,2026-03-06 03:25:48,changed mind,approved
+1363,10337,2026-03-06 04:36:49,changed mind,approved
+1364,9377,2026-03-06 06:15:24,changed mind,approved
+1365,9992,2026-03-06 07:21:15,defective,approved
+1366,10977,2026-03-06 07:31:26,defective,approved
+1367,10249,2026-03-06 08:46:00,changed mind,approved
+1368,9850,2026-03-06 09:26:23,defective,approved
+1369,10288,2026-03-06 09:56:17,changed mind,pending
+1370,9162,2026-03-06 10:02:41,defective,approved
+1371,7881,2026-03-06 10:07:23,defective,approved
+1372,8940,2026-03-06 10:27:01,defective,approved
+1373,10780,2026-03-06 10:27:52,defective,approved
+1374,10252,2026-03-06 10:49:29,defective,pending
+1375,8670,2026-03-06 11:49:43,late delivery,approved
+1376,8975,2026-03-06 12:17:41,late delivery,approved
+1377,11391,2026-03-06 12:23:50,defective,approved
+1378,9580,2026-03-06 13:40:29,changed mind,approved
+1379,10440,2026-03-06 13:58:33,changed mind,approved
+1380,10285,2026-03-06 14:33:10,defective,approved
+1381,8738,2026-03-06 14:37:11,changed mind,rejected
+1382,9998,2026-03-06 14:48:07,defective,approved
+1383,9948,2026-03-06 15:02:45,changed mind,approved
+1384,10457,2026-03-06 15:17:34,fraud,approved
+1385,10730,2026-03-06 15:23:34,defective,approved
+1386,8886,2026-03-06 16:04:40,changed mind,approved
+1387,9663,2026-03-06 16:05:07,fraud,approved
+1388,9378,2026-03-06 16:55:23,changed mind,rejected
+1389,8351,2026-03-06 16:57:22,fraud,pending
+1390,10308,2026-03-06 17:20:09,changed mind,approved
+1391,7134,2026-03-06 18:56:42,changed mind,approved
+1392,9678,2026-03-06 19:10:21,fraud,approved
+1393,9369,2026-03-06 19:20:24,changed mind,rejected
+1394,9224,2026-03-06 19:32:48,late delivery,approved
+1395,8812,2026-03-06 19:51:44,defective,approved
+1396,10770,2026-03-06 20:03:36,defective,approved
+1397,8988,2026-03-06 20:49:16,defective,approved
+1398,10639,2026-03-06 20:57:58,late delivery,approved
+1399,9739,2026-03-06 21:25:36,changed mind,approved
+1400,10253,2026-03-06 21:51:20,defective,approved
+1401,9495,2026-03-06 22:32:47,late delivery,pending
+1402,9972,2026-03-06 22:58:00,defective,pending
+1403,9830,2026-03-06 23:49:31,changed mind,approved
+1404,8939,2026-03-07 00:10:42,late delivery,pending
+1405,10029,2026-03-07 00:46:48,changed mind,pending
+1406,9773,2026-03-07 00:48:02,changed mind,approved
+1407,10828,2026-03-07 00:53:45,late delivery,pending
+1408,10123,2026-03-07 00:59:07,defective,approved
+1409,11071,2026-03-07 02:34:40,changed mind,pending
+1410,9876,2026-03-07 02:43:04,late delivery,approved
+1411,10248,2026-03-07 03:04:28,changed mind,approved
+1412,9573,2026-03-07 03:58:01,defective,rejected
+1413,10397,2026-03-07 04:06:39,changed mind,approved
+1414,9706,2026-03-07 05:03:11,changed mind,rejected
+1415,9702,2026-03-07 05:07:49,late delivery,rejected
+1416,9236,2026-03-07 05:29:06,defective,approved
+1417,8543,2026-03-07 05:58:11,changed mind,approved
+1418,10742,2026-03-07 05:59:38,changed mind,rejected
+1419,9273,2026-03-07 06:52:15,defective,approved
+1420,7304,2026-03-07 06:52:56,late delivery,rejected
+1421,10696,2026-03-07 06:59:27,changed mind,pending
+1422,9303,2026-03-07 08:19:47,defective,approved
+1423,11436,2026-03-07 08:29:51,late delivery,approved
+1424,8384,2026-03-07 09:41:59,changed mind,pending
+1425,8448,2026-03-07 09:44:01,defective,approved
+1426,8762,2026-03-07 09:45:42,changed mind,approved
+1427,11015,2026-03-07 10:40:20,changed mind,approved
+1428,8715,2026-03-07 10:41:07,defective,pending
+1429,10384,2026-03-07 10:42:54,fraud,approved
+1430,9878,2026-03-07 10:49:52,changed mind,pending
+1431,9433,2026-03-07 11:07:00,defective,approved
+1432,10905,2026-03-07 11:57:04,defective,approved
+1433,10565,2026-03-07 12:08:38,defective,approved
+1434,11276,2026-03-07 12:12:04,late delivery,approved
+1435,10058,2026-03-07 12:12:29,fraud,pending
+1436,8465,2026-03-07 12:24:47,changed mind,approved
+1437,9332,2026-03-07 12:56:28,changed mind,approved
+1438,10661,2026-03-07 12:59:09,fraud,approved
+1439,10233,2026-03-07 13:29:24,defective,approved
+1440,11334,2026-03-07 13:29:41,late delivery,approved
+1441,9084,2026-03-07 14:03:17,defective,approved
+1442,10583,2026-03-07 14:08:41,defective,approved
+1443,8763,2026-03-07 14:23:11,defective,pending
+1444,11203,2026-03-07 15:07:54,defective,pending
+1445,10755,2026-03-07 15:43:13,late delivery,approved
+1446,8534,2026-03-07 16:21:31,fraud,rejected
+1447,9010,2026-03-07 17:19:00,defective,approved
+1448,10375,2026-03-07 17:35:20,fraud,approved
+1449,9682,2026-03-07 17:39:06,late delivery,rejected
+1450,10490,2026-03-07 17:39:40,changed mind,approved
+1451,9825,2026-03-07 18:06:23,defective,rejected
+1452,11581,2026-03-07 20:02:22,changed mind,pending
+1453,10879,2026-03-07 20:37:33,changed mind,rejected
+1454,11563,2026-03-07 21:24:12,defective,approved
+1455,10045,2026-03-07 21:24:17,changed mind,approved
+1456,10949,2026-03-07 21:44:21,defective,approved
+1457,10543,2026-03-07 22:02:10,defective,approved
+1458,10460,2026-03-07 22:05:57,changed mind,approved
+1459,10202,2026-03-07 22:28:06,changed mind,approved
+1460,10228,2026-03-07 22:52:17,defective,approved
+1461,10378,2026-03-08 00:54:46,changed mind,approved
+1462,9242,2026-03-08 01:17:53,defective,approved
+1463,10204,2026-03-08 02:12:39,late delivery,approved
+1464,8882,2026-03-08 02:20:02,changed mind,approved
+1465,10720,2026-03-08 02:29:44,fraud,approved
+1466,10497,2026-03-08 03:28:19,changed mind,pending
+1467,10316,2026-03-08 04:03:42,defective,approved
+1468,10326,2026-03-08 04:30:23,defective,pending
+1469,11192,2026-03-08 04:38:02,changed mind,approved
+1470,11760,2026-03-08 04:58:27,defective,pending
+1471,8967,2026-03-08 05:07:04,changed mind,rejected
+1472,7756,2026-03-08 05:14:55,changed mind,approved
+1473,9356,2026-03-08 05:37:45,defective,approved
+1474,9532,2026-03-08 06:47:44,late delivery,approved
+1475,10602,2026-03-08 07:15:46,defective,rejected
+1476,8329,2026-03-08 07:24:57,fraud,pending
+1477,10086,2026-03-08 07:33:27,changed mind,approved
+1478,9945,2026-03-08 08:37:22,changed mind,approved
+1479,10734,2026-03-08 08:39:43,late delivery,approved
+1480,10684,2026-03-08 08:51:04,late delivery,rejected
+1481,9221,2026-03-08 09:02:45,changed mind,pending
+1482,8747,2026-03-08 09:12:35,defective,approved
+1483,11401,2026-03-08 09:14:25,fraud,approved
+1484,10226,2026-03-08 09:24:53,fraud,approved
+1485,10355,2026-03-08 10:12:20,late delivery,approved
+1486,10430,2026-03-08 10:22:04,late delivery,pending
+1487,10377,2026-03-08 10:30:16,defective,approved
+1488,11105,2026-03-08 10:57:38,changed mind,approved
+1489,10575,2026-03-08 11:33:35,defective,approved
+1490,10861,2026-03-08 11:39:51,changed mind,approved
+1491,9738,2026-03-08 11:58:54,defective,pending
+1492,10896,2026-03-08 12:12:26,defective,rejected
+1493,11240,2026-03-08 12:14:18,defective,approved
+1494,10823,2026-03-08 12:29:22,fraud,approved
+1495,8901,2026-03-08 13:01:23,defective,pending
+1496,9616,2026-03-08 13:01:28,defective,approved
+1497,11304,2026-03-08 13:14:27,late delivery,pending
+1498,10488,2026-03-08 13:18:56,late delivery,pending
+1499,10416,2026-03-08 13:40:28,changed mind,approved
+1500,11487,2026-03-08 14:50:36,changed mind,rejected
+1501,8434,2026-03-08 15:36:49,late delivery,approved
+1502,9691,2026-03-08 17:03:44,defective,approved
+1503,10625,2026-03-08 17:12:59,defective,approved
+1504,10561,2026-03-08 17:21:53,defective,approved
+1505,10511,2026-03-08 18:10:35,defective,approved
+1506,9779,2026-03-08 18:40:39,changed mind,approved
+1507,10698,2026-03-08 19:03:28,changed mind,approved
+1508,11259,2026-03-08 19:18:53,late delivery,approved
+1509,10586,2026-03-08 19:19:24,defective,approved
+1510,9059,2026-03-08 20:41:59,changed mind,approved
+1511,11359,2026-03-08 20:45:00,changed mind,pending
+1512,9231,2026-03-08 21:09:18,defective,pending
+1513,10763,2026-03-08 21:58:40,late delivery,pending
+1514,10405,2026-03-08 22:02:48,changed mind,approved
+1515,11145,2026-03-08 22:07:06,defective,approved
+1516,11065,2026-03-08 22:50:32,changed mind,approved
+1517,11893,2026-03-08 23:04:57,defective,approved
+1518,11395,2026-03-08 23:33:06,changed mind,approved
+1519,10874,2026-03-09 00:11:06,late delivery,rejected
+1520,11341,2026-03-09 00:50:52,changed mind,pending
+1521,10025,2026-03-09 01:18:51,defective,approved
+1522,10884,2026-03-09 01:26:41,changed mind,approved
+1523,9704,2026-03-09 01:59:49,late delivery,approved
+1524,9049,2026-03-09 02:07:01,changed mind,rejected
+1525,10354,2026-03-09 02:13:25,changed mind,approved
+1526,7535,2026-03-09 02:30:32,defective,approved
+1527,11427,2026-03-09 02:36:39,changed mind,approved
+1528,11675,2026-03-09 02:37:30,changed mind,approved
+1529,9701,2026-03-09 03:17:39,changed mind,approved
+1530,8802,2026-03-09 03:30:15,changed mind,approved
+1531,9731,2026-03-09 03:55:08,defective,approved
+1532,10670,2026-03-09 04:37:25,defective,approved
+1533,10312,2026-03-09 05:10:20,changed mind,approved
+1534,8955,2026-03-09 05:31:14,defective,approved
+1535,10838,2026-03-09 05:42:19,late delivery,pending
+1536,10271,2026-03-09 06:08:56,defective,approved
+1537,11242,2026-03-09 06:12:52,changed mind,approved
+1538,10945,2026-03-09 06:53:06,defective,pending
+1539,10321,2026-03-09 06:54:59,defective,approved
+1540,10792,2026-03-09 07:04:02,changed mind,approved
+1541,10840,2026-03-09 07:14:32,changed mind,rejected
+1542,10344,2026-03-09 07:22:09,defective,approved
+1543,9285,2026-03-09 07:28:42,late delivery,pending
+1544,10442,2026-03-09 08:00:43,late delivery,approved
+1545,10573,2026-03-09 08:43:35,defective,approved
+1546,10713,2026-03-09 08:45:15,defective,pending
+1547,10310,2026-03-09 09:19:09,defective,approved
+1548,9437,2026-03-09 10:41:16,late delivery,approved
+1549,10453,2026-03-09 10:56:40,changed mind,approved
+1550,10769,2026-03-09 11:00:14,late delivery,approved
+1551,7604,2026-03-09 11:27:53,fraud,rejected
+1552,11755,2026-03-09 11:43:26,changed mind,rejected
+1553,11046,2026-03-09 11:56:17,changed mind,pending
+1554,8930,2026-03-09 12:28:06,defective,pending
+1555,10747,2026-03-09 12:40:29,defective,approved
+1556,11465,2026-03-09 12:54:15,defective,approved
+1557,10771,2026-03-09 13:11:33,changed mind,rejected
+1558,11362,2026-03-09 13:37:18,changed mind,approved
+1559,10428,2026-03-09 14:38:58,changed mind,rejected
+1560,9507,2026-03-09 15:10:24,defective,pending
+1561,10473,2026-03-09 15:11:59,defective,approved
+1562,10435,2026-03-09 15:36:05,late delivery,pending
+1563,9836,2026-03-09 15:45:02,defective,approved
+1564,8231,2026-03-09 16:28:08,changed mind,approved
+1565,10917,2026-03-09 16:58:19,late delivery,pending
+1566,9232,2026-03-09 17:25:49,changed mind,approved
+1567,11343,2026-03-09 17:58:05,changed mind,approved
+1568,10725,2026-03-09 18:50:03,changed mind,approved
+1569,9257,2026-03-09 19:45:57,late delivery,approved
+1570,10329,2026-03-09 20:29:49,late delivery,approved
+1571,8773,2026-03-09 21:05:30,changed mind,approved
+1572,10028,2026-03-09 21:11:17,defective,rejected
+1573,10886,2026-03-09 21:36:39,late delivery,rejected
+1574,9419,2026-03-09 21:46:58,fraud,approved
+1575,9090,2026-03-09 22:40:56,changed mind,approved
+1576,10939,2026-03-09 23:42:00,changed mind,approved
+1577,10566,2026-03-09 23:47:35,defective,approved
+1578,11385,2026-03-10 00:15:05,defective,approved
+1579,10609,2026-03-10 00:17:47,defective,approved
+1580,9130,2026-03-10 00:39:15,late delivery,approved
+1581,11263,2026-03-10 01:00:55,defective,approved
+1582,11561,2026-03-10 01:05:00,changed mind,approved
+1583,11121,2026-03-10 02:15:26,changed mind,approved
+1584,7850,2026-03-10 02:22:48,defective,pending
+1585,10517,2026-03-10 02:30:48,changed mind,pending
+1586,11094,2026-03-10 02:36:03,changed mind,approved
+1587,10929,2026-03-10 03:16:56,late delivery,pending
+1588,11360,2026-03-10 03:45:48,defective,pending
+1589,10459,2026-03-10 03:50:32,defective,approved
+1590,10099,2026-03-10 04:22:01,late delivery,pending
+1591,11757,2026-03-10 04:34:21,defective,approved
+1592,9312,2026-03-10 04:39:34,late delivery,pending
+1593,10034,2026-03-10 05:45:37,changed mind,approved
+1594,11414,2026-03-10 06:07:22,late delivery,approved
+1595,10300,2026-03-10 06:32:47,late delivery,approved
+1596,8924,2026-03-10 07:15:01,defective,approved
+1597,10777,2026-03-10 08:16:44,late delivery,approved
+1598,8815,2026-03-10 09:02:49,late delivery,approved
+1599,11036,2026-03-10 09:48:31,late delivery,approved
+1600,10090,2026-03-10 11:04:29,defective,approved
+1601,11294,2026-03-10 11:07:05,changed mind,pending
+1602,11194,2026-03-10 11:24:20,fraud,approved
+1603,11743,2026-03-10 12:05:07,late delivery,approved
+1604,10478,2026-03-10 12:35:13,defective,rejected
+1605,11666,2026-03-10 13:02:14,late delivery,approved
+1606,10992,2026-03-10 13:48:52,changed mind,approved
+1607,9443,2026-03-10 14:20:51,changed mind,rejected
+1608,10356,2026-03-10 14:52:56,changed mind,pending
+1609,10294,2026-03-10 15:03:15,defective,approved
+1610,11187,2026-03-10 15:19:17,changed mind,approved
+1611,11373,2026-03-10 15:29:30,defective,approved
+1612,9220,2026-03-10 15:44:45,defective,approved
+1613,11378,2026-03-10 16:07:51,defective,approved
+1614,9543,2026-03-10 16:59:31,late delivery,approved
+1615,11635,2026-03-10 17:18:42,defective,approved
+1616,10072,2026-03-10 17:26:46,late delivery,approved
+1617,11702,2026-03-10 17:31:41,defective,pending
+1618,10214,2026-03-10 17:42:29,defective,pending
+1619,9418,2026-03-10 17:46:16,changed mind,approved
+1620,10993,2026-03-10 17:48:08,changed mind,pending
+1621,10061,2026-03-10 17:52:53,changed mind,pending
+1622,10454,2026-03-10 17:55:37,fraud,rejected
+1623,8496,2026-03-10 17:56:52,late delivery,approved
+1624,10425,2026-03-10 18:30:07,changed mind,approved
+1625,11853,2026-03-10 19:58:18,late delivery,approved
+1626,12231,2026-03-10 20:28:34,late delivery,pending
+1627,9313,2026-03-10 20:56:31,late delivery,approved
+1628,11667,2026-03-10 21:05:04,changed mind,approved
+1629,9105,2026-03-10 21:38:11,changed mind,approved
+1630,12039,2026-03-10 21:55:32,defective,approved
+1631,10978,2026-03-10 23:48:16,defective,approved
+1632,9249,2026-03-10 23:58:04,defective,rejected
+1633,11114,2026-03-11 00:03:32,late delivery,approved
+1634,6934,2026-03-11 01:43:48,defective,approved
+1635,11732,2026-03-11 01:52:39,changed mind,approved
+1636,10509,2026-03-11 02:20:33,defective,pending
+1637,8639,2026-03-11 02:30:58,changed mind,pending
+1638,9806,2026-03-11 03:21:14,late delivery,approved
+1639,11281,2026-03-11 04:26:22,late delivery,pending
+1640,11717,2026-03-11 04:32:41,defective,pending
+1641,10205,2026-03-11 04:42:59,defective,approved
+1642,11066,2026-03-11 05:24:55,defective,approved
+1643,11814,2026-03-11 07:05:43,defective,approved
+1644,11927,2026-03-11 07:21:37,late delivery,approved
+1645,10501,2026-03-11 07:22:10,defective,approved
+1646,9371,2026-03-11 07:22:36,defective,approved
+1647,11125,2026-03-11 08:31:46,defective,approved
+1648,9888,2026-03-11 08:48:05,defective,approved
+1649,10520,2026-03-11 09:15:54,changed mind,approved
+1650,8511,2026-03-11 10:38:23,defective,approved
+1651,11558,2026-03-11 12:10:47,late delivery,pending
+1652,10528,2026-03-11 12:22:17,defective,rejected
+1653,9982,2026-03-11 12:36:48,defective,approved
+1654,10264,2026-03-11 13:07:30,late delivery,approved
+1655,11587,2026-03-11 13:25:06,changed mind,approved
+1656,9720,2026-03-11 13:30:39,changed mind,pending
+1657,10653,2026-03-11 15:21:55,changed mind,approved
+1658,9456,2026-03-11 15:32:20,defective,approved
+1659,8979,2026-03-11 15:36:04,defective,pending
+1660,11955,2026-03-11 16:12:52,defective,approved
+1661,10386,2026-03-11 16:35:51,late delivery,approved
+1662,9858,2026-03-11 17:09:22,late delivery,approved
+1663,10893,2026-03-11 17:24:29,defective,approved
+1664,10113,2026-03-11 17:41:45,changed mind,approved
+1665,9588,2026-03-11 17:44:36,changed mind,approved
+1666,11644,2026-03-11 17:46:54,changed mind,approved
+1667,10382,2026-03-11 18:13:54,defective,pending
+1668,12333,2026-03-11 18:20:35,late delivery,pending
+1669,8867,2026-03-11 19:15:21,defective,approved
+1670,11337,2026-03-11 20:05:41,defective,approved
+1671,10804,2026-03-11 20:44:28,defective,approved
+1672,9139,2026-03-11 21:46:03,defective,approved
+1673,11586,2026-03-11 21:51:22,changed mind,approved
+1674,11313,2026-03-11 21:55:26,defective,approved
+1675,11515,2026-03-11 21:59:08,changed mind,approved
+1676,11061,2026-03-11 22:10:53,defective,approved
+1677,11876,2026-03-11 22:17:33,fraud,approved
+1678,10122,2026-03-11 22:30:23,changed mind,approved
+1679,10901,2026-03-11 23:15:39,changed mind,approved
+1680,10824,2026-03-11 23:45:06,late delivery,approved
+1681,11302,2026-03-12 00:49:19,defective,approved
+1682,11735,2026-03-12 00:53:44,defective,pending
+1683,10169,2026-03-12 02:04:30,late delivery,approved
+1684,11045,2026-03-12 02:20:20,late delivery,rejected
+1685,11948,2026-03-12 02:42:17,defective,pending
+1686,10060,2026-03-12 05:01:14,defective,approved
+1687,11258,2026-03-12 05:04:37,late delivery,approved
+1688,10629,2026-03-12 06:50:08,late delivery,approved
+1689,10087,2026-03-12 07:04:31,defective,approved
+1690,11231,2026-03-12 07:05:01,late delivery,approved
+1691,9531,2026-03-12 09:24:04,changed mind,pending
+1692,12028,2026-03-12 10:22:35,defective,pending
+1693,9920,2026-03-12 10:30:46,defective,pending
+1694,11032,2026-03-12 10:32:50,fraud,rejected
+1695,12088,2026-03-12 12:15:53,fraud,approved
+1696,10491,2026-03-12 12:29:02,late delivery,approved
+1697,11147,2026-03-12 13:12:43,defective,approved
+1698,11619,2026-03-12 13:36:10,defective,approved
+1699,11541,2026-03-12 13:43:05,defective,approved
+1700,11255,2026-03-12 14:12:11,fraud,rejected
+1701,10842,2026-03-12 14:38:03,defective,approved
+1702,11129,2026-03-12 15:07:26,late delivery,approved
+1703,9894,2026-03-12 15:33:55,changed mind,approved
+1704,12105,2026-03-12 16:40:18,defective,approved
+1705,10732,2026-03-12 16:46:25,defective,approved
+1706,11918,2026-03-12 19:42:43,defective,rejected
+1707,11604,2026-03-12 20:20:33,defective,approved
+1708,10023,2026-03-12 20:31:37,late delivery,approved
+1709,10533,2026-03-12 20:32:56,changed mind,approved
+1710,12497,2026-03-12 20:33:01,changed mind,approved
+1711,10042,2026-03-12 21:05:06,changed mind,approved
+1712,9436,2026-03-12 22:59:55,changed mind,approved
+1713,9853,2026-03-13 00:55:03,defective,approved
+1714,11509,2026-03-13 02:03:01,changed mind,approved
+1715,10955,2026-03-13 02:11:26,defective,rejected
+1716,12003,2026-03-13 02:21:58,defective,pending
+1717,12297,2026-03-13 02:49:18,changed mind,approved
+1718,10605,2026-03-13 03:16:07,defective,approved
+1719,10754,2026-03-13 03:18:04,changed mind,pending
+1720,9999,2026-03-13 03:26:41,fraud,approved
+1721,11847,2026-03-13 05:22:05,defective,pending
+1722,11489,2026-03-13 05:52:08,defective,approved
+1723,12075,2026-03-13 06:15:48,defective,pending
+1724,10674,2026-03-13 07:04:50,defective,approved
+1725,11444,2026-03-13 07:14:02,late delivery,approved
+1726,10429,2026-03-13 07:41:11,late delivery,approved
+1727,9364,2026-03-13 07:44:46,defective,rejected
+1728,9791,2026-03-13 08:02:35,fraud,approved
+1729,10980,2026-03-13 08:34:07,late delivery,approved
+1730,11693,2026-03-13 08:46:18,changed mind,approved
+1731,11921,2026-03-13 09:42:45,changed mind,approved
+1732,11597,2026-03-13 10:18:01,changed mind,approved
+1733,10529,2026-03-13 10:19:38,changed mind,approved
+1734,10319,2026-03-13 10:47:15,defective,pending
+1735,10852,2026-03-13 11:08:03,late delivery,approved
+1736,11900,2026-03-13 13:16:17,changed mind,rejected
+1737,12204,2026-03-13 14:02:31,changed mind,approved
+1738,11512,2026-03-13 14:17:21,changed mind,approved
+1739,8990,2026-03-13 15:10:19,changed mind,approved
+1740,10870,2026-03-13 15:30:17,changed mind,approved
+1741,8570,2026-03-13 15:40:12,changed mind,approved
+1742,9387,2026-03-13 15:45:06,changed mind,approved
+1743,11123,2026-03-13 17:13:16,changed mind,approved
+1744,9042,2026-03-13 17:33:17,defective,rejected
+1745,9186,2026-03-13 17:35:43,defective,approved
+1746,12396,2026-03-13 17:38:51,late delivery,approved
+1747,9633,2026-03-13 18:31:32,defective,approved
+1748,10137,2026-03-13 19:27:22,defective,pending
+1749,11805,2026-03-13 19:27:26,late delivery,rejected
+1750,11523,2026-03-13 19:37:28,changed mind,approved
+1751,11390,2026-03-13 20:08:48,defective,approved
+1752,11816,2026-03-13 20:39:35,defective,pending
+1753,12242,2026-03-13 20:51:48,late delivery,approved
+1754,12760,2026-03-13 21:16:20,changed mind,approved
+1755,12076,2026-03-13 21:27:41,defective,pending
+1756,11867,2026-03-13 21:42:14,changed mind,pending
+1757,12630,2026-03-13 23:09:26,fraud,approved
+1758,10577,2026-03-14 01:53:21,changed mind,rejected
+1759,12436,2026-03-14 02:35:42,late delivery,rejected
+1760,12071,2026-03-14 03:55:27,changed mind,pending
+1761,11542,2026-03-14 04:01:55,defective,rejected
+1762,12216,2026-03-14 04:04:27,defective,approved
+1763,11669,2026-03-14 04:40:00,defective,pending
+1764,8429,2026-03-14 05:20:17,changed mind,approved
+1765,11916,2026-03-14 05:25:56,defective,pending
+1766,9761,2026-03-14 05:47:29,changed mind,approved
+1767,9062,2026-03-14 06:12:37,late delivery,approved
+1768,11554,2026-03-14 07:17:56,changed mind,approved
+1769,11688,2026-03-14 07:20:57,changed mind,pending
+1770,11677,2026-03-14 08:15:53,changed mind,pending
+1771,11695,2026-03-14 08:50:15,changed mind,approved
+1772,10701,2026-03-14 09:23:28,defective,approved
+1773,12563,2026-03-14 09:33:01,changed mind,approved
+1774,11440,2026-03-14 09:37:30,late delivery,approved
+1775,11691,2026-03-14 10:13:12,late delivery,pending
+1776,11662,2026-03-14 10:35:35,defective,approved
+1777,12058,2026-03-14 10:44:53,late delivery,approved
+1778,12874,2026-03-14 11:18:51,defective,approved
+1779,11165,2026-03-14 11:52:29,late delivery,approved
+1780,9411,2026-03-14 11:59:24,defective,rejected
+1781,10626,2026-03-14 11:59:50,changed mind,approved
+1782,10094,2026-03-14 12:18:08,fraud,approved
+1783,10619,2026-03-14 13:33:16,changed mind,approved
+1784,11703,2026-03-14 13:34:54,changed mind,approved
+1785,12269,2026-03-14 14:31:48,changed mind,pending
+1786,9910,2026-03-14 14:32:28,changed mind,pending
+1787,11204,2026-03-14 15:55:12,late delivery,approved
+1788,11790,2026-03-14 15:56:41,changed mind,approved
+1789,11346,2026-03-14 16:49:01,changed mind,approved
+1790,12799,2026-03-14 16:52:57,changed mind,pending
+1791,10170,2026-03-14 17:54:47,late delivery,approved
+1792,11809,2026-03-14 18:20:03,changed mind,approved
+1793,11770,2026-03-14 19:45:12,defective,approved
+1794,11074,2026-03-14 20:21:26,changed mind,approved
+1795,11001,2026-03-14 20:44:21,late delivery,approved
+1796,12315,2026-03-14 20:46:04,fraud,approved
+1797,10735,2026-03-14 21:16:12,changed mind,approved
+1798,12703,2026-03-14 21:21:23,late delivery,approved
+1799,11467,2026-03-14 21:36:23,defective,approved

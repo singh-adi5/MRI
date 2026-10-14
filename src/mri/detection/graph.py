@@ -1,5 +1,8 @@
 import os
 import sqlite3
+from collections import defaultdict
+from itertools import combinations
+
 import pandas as pd
 import numpy as np
 import networkx as nx
@@ -8,6 +11,26 @@ from mri.config import ROOT as BASE_DIR  # repository root
 DB_PATH = os.path.join(BASE_DIR, "data", "marketplace.db")
 OUTPUT_DIR = os.path.join(BASE_DIR, "outputs")
 OUTPUT_PATH = os.path.join(OUTPUT_DIR, "graph_risk_scores.csv")
+
+# ---------------------------------------------------------------------------
+# Shared-attribute linking policy
+# ---------------------------------------------------------------------------
+# A shared device or region is evidence only when it is RARE. The previous
+# code capped region groups at a fixed 25 members, which on any realistic
+# dataset excluded every group and emitted a permanently-zero feature that
+# still carried weight in the score. Cardinality is therefore judged
+# relatively, not against a hardcoded constant:
+#
+#   a group is informative  <=>  2 <= members <= max(MIN_INFORMATIVE_MEMBERS,
+#                                                    MAX_GROUP_SHARE * population)
+#
+# This also bounds the O(k^2) clique expansion: group size scales with the
+# population, so the edge count stays roughly linear in it instead of
+# quadratic. MAX_GROUP_MEMBERS is a hard safety ceiling for very large
+# populations; when it bites, it is logged, never silently applied.
+MAX_GROUP_SHARE = 0.01
+MIN_INFORMATIVE_MEMBERS = 10
+MAX_GROUP_MEMBERS = 200
 
 
 def log(msg: str):
@@ -34,6 +57,75 @@ def normalize(series: pd.Series) -> pd.Series:
     if pd.isna(min_val) or pd.isna(max_val) or max_val == min_val:
         return pd.Series([0.0] * len(series), index=series.index)
     return (series - min_val) / (max_val - min_val)
+
+
+def informative_groups(groups, population: int, label: str):
+    """Yield (key, members) for shared-attribute groups that carry information.
+
+    Returns the kept groups plus a diagnostics dict. A group is dropped when it
+    has a single member (no link), when it covers too large a share of the
+    population to individuate anybody, or when it exceeds the hard expansion
+    ceiling. Every drop is counted so a dead signal can never pass as a zero.
+    """
+    max_members = max(MIN_INFORMATIVE_MEMBERS, int(MAX_GROUP_SHARE * population))
+    max_members = min(max_members, MAX_GROUP_MEMBERS)
+
+    kept, diagnostics = [], {
+        "label": label, "total": 0, "kept": 0, "singleton": 0,
+        "too_common": 0, "max_members": max_members, "largest": 0, "pairs": 0,
+    }
+
+    for key, members in groups.items():
+        members = sorted(set(members))
+        diagnostics["total"] += 1
+        diagnostics["largest"] = max(diagnostics["largest"], len(members))
+        if len(members) < 2:
+            diagnostics["singleton"] += 1
+            continue
+        if len(members) > max_members:
+            diagnostics["too_common"] += 1
+            continue
+        kept.append((key, members))
+        diagnostics["kept"] += 1
+        diagnostics["pairs"] += len(members) * (len(members) - 1) // 2
+
+    return kept, diagnostics
+
+
+def weighted_risk_score(df: pd.DataFrame, spec, log_fn):
+    """Weighted sum over features, excluding any that carry no information.
+
+    A constant (zero-variance) or all-NaN feature cannot rank anything: left in
+    the sum it contributes a fixed 0 to every entity while still consuming its
+    share of the weight, silently shrinking the score's dynamic range. Such
+    features are dropped, logged, and the remaining weights renormalised to 1.
+    """
+    usable, dropped = [], []
+    for column, weight in spec:
+        values = pd.to_numeric(df[column], errors="coerce")
+        if values.notna().sum() == 0:
+            dropped.append((column, weight, "not computable (all NaN)"))
+        elif values.nunique(dropna=True) <= 1:
+            dropped.append((column, weight, f"zero variance (constant {values.dropna().iloc[0]})"))
+        else:
+            usable.append((column, weight))
+
+    for column, weight, reason in dropped:
+        log_fn(f"  EXCLUDED from graph risk score: {column} (weight {weight:.2f}) - {reason}")
+
+    if not usable:
+        raise ValueError("no informative graph features; cannot compute a graph risk score")
+
+    total_weight = sum(weight for _, weight in usable)
+    if dropped:
+        log_fn(f"  renormalising {len(usable)} remaining features over weight {total_weight:.2f}")
+
+    score = pd.Series(0.0, index=df.index)
+    for column, weight in usable:
+        score = score + (weight / total_weight) * normalize(
+            pd.to_numeric(df[column], errors="coerce")
+        ).fillna(0.0)
+    return score, [c for c, _ in usable], dropped
 
 
 def main():

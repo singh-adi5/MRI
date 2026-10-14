@@ -1,301 +1,2001 @@
 customer_id,signup_date,region,device_type,account_age_days
-1,2025-11-18,North America,mobile,116
-2,2025-07-03,Europe,mobile,254
-3,2025-04-03,Africa,desktop,345
-4,2025-08-01,Oceania,desktop,225
-5,2026-02-24,North America,tablet,18
-6,2025-10-29,Africa,mobile,136
-7,2025-04-13,North America,tablet,335
-8,2025-11-01,South America,desktop,133
-9,2025-07-04,Africa,tablet,253
-10,2025-07-05,Oceania,tablet,252
-11,2025-10-09,Africa,tablet,156
-12,2025-05-18,North America,tablet,300
-13,2025-03-25,Asia,desktop,354
-14,2025-05-01,Asia,desktop,317
-15,2025-05-31,Asia,desktop,287
-16,2025-09-18,Asia,tablet,177
-17,2026-03-14,Africa,tablet,0
-18,2025-07-02,Asia,mobile,255
-19,2026-02-20,Africa,tablet,22
-20,2025-06-03,North America,tablet,284
-21,2025-08-08,South America,mobile,218
-22,2026-01-24,South America,desktop,49
-23,2025-06-11,Asia,tablet,276
-24,2025-11-22,Africa,desktop,112
-25,2025-04-03,Europe,tablet,345
-26,2025-12-31,South America,tablet,73
-27,2026-02-25,South America,desktop,17
-28,2026-01-30,Europe,desktop,43
-29,2025-03-17,Europe,desktop,362
-30,2026-03-05,Oceania,desktop,9
-31,2026-02-23,South America,tablet,19
-32,2025-05-05,North America,mobile,313
-33,2025-08-09,North America,tablet,217
-34,2025-11-29,Europe,mobile,105
-35,2025-05-14,Oceania,desktop,304
-36,2025-11-22,Asia,mobile,112
-37,2025-08-15,Africa,desktop,211
-38,2025-07-17,South America,mobile,240
-39,2026-02-26,North America,desktop,16
-40,2026-01-31,Europe,desktop,42
-41,2025-08-26,Africa,mobile,200
-42,2025-09-17,South America,tablet,178
-43,2025-12-16,Asia,tablet,88
-44,2026-02-12,Europe,mobile,30
-45,2025-10-18,Oceania,desktop,147
-46,2025-11-20,Europe,desktop,114
-47,2025-04-11,Africa,desktop,337
-48,2025-06-24,Oceania,mobile,263
-49,2026-03-09,Europe,tablet,5
-50,2025-10-31,South America,mobile,134
-51,2025-03-25,Europe,tablet,354
-52,2026-02-03,North America,mobile,39
-53,2026-01-31,Europe,tablet,42
-54,2025-10-02,Europe,desktop,163
-55,2025-03-27,Oceania,tablet,352
-56,2025-08-30,Oceania,tablet,196
-57,2026-03-09,South America,mobile,5
-58,2025-10-26,North America,mobile,139
-59,2025-08-18,Europe,tablet,208
-60,2025-05-26,North America,mobile,292
-61,2025-08-03,Europe,mobile,223
-62,2025-08-10,Europe,desktop,216
-63,2025-07-12,Asia,tablet,245
-64,2025-04-15,Europe,tablet,333
-65,2025-03-21,Europe,desktop,358
-66,2026-01-25,Europe,tablet,48
-67,2025-05-16,Asia,mobile,302
-68,2025-07-10,Oceania,mobile,247
-69,2025-06-22,Europe,tablet,265
-70,2025-12-27,Africa,desktop,77
-71,2025-11-01,Asia,tablet,133
-72,2025-04-06,Africa,desktop,342
-73,2025-03-31,Africa,desktop,348
-74,2025-07-01,Asia,tablet,256
-75,2026-02-18,Europe,desktop,24
-76,2025-03-27,Asia,mobile,352
-77,2025-07-11,North America,tablet,246
-78,2025-09-02,Africa,desktop,193
-79,2025-12-15,North America,desktop,89
-80,2025-05-10,Oceania,tablet,308
-81,2025-04-13,Asia,tablet,335
-82,2025-04-28,South America,tablet,320
-83,2026-02-19,North America,tablet,23
-84,2025-12-30,Oceania,desktop,74
-85,2026-02-12,Africa,tablet,30
-86,2025-04-13,North America,tablet,335
-87,2025-10-03,Europe,desktop,162
-88,2025-07-10,Europe,mobile,247
-89,2025-10-07,North America,tablet,158
-90,2025-04-06,Asia,desktop,342
-91,2025-09-08,Asia,mobile,187
-92,2025-08-02,Oceania,mobile,224
-93,2025-12-20,North America,desktop,84
-94,2025-11-10,North America,mobile,124
-95,2025-09-30,Europe,mobile,165
-96,2026-03-01,Oceania,tablet,13
-97,2025-10-25,Europe,mobile,140
-98,2025-04-21,South America,tablet,327
-99,2025-12-28,South America,tablet,76
-100,2025-08-30,North America,mobile,196
-101,2025-08-13,Asia,mobile,213
-102,2025-12-25,Africa,tablet,79
-103,2026-03-05,Asia,desktop,9
-104,2025-09-19,Europe,desktop,176
-105,2025-05-06,North America,mobile,312
-106,2025-04-25,Europe,tablet,323
-107,2025-08-27,Africa,tablet,199
-108,2026-01-30,North America,mobile,43
-109,2025-09-27,Africa,desktop,168
-110,2025-09-01,Asia,mobile,194
-111,2025-11-09,Oceania,desktop,125
-112,2025-03-31,Oceania,mobile,348
-113,2025-04-27,Europe,mobile,321
-114,2025-05-15,South America,tablet,303
-115,2025-06-21,Europe,mobile,266
-116,2025-09-09,Europe,tablet,186
-117,2026-03-06,South America,mobile,8
-118,2025-07-17,Asia,tablet,240
-119,2026-02-05,Europe,mobile,37
-120,2026-02-09,Europe,tablet,33
-121,2025-05-12,Oceania,mobile,306
-122,2025-08-09,Europe,desktop,217
-123,2026-02-25,Africa,mobile,17
-124,2025-12-28,Africa,desktop,76
-125,2025-07-18,North America,desktop,239
-126,2025-07-01,Africa,tablet,256
-127,2025-06-09,Africa,desktop,278
-128,2025-03-31,Oceania,desktop,348
-129,2025-11-13,Oceania,tablet,121
-130,2025-07-04,Europe,tablet,253
-131,2025-05-27,North America,desktop,291
-132,2026-02-04,Asia,tablet,38
-133,2025-10-31,South America,mobile,134
-134,2025-05-15,Europe,desktop,303
-135,2025-11-07,Europe,mobile,127
-136,2025-11-06,Asia,mobile,128
-137,2026-01-09,Asia,tablet,64
-138,2026-01-04,South America,mobile,69
-139,2026-02-04,North America,desktop,38
-140,2026-02-06,Asia,mobile,36
-141,2025-11-30,Oceania,mobile,104
-142,2025-09-07,Oceania,desktop,188
-143,2025-08-04,Asia,tablet,222
-144,2025-03-24,Oceania,mobile,355
-145,2026-01-16,Asia,tablet,57
-146,2025-11-10,Europe,mobile,124
-147,2026-01-26,Asia,mobile,47
-148,2025-11-10,Africa,desktop,124
-149,2026-02-01,Africa,desktop,41
-150,2025-10-03,South America,tablet,162
-151,2025-11-14,Asia,mobile,120
-152,2025-11-26,Oceania,mobile,108
-153,2025-11-10,Europe,desktop,124
-154,2025-10-03,Asia,mobile,162
-155,2025-05-23,Oceania,tablet,295
-156,2026-02-19,North America,tablet,23
-157,2025-04-29,North America,mobile,319
-158,2025-12-02,North America,tablet,102
-159,2025-07-15,Oceania,tablet,242
-160,2025-03-19,Asia,mobile,360
-161,2025-07-26,Oceania,tablet,231
-162,2025-07-08,South America,desktop,249
-163,2025-11-27,Asia,mobile,107
-164,2025-07-26,North America,tablet,231
-165,2025-04-23,South America,mobile,325
-166,2025-04-17,Oceania,tablet,331
-167,2025-10-12,North America,mobile,153
-168,2026-01-02,Africa,tablet,71
-169,2026-02-12,South America,mobile,30
-170,2026-01-16,Oceania,tablet,57
-171,2025-09-04,North America,mobile,191
-172,2026-02-24,Europe,mobile,18
-173,2025-08-09,North America,mobile,217
-174,2026-02-04,South America,mobile,38
-175,2025-08-09,South America,desktop,217
-176,2025-10-28,North America,desktop,137
-177,2025-12-25,Asia,desktop,79
-178,2026-01-19,South America,tablet,54
-179,2025-04-02,Asia,tablet,346
-180,2026-03-13,Asia,mobile,1
-181,2025-10-16,South America,tablet,149
-182,2025-10-02,Asia,desktop,163
-183,2026-03-13,North America,mobile,1
-184,2025-11-21,North America,desktop,113
-185,2025-07-12,North America,desktop,245
-186,2025-08-13,North America,tablet,213
-187,2025-12-13,Asia,mobile,91
-188,2025-10-15,Asia,tablet,150
-189,2025-04-16,North America,mobile,332
-190,2025-09-18,Asia,desktop,177
-191,2025-09-29,Oceania,desktop,166
-192,2025-10-16,North America,mobile,149
-193,2025-12-30,Africa,desktop,74
-194,2025-11-04,Africa,desktop,130
-195,2025-07-16,South America,tablet,241
-196,2025-07-14,Europe,mobile,243
-197,2026-02-05,Oceania,tablet,37
-198,2025-03-18,Asia,mobile,361
-199,2025-12-08,South America,tablet,96
-200,2025-12-08,North America,desktop,96
-201,2025-08-18,Africa,tablet,208
-202,2025-09-26,North America,mobile,169
-203,2026-02-19,Europe,tablet,23
-204,2025-04-04,Oceania,tablet,344
-205,2025-10-05,North America,tablet,160
-206,2025-08-03,North America,mobile,223
-207,2026-03-01,Africa,tablet,13
-208,2025-12-19,Europe,desktop,85
-209,2025-12-24,Asia,mobile,80
-210,2025-10-13,Oceania,mobile,152
-211,2025-08-24,North America,mobile,202
-212,2025-09-11,North America,mobile,184
-213,2025-08-10,Europe,mobile,216
-214,2025-08-15,Asia,desktop,211
-215,2025-10-03,Africa,tablet,162
-216,2025-05-05,Europe,desktop,313
-217,2025-11-11,South America,tablet,123
-218,2025-05-07,Africa,mobile,311
-219,2025-09-03,Asia,mobile,192
-220,2025-10-19,South America,tablet,146
-221,2025-08-19,North America,tablet,207
-222,2025-09-03,North America,tablet,192
-223,2025-04-26,Europe,desktop,322
-224,2025-07-27,Europe,mobile,230
-225,2026-03-03,South America,mobile,11
-226,2026-01-29,North America,mobile,44
-227,2025-07-11,Europe,desktop,246
-228,2025-10-10,Europe,desktop,155
-229,2025-09-21,Asia,desktop,174
-230,2025-04-11,North America,tablet,337
-231,2025-12-26,Africa,tablet,78
-232,2026-01-04,Africa,mobile,69
-233,2025-07-05,North America,tablet,252
-234,2025-05-30,Oceania,desktop,288
-235,2026-03-10,South America,mobile,4
-236,2025-04-14,Asia,tablet,334
-237,2026-01-05,South America,desktop,68
-238,2025-09-21,Asia,desktop,174
-239,2026-02-04,Europe,desktop,38
-240,2025-06-16,Europe,desktop,271
-241,2025-10-30,Europe,mobile,135
-242,2026-01-12,North America,desktop,61
-243,2026-02-20,North America,mobile,22
-244,2025-11-05,Africa,mobile,129
-245,2025-12-03,Europe,mobile,101
-246,2025-06-18,Europe,desktop,269
-247,2025-11-21,Europe,desktop,113
-248,2025-07-12,Oceania,tablet,245
-249,2025-08-07,Africa,desktop,219
-250,2025-12-27,North America,mobile,77
-251,2025-04-08,Asia,tablet,340
-252,2025-11-28,North America,tablet,106
-253,2025-08-14,Africa,tablet,212
-254,2025-03-26,South America,tablet,353
-255,2026-03-07,Asia,desktop,7
-256,2025-12-22,North America,mobile,82
-257,2026-01-18,Africa,desktop,55
-258,2025-04-11,North America,mobile,337
-259,2025-11-10,North America,mobile,124
-260,2025-12-21,Oceania,mobile,83
-261,2025-05-06,North America,tablet,312
-262,2026-02-01,North America,tablet,41
-263,2025-06-23,North America,mobile,264
-264,2026-02-25,Europe,desktop,17
-265,2025-07-03,Asia,desktop,254
-266,2026-01-12,Oceania,mobile,61
-267,2026-03-10,Oceania,mobile,4
-268,2026-02-17,North America,mobile,25
-269,2025-09-13,South America,desktop,182
-270,2025-09-23,Europe,desktop,172
-271,2025-06-10,South America,desktop,277
-272,2026-03-05,Europe,tablet,9
-273,2025-06-22,Oceania,desktop,265
-274,2025-10-23,Africa,tablet,142
-275,2025-07-30,South America,tablet,227
-276,2026-02-18,Europe,mobile,24
-277,2025-04-24,Asia,tablet,324
-278,2025-04-26,North America,mobile,322
-279,2025-09-08,Asia,mobile,187
-280,2025-12-07,Asia,desktop,97
-281,2025-10-09,North America,desktop,156
-282,2026-02-06,Africa,tablet,36
-283,2025-04-30,South America,desktop,318
-284,2025-05-20,Europe,desktop,298
-285,2025-11-18,Oceania,tablet,116
-286,2025-11-05,North America,tablet,129
-287,2025-03-18,Europe,desktop,361
-288,2025-12-12,Europe,desktop,92
-289,2025-05-03,North America,mobile,315
-290,2025-10-21,Oceania,desktop,144
-291,2026-01-30,South America,tablet,43
-292,2026-01-20,Asia,tablet,53
-293,2026-03-07,Asia,mobile,7
-294,2025-10-15,Africa,tablet,150
-295,2025-12-09,Africa,tablet,95
-296,2025-05-27,South America,desktop,291
-297,2025-10-29,Europe,tablet,136
-298,2025-06-03,Asia,tablet,284
-299,2025-10-13,Europe,desktop,152
-300,2025-06-08,South America,mobile,279
+1,2025-04-04,North America,tablet,345
+2,2024-09-24,North America,mobile,537
+3,2025-04-20,North America,mobile,329
+4,2026-02-05,Asia,desktop,38
+5,2025-12-20,North America,desktop,85
+6,2025-12-24,North America,mobile,80
+7,2025-07-19,Europe,mobile,239
+8,2024-11-15,Oceania,desktop,485
+9,2025-11-01,North America,desktop,133
+10,2024-11-05,Africa,mobile,495
+11,2026-01-24,Asia,mobile,50
+12,2026-01-17,Asia,mobile,57
+13,2025-08-06,Africa,desktop,221
+14,2024-12-07,Europe,mobile,463
+15,2024-11-30,North America,desktop,470
+16,2025-06-20,Asia,desktop,268
+17,2024-10-02,South America,tablet,529
+18,2025-04-13,Africa,desktop,336
+19,2025-02-28,Oceania,mobile,380
+20,2024-11-23,Asia,mobile,477
+21,2024-11-15,South America,mobile,485
+22,2025-03-29,Africa,desktop,351
+23,2025-06-01,Oceania,mobile,287
+24,2025-02-22,South America,tablet,386
+25,2024-11-05,Oceania,mobile,495
+26,2025-03-17,South America,mobile,363
+27,2024-10-26,Africa,desktop,505
+28,2024-10-27,Oceania,desktop,504
+29,2025-02-10,Asia,mobile,398
+30,2024-11-14,North America,mobile,486
+31,2025-02-28,South America,mobile,380
+32,2025-01-24,South America,tablet,415
+33,2025-11-30,Oceania,desktop,104
+34,2025-11-07,Europe,desktop,128
+35,2025-10-13,Oceania,desktop,153
+36,2025-07-31,Africa,mobile,227
+37,2026-01-29,North America,desktop,45
+38,2025-02-19,North America,mobile,389
+39,2025-08-22,Africa,mobile,205
+40,2025-07-26,South America,desktop,232
+41,2025-09-29,Asia,mobile,167
+42,2024-12-26,South America,mobile,444
+43,2025-06-04,Asia,mobile,284
+44,2025-04-16,North America,mobile,333
+45,2025-10-05,South America,tablet,161
+46,2025-08-20,North America,tablet,207
+47,2025-12-05,Oceania,mobile,99
+48,2024-10-11,Oceania,mobile,520
+49,2024-10-14,Oceania,desktop,517
+50,2025-08-07,Africa,desktop,220
+51,2024-10-24,Asia,mobile,507
+52,2026-01-01,North America,desktop,73
+53,2026-02-16,Asia,mobile,27
+54,2025-07-23,Africa,mobile,235
+55,2024-11-27,North America,mobile,473
+56,2025-03-14,North America,mobile,366
+57,2025-02-08,South America,desktop,400
+58,2025-01-28,Oceania,mobile,411
+59,2024-10-16,Oceania,tablet,515
+60,2026-02-11,South America,mobile,32
+61,2025-10-16,South America,tablet,150
+62,2025-09-29,South America,mobile,167
+63,2025-10-24,Africa,desktop,142
+64,2026-01-05,Oceania,mobile,69
+65,2025-02-17,Africa,mobile,391
+66,2025-07-05,Africa,desktop,253
+67,2025-12-10,Oceania,mobile,95
+68,2025-08-11,Europe,desktop,216
+69,2025-04-28,Africa,mobile,321
+70,2025-07-28,South America,desktop,230
+71,2025-02-24,South America,mobile,384
+72,2025-06-26,Africa,mobile,262
+73,2025-08-02,Africa,mobile,225
+74,2026-01-03,Asia,mobile,71
+75,2025-01-26,Asia,desktop,413
+76,2026-02-26,Oceania,desktop,17
+77,2024-10-25,North America,desktop,506
+78,2025-06-10,Asia,desktop,277
+79,2025-02-24,South America,desktop,384
+80,2025-02-28,Africa,desktop,380
+81,2026-01-13,Europe,desktop,61
+82,2025-01-24,Oceania,mobile,415
+83,2024-11-25,South America,mobile,475
+84,2025-07-05,North America,desktop,253
+85,2025-04-10,North America,mobile,339
+86,2025-11-22,Oceania,mobile,112
+87,2025-10-21,Africa,mobile,145
+88,2025-02-25,Europe,desktop,383
+89,2025-10-20,Africa,desktop,146
+90,2026-02-18,Asia,mobile,25
+91,2025-11-21,Africa,desktop,114
+92,2026-01-10,Oceania,desktop,64
+93,2025-02-23,Africa,desktop,385
+94,2025-06-03,North America,mobile,285
+95,2025-05-16,North America,mobile,303
+96,2025-11-28,Asia,mobile,107
+97,2025-12-01,North America,mobile,103
+98,2026-01-03,Africa,mobile,71
+99,2026-02-18,Asia,mobile,25
+100,2025-07-31,Asia,mobile,227
+101,2024-10-14,Africa,mobile,517
+102,2026-01-09,Asia,mobile,65
+103,2025-06-25,Asia,mobile,263
+104,2025-03-01,Africa,desktop,379
+105,2025-12-28,South America,mobile,77
+106,2025-12-08,Africa,mobile,97
+107,2025-07-20,North America,desktop,238
+108,2025-09-16,Europe,mobile,180
+109,2025-02-21,Oceania,desktop,387
+110,2026-02-12,South America,desktop,31
+111,2025-09-16,Oceania,mobile,180
+112,2025-05-29,Europe,mobile,289
+113,2025-01-07,Oceania,mobile,432
+114,2025-11-11,Europe,mobile,124
+115,2025-12-31,North America,mobile,74
+116,2024-11-11,North America,mobile,489
+117,2026-01-31,Oceania,mobile,43
+118,2024-10-09,North America,desktop,522
+119,2025-10-03,Oceania,mobile,163
+120,2025-07-29,Europe,mobile,229
+121,2025-06-05,Asia,mobile,283
+122,2026-02-15,Europe,desktop,28
+123,2025-08-06,Europe,mobile,221
+124,2025-01-02,Asia,mobile,437
+125,2025-11-30,Europe,mobile,105
+126,2025-10-17,Asia,desktop,149
+127,2025-04-12,Oceania,mobile,337
+128,2024-10-12,Oceania,mobile,519
+129,2024-11-13,Asia,desktop,487
+130,2025-09-30,Oceania,mobile,166
+131,2024-12-22,North America,desktop,448
+132,2025-03-12,Europe,desktop,368
+133,2025-11-05,Africa,mobile,129
+134,2025-04-25,Asia,mobile,324
+135,2025-04-12,North America,desktop,337
+136,2025-01-24,Europe,desktop,415
+137,2025-02-21,Asia,mobile,386
+138,2024-11-24,South America,tablet,476
+139,2025-11-22,Africa,mobile,113
+140,2025-02-19,Oceania,mobile,389
+141,2024-11-14,North America,mobile,486
+142,2024-12-14,South America,desktop,456
+143,2025-03-23,Europe,tablet,357
+144,2025-12-15,Asia,mobile,90
+145,2025-05-13,Asia,mobile,306
+146,2025-09-02,North America,mobile,194
+147,2025-10-24,South America,mobile,142
+148,2025-11-11,Oceania,mobile,124
+149,2025-09-09,North America,desktop,187
+150,2025-04-10,Asia,desktop,339
+151,2025-10-29,South America,desktop,137
+152,2025-11-11,North America,desktop,124
+153,2026-02-08,South America,desktop,35
+154,2025-03-16,North America,desktop,364
+155,2024-12-05,North America,mobile,465
+156,2024-10-13,Oceania,mobile,518
+157,2026-01-21,North America,desktop,53
+158,2025-03-27,South America,tablet,353
+159,2025-11-12,Europe,desktop,123
+160,2025-09-04,Asia,desktop,192
+161,2025-08-31,Europe,desktop,196
+162,2025-04-12,Africa,tablet,337
+163,2025-08-29,North America,mobile,198
+164,2024-12-31,Africa,desktop,439
+165,2025-04-28,Europe,tablet,321
+166,2025-07-02,North America,mobile,256
+167,2025-07-08,Africa,mobile,250
+168,2025-03-25,Africa,mobile,355
+169,2026-01-13,Oceania,mobile,61
+170,2025-07-25,Oceania,mobile,233
+171,2026-01-08,North America,mobile,66
+172,2025-08-12,South America,mobile,215
+173,2026-03-04,Africa,tablet,11
+174,2024-10-11,South America,desktop,520
+175,2025-08-26,Asia,mobile,201
+176,2025-11-11,Asia,mobile,124
+177,2024-11-10,North America,mobile,490
+178,2025-09-15,Europe,desktop,181
+179,2025-11-03,Oceania,desktop,132
+180,2025-07-18,Asia,desktop,240
+181,2025-11-26,South America,mobile,108
+182,2025-12-29,Asia,desktop,76
+183,2025-03-27,North America,desktop,353
+184,2025-12-06,Asia,mobile,99
+185,2025-01-18,Asia,desktop,421
+186,2025-08-20,Europe,mobile,207
+187,2025-11-03,Oceania,desktop,132
+188,2025-03-22,North America,mobile,358
+189,2024-10-25,Europe,desktop,506
+190,2024-10-15,Europe,mobile,516
+191,2025-07-26,Oceania,tablet,232
+192,2025-04-25,Asia,mobile,324
+193,2025-02-26,Oceania,desktop,382
+194,2025-10-12,South America,desktop,154
+195,2025-10-12,Europe,desktop,154
+196,2025-12-12,North America,desktop,93
+197,2025-06-29,Oceania,desktop,259
+198,2025-07-27,North America,tablet,231
+199,2025-10-19,Africa,mobile,147
+200,2025-05-20,North America,mobile,299
+201,2024-12-13,Asia,desktop,457
+202,2024-12-28,South America,desktop,442
+203,2026-02-25,South America,mobile,18
+204,2025-03-23,South America,desktop,356
+205,2025-03-12,North America,mobile,368
+206,2025-07-26,Asia,mobile,232
+207,2025-11-18,Oceania,desktop,117
+208,2025-07-07,Oceania,desktop,251
+209,2025-12-04,Europe,mobile,101
+210,2025-01-05,Europe,tablet,434
+211,2024-12-01,Europe,tablet,469
+212,2025-07-02,Asia,mobile,256
+213,2025-07-23,North America,desktop,235
+214,2025-03-03,South America,desktop,377
+215,2025-10-22,Asia,desktop,144
+216,2024-11-03,Oceania,desktop,497
+217,2025-09-25,Africa,desktop,171
+218,2025-03-10,Oceania,mobile,370
+219,2026-01-31,Africa,mobile,43
+220,2025-11-28,Africa,mobile,107
+221,2025-08-29,Oceania,mobile,198
+222,2026-01-30,Oceania,mobile,44
+223,2025-10-30,Oceania,mobile,136
+224,2025-01-12,Oceania,mobile,427
+225,2025-06-25,South America,mobile,263
+226,2025-01-08,South America,desktop,431
+227,2024-10-03,Africa,desktop,528
+228,2025-08-19,Europe,mobile,208
+229,2026-02-22,Africa,desktop,21
+230,2024-12-05,Europe,mobile,465
+231,2025-03-22,Africa,mobile,358
+232,2026-01-05,Oceania,mobile,69
+233,2025-06-06,Oceania,desktop,282
+234,2025-01-10,South America,tablet,429
+235,2025-04-23,Africa,desktop,326
+236,2025-11-17,Europe,desktop,118
+237,2024-10-29,Africa,mobile,502
+238,2024-12-31,Africa,desktop,439
+239,2025-10-01,South America,desktop,165
+240,2025-07-30,Asia,desktop,228
+241,2025-01-25,Africa,mobile,414
+242,2025-07-20,Oceania,mobile,238
+243,2025-02-07,Europe,mobile,401
+244,2024-12-16,Africa,tablet,454
+245,2025-06-11,South America,desktop,276
+246,2025-02-07,South America,desktop,401
+247,2025-09-24,Europe,desktop,172
+248,2024-10-09,Africa,mobile,522
+249,2025-03-30,South America,desktop,350
+250,2024-12-04,Europe,mobile,466
+251,2025-05-17,South America,mobile,302
+252,2025-05-30,Oceania,mobile,289
+253,2025-11-30,North America,mobile,104
+254,2025-04-13,Europe,desktop,336
+255,2025-10-06,Oceania,desktop,160
+256,2024-10-06,South America,mobile,525
+257,2026-01-27,Asia,desktop,47
+258,2025-08-03,North America,desktop,224
+259,2025-02-04,Europe,desktop,404
+260,2025-01-06,Oceania,desktop,433
+261,2025-03-16,South America,mobile,364
+262,2025-09-24,North America,tablet,172
+263,2025-03-24,Europe,desktop,356
+264,2024-10-07,Europe,mobile,524
+265,2025-08-08,Africa,mobile,219
+266,2024-10-10,South America,desktop,521
+267,2025-07-07,Africa,tablet,251
+268,2025-03-27,North America,mobile,353
+269,2025-03-26,Oceania,mobile,354
+270,2026-02-01,North America,mobile,42
+271,2025-05-17,South America,mobile,302
+272,2025-02-26,Europe,mobile,382
+273,2025-05-30,Europe,mobile,288
+274,2025-05-02,North America,tablet,316
+275,2025-01-06,Europe,mobile,433
+276,2025-06-11,North America,tablet,277
+277,2025-06-21,Oceania,mobile,267
+278,2024-09-26,Africa,mobile,535
+279,2025-08-17,Oceania,desktop,210
+280,2025-10-08,Europe,tablet,158
+281,2025-03-14,Oceania,mobile,366
+282,2025-06-24,South America,mobile,264
+283,2025-09-29,Asia,mobile,167
+284,2025-10-27,Africa,desktop,139
+285,2025-07-02,North America,mobile,256
+286,2025-07-08,Africa,desktop,250
+287,2025-10-22,North America,mobile,144
+288,2025-12-13,Europe,desktop,92
+289,2025-04-03,Africa,mobile,346
+290,2025-06-12,Asia,mobile,276
+291,2024-10-12,Asia,mobile,519
+292,2026-02-07,South America,desktop,36
+293,2024-12-15,South America,mobile,455
+294,2025-07-10,South America,mobile,248
+295,2025-01-31,Oceania,mobile,408
+296,2024-10-08,Africa,desktop,523
+297,2024-10-27,Oceania,mobile,504
+298,2025-12-17,Africa,desktop,88
+299,2025-10-21,Africa,desktop,145
+300,2024-12-29,Asia,mobile,441
+301,2026-01-19,Europe,mobile,55
+302,2025-05-22,Oceania,desktop,297
+303,2025-01-11,Oceania,mobile,428
+304,2025-07-03,Oceania,mobile,255
+305,2025-12-27,Oceania,desktop,78
+306,2025-07-09,Africa,mobile,249
+307,2025-08-10,Europe,desktop,217
+308,2025-05-11,Asia,mobile,308
+309,2025-08-17,North America,mobile,210
+310,2024-12-04,Europe,desktop,466
+311,2025-01-19,Africa,mobile,420
+312,2025-05-18,Europe,mobile,301
+313,2024-09-22,Asia,mobile,539
+314,2024-12-15,Europe,mobile,455
+315,2025-12-28,North America,mobile,76
+316,2025-09-21,Oceania,desktop,175
+317,2025-12-22,Oceania,desktop,83
+318,2025-09-19,Asia,mobile,177
+319,2025-01-24,Europe,mobile,415
+320,2024-11-10,Oceania,mobile,490
+321,2025-10-06,Europe,mobile,160
+322,2025-06-27,South America,mobile,261
+323,2026-01-14,South America,mobile,60
+324,2025-06-09,South America,mobile,279
+325,2024-12-27,Asia,tablet,443
+326,2025-11-14,North America,desktop,121
+327,2026-01-27,North America,desktop,47
+328,2025-11-25,Africa,desktop,110
+329,2024-12-22,North America,mobile,448
+330,2025-06-07,Europe,desktop,281
+331,2024-10-19,Africa,desktop,512
+332,2026-02-27,Europe,desktop,16
+333,2025-10-24,Asia,mobile,142
+334,2025-03-21,South America,mobile,359
+335,2024-12-26,Africa,desktop,444
+336,2025-11-16,Asia,mobile,119
+337,2025-08-24,Oceania,mobile,203
+338,2026-02-14,Africa,mobile,29
+339,2025-12-04,North America,mobile,100
+340,2024-10-13,Oceania,mobile,518
+341,2025-09-13,Africa,desktop,183
+342,2025-02-04,Africa,desktop,404
+343,2025-11-01,Europe,desktop,134
+344,2025-09-25,Europe,desktop,171
+345,2025-02-27,Asia,desktop,381
+346,2025-05-13,Europe,mobile,306
+347,2026-01-04,South America,mobile,70
+348,2024-12-10,Europe,mobile,460
+349,2024-12-17,North America,desktop,453
+350,2025-09-30,Africa,desktop,166
+351,2025-08-05,North America,mobile,222
+352,2024-10-24,North America,desktop,507
+353,2026-01-22,Asia,mobile,52
+354,2025-05-01,Oceania,mobile,318
+355,2024-10-27,North America,tablet,504
+356,2024-10-29,Africa,desktop,502
+357,2025-11-09,Europe,mobile,126
+358,2025-05-04,North America,mobile,315
+359,2025-09-29,Africa,mobile,167
+360,2026-01-25,Africa,desktop,49
+361,2025-01-31,Africa,desktop,408
+362,2026-02-20,Africa,tablet,23
+363,2025-05-30,Asia,mobile,289
+364,2025-06-09,North America,mobile,279
+365,2025-02-14,North America,mobile,394
+366,2025-11-29,Africa,mobile,105
+367,2025-02-03,Asia,tablet,405
+368,2025-06-26,Europe,mobile,262
+369,2025-12-11,Africa,mobile,94
+370,2026-01-05,Asia,mobile,69
+371,2025-12-27,Oceania,mobile,78
+372,2025-10-28,Oceania,mobile,138
+373,2024-11-20,Asia,mobile,480
+374,2025-06-16,Asia,mobile,272
+375,2025-07-15,Africa,mobile,243
+376,2025-02-17,Europe,mobile,390
+377,2025-06-10,North America,mobile,278
+378,2024-10-04,South America,mobile,527
+379,2026-02-15,Africa,desktop,27
+380,2025-07-17,Europe,mobile,241
+381,2024-11-11,North America,mobile,489
+382,2025-07-24,Europe,mobile,234
+383,2024-11-28,Africa,desktop,472
+384,2024-11-13,Africa,mobile,487
+385,2024-12-30,South America,desktop,440
+386,2025-06-14,North America,mobile,273
+387,2025-01-05,Africa,desktop,434
+388,2026-01-07,Africa,mobile,67
+389,2025-07-10,Europe,desktop,248
+390,2025-04-22,North America,mobile,327
+391,2026-03-05,Oceania,desktop,10
+392,2025-09-29,Oceania,mobile,167
+393,2025-07-19,Europe,tablet,239
+394,2025-11-02,Africa,desktop,133
+395,2024-10-04,North America,mobile,527
+396,2024-12-11,Africa,mobile,459
+397,2024-10-29,South America,desktop,502
+398,2025-09-25,Oceania,mobile,171
+399,2025-10-18,Asia,mobile,148
+400,2025-04-23,North America,mobile,326
+401,2025-05-06,Asia,desktop,313
+402,2025-08-14,Africa,tablet,213
+403,2025-09-09,Africa,desktop,186
+404,2025-04-05,North America,tablet,344
+405,2025-09-12,North America,desktop,184
+406,2024-10-09,South America,mobile,522
+407,2025-06-04,South America,mobile,284
+408,2025-10-03,Asia,mobile,163
+409,2025-12-21,Oceania,mobile,84
+410,2026-02-26,North America,mobile,16
+411,2024-11-24,Asia,desktop,476
+412,2024-10-21,Africa,desktop,510
+413,2025-01-13,Africa,mobile,426
+414,2025-07-02,Africa,desktop,256
+415,2025-08-03,Asia,desktop,224
+416,2025-12-12,Europe,desktop,93
+417,2025-12-02,Asia,desktop,103
+418,2026-02-07,Asia,mobile,35
+419,2025-07-16,Europe,tablet,242
+420,2025-08-18,North America,mobile,209
+421,2024-12-21,North America,mobile,449
+422,2025-11-16,Asia,mobile,119
+423,2025-04-30,Asia,desktop,319
+424,2025-11-18,Asia,mobile,117
+425,2024-11-02,Africa,mobile,498
+426,2025-07-28,North America,mobile,230
+427,2025-12-06,Asia,tablet,99
+428,2025-07-24,South America,mobile,234
+429,2024-12-12,Africa,desktop,458
+430,2025-09-05,South America,desktop,191
+431,2025-12-16,South America,desktop,89
+432,2024-09-28,Africa,mobile,533
+433,2024-12-17,South America,mobile,453
+434,2026-01-06,North America,desktop,67
+435,2025-10-08,Europe,mobile,158
+436,2024-11-29,Africa,desktop,471
+437,2024-10-09,Europe,mobile,522
+438,2024-12-22,South America,mobile,448
+439,2025-08-19,Africa,desktop,207
+440,2024-11-01,Africa,desktop,499
+441,2026-02-16,South America,desktop,27
+442,2024-10-03,North America,mobile,528
+443,2025-03-11,Africa,desktop,369
+444,2025-11-18,Oceania,mobile,117
+445,2025-11-26,North America,mobile,109
+446,2025-07-21,Asia,mobile,237
+447,2026-01-26,Africa,mobile,48
+448,2025-11-27,Africa,mobile,108
+449,2025-09-08,South America,tablet,188
+450,2025-04-06,Europe,mobile,343
+451,2026-01-05,Europe,mobile,69
+452,2025-02-24,Asia,tablet,384
+453,2025-05-28,Europe,tablet,291
+454,2025-12-20,Africa,desktop,85
+455,2026-01-18,North America,mobile,56
+456,2024-12-07,Oceania,mobile,463
+457,2024-11-20,Asia,tablet,480
+458,2026-01-17,Europe,tablet,57
+459,2026-02-18,Oceania,desktop,24
+460,2024-11-02,South America,desktop,498
+461,2025-04-09,Asia,mobile,340
+462,2025-02-04,Africa,desktop,404
+463,2025-03-15,Asia,tablet,365
+464,2025-10-11,Africa,mobile,155
+465,2025-01-06,Oceania,mobile,433
+466,2025-07-17,South America,desktop,241
+467,2026-02-10,Oceania,mobile,33
+468,2026-01-15,North America,mobile,59
+469,2026-02-22,North America,tablet,21
+470,2025-01-21,Africa,desktop,418
+471,2026-02-19,Europe,mobile,24
+472,2025-11-26,Europe,mobile,109
+473,2025-07-28,Europe,desktop,230
+474,2024-12-07,Oceania,desktop,463
+475,2025-08-21,Europe,mobile,206
+476,2025-11-18,North America,mobile,117
+477,2025-03-23,Europe,desktop,357
+478,2025-11-30,South America,mobile,104
+479,2025-01-24,South America,desktop,415
+480,2024-11-25,Africa,mobile,475
+481,2026-02-11,Africa,mobile,32
+482,2026-03-01,North America,desktop,14
+483,2026-01-08,Asia,mobile,66
+484,2025-10-16,South America,mobile,150
+485,2024-10-24,Oceania,desktop,507
+486,2026-01-02,South America,desktop,72
+487,2025-08-05,South America,mobile,222
+488,2024-12-13,South America,mobile,457
+489,2025-11-09,Africa,mobile,126
+490,2026-01-08,Oceania,desktop,66
+491,2025-11-03,Africa,mobile,132
+492,2025-03-08,South America,desktop,372
+493,2026-01-26,North America,mobile,48
+494,2026-01-27,Africa,tablet,47
+495,2025-09-10,South America,desktop,186
+496,2025-10-14,North America,mobile,152
+497,2025-05-28,Oceania,mobile,291
+498,2024-10-03,Oceania,desktop,528
+499,2025-07-04,Africa,mobile,254
+500,2025-03-23,North America,tablet,357
+501,2025-10-18,Europe,tablet,148
+502,2025-03-22,Europe,mobile,358
+503,2025-11-24,Asia,desktop,111
+504,2025-04-26,Africa,tablet,323
+505,2026-02-10,South America,desktop,33
+506,2025-08-02,Asia,mobile,225
+507,2026-01-18,Africa,mobile,56
+508,2024-09-30,Oceania,mobile,531
+509,2025-11-29,Africa,tablet,106
+510,2025-02-14,Africa,mobile,394
+511,2025-03-16,Asia,mobile,364
+512,2025-12-31,Asia,tablet,74
+513,2025-09-08,South America,desktop,188
+514,2025-11-30,Asia,tablet,104
+515,2025-02-08,Europe,desktop,400
+516,2024-10-16,Europe,desktop,515
+517,2026-01-13,Africa,desktop,61
+518,2025-03-14,Africa,desktop,366
+519,2026-01-23,Africa,mobile,51
+520,2025-01-13,Asia,mobile,426
+521,2025-01-25,Africa,mobile,414
+522,2025-10-07,Oceania,desktop,159
+523,2024-10-30,Africa,mobile,501
+524,2024-09-22,Africa,mobile,539
+525,2026-01-02,North America,tablet,72
+526,2026-02-20,North America,mobile,23
+527,2024-10-20,Asia,desktop,511
+528,2024-12-05,Oceania,mobile,465
+529,2025-04-01,Asia,desktop,348
+530,2025-11-04,Africa,tablet,131
+531,2026-01-03,Africa,tablet,71
+532,2025-01-26,Africa,mobile,413
+533,2026-02-28,South America,desktop,15
+534,2026-02-17,Europe,desktop,26
+535,2025-01-10,Asia,desktop,429
+536,2025-08-26,Oceania,mobile,200
+537,2024-11-03,Asia,mobile,497
+538,2025-01-02,Oceania,tablet,437
+539,2024-10-27,Asia,mobile,504
+540,2025-01-11,Asia,desktop,428
+541,2024-10-16,North America,mobile,515
+542,2025-11-14,South America,desktop,121
+543,2024-11-14,North America,desktop,486
+544,2025-09-30,Asia,mobile,166
+545,2026-02-12,Africa,desktop,31
+546,2025-03-23,Asia,tablet,357
+547,2026-02-22,Europe,desktop,21
+548,2025-09-19,Oceania,desktop,177
+549,2025-07-22,Africa,tablet,236
+550,2025-03-29,Europe,mobile,351
+551,2024-10-08,Asia,mobile,523
+552,2026-01-13,North America,mobile,60
+553,2025-11-21,Asia,mobile,114
+554,2024-12-15,Africa,mobile,455
+555,2025-05-31,Asia,mobile,288
+556,2025-10-02,South America,mobile,164
+557,2025-03-28,South America,desktop,352
+558,2025-09-25,Europe,mobile,171
+559,2025-11-10,Europe,mobile,125
+560,2025-11-14,North America,mobile,121
+561,2025-05-22,Oceania,desktop,297
+562,2026-01-26,South America,desktop,48
+563,2026-01-29,South America,mobile,45
+564,2024-10-18,Asia,mobile,513
+565,2025-08-21,Europe,mobile,206
+566,2025-10-20,Africa,desktop,146
+567,2024-10-23,South America,mobile,508
+568,2025-04-06,Asia,mobile,343
+569,2025-03-28,Africa,mobile,352
+570,2025-03-16,Asia,tablet,364
+571,2024-12-23,Oceania,mobile,447
+572,2024-12-11,Africa,mobile,459
+573,2025-01-11,South America,mobile,428
+574,2026-02-21,Oceania,tablet,22
+575,2024-11-16,Asia,desktop,484
+576,2025-11-26,South America,tablet,109
+577,2025-10-04,Oceania,mobile,162
+578,2025-07-12,Europe,tablet,246
+579,2025-06-13,South America,mobile,275
+580,2025-07-03,Asia,desktop,255
+581,2026-01-10,Europe,mobile,64
+582,2025-03-15,North America,desktop,365
+583,2026-02-09,Asia,mobile,34
+584,2025-04-04,North America,mobile,345
+585,2026-02-28,Oceania,desktop,15
+586,2025-07-13,North America,mobile,245
+587,2025-12-17,Asia,mobile,88
+588,2026-01-20,Oceania,mobile,54
+589,2025-07-28,South America,desktop,230
+590,2024-09-29,South America,tablet,532
+591,2024-11-24,Asia,mobile,476
+592,2024-11-24,North America,desktop,476
+593,2026-02-20,Asia,mobile,23
+594,2025-04-02,North America,mobile,347
+595,2025-12-07,Africa,mobile,98
+596,2025-06-03,Africa,mobile,285
+597,2025-04-10,South America,mobile,339
+598,2025-12-19,Oceania,mobile,86
+599,2025-03-26,Asia,mobile,354
+600,2025-12-19,Oceania,mobile,86
+601,2025-03-05,North America,desktop,375
+602,2025-03-10,Europe,desktop,370
+603,2024-11-26,South America,mobile,474
+604,2025-05-13,Asia,tablet,306
+605,2025-11-14,Africa,mobile,121
+606,2025-04-06,Oceania,desktop,343
+607,2026-02-16,North America,desktop,27
+608,2024-12-17,Europe,mobile,453
+609,2025-04-08,Oceania,desktop,341
+610,2025-03-10,South America,mobile,370
+611,2025-01-07,Asia,desktop,432
+612,2025-04-24,Europe,tablet,325
+613,2025-10-23,Oceania,mobile,143
+614,2025-05-08,Oceania,mobile,311
+615,2024-10-08,Europe,mobile,523
+616,2026-01-29,Africa,desktop,45
+617,2025-01-15,South America,tablet,424
+618,2024-12-08,Asia,mobile,462
+619,2025-04-04,Africa,mobile,344
+620,2025-12-28,Europe,mobile,76
+621,2025-01-10,North America,mobile,429
+622,2025-04-29,Africa,mobile,320
+623,2025-01-15,South America,desktop,424
+624,2025-07-05,Europe,mobile,253
+625,2025-11-03,Asia,desktop,131
+626,2025-07-07,South America,mobile,251
+627,2025-03-03,Asia,mobile,377
+628,2025-11-23,South America,mobile,112
+629,2026-02-26,Asia,desktop,17
+630,2024-10-21,Europe,mobile,510
+631,2025-08-30,Africa,desktop,197
+632,2024-10-21,South America,desktop,510
+633,2025-01-17,Europe,mobile,422
+634,2026-01-13,Europe,mobile,61
+635,2024-10-21,Europe,mobile,510
+636,2026-02-11,South America,desktop,32
+637,2024-09-24,Africa,mobile,537
+638,2024-12-12,South America,mobile,458
+639,2025-01-12,North America,desktop,427
+640,2026-01-12,Asia,desktop,61
+641,2025-01-03,Africa,tablet,436
+642,2025-06-18,Oceania,mobile,270
+643,2026-02-04,South America,mobile,39
+644,2025-04-04,South America,desktop,345
+645,2025-12-03,Africa,desktop,102
+646,2025-02-07,Africa,mobile,401
+647,2025-10-09,Oceania,mobile,157
+648,2025-04-30,North America,tablet,319
+649,2025-03-06,South America,desktop,374
+650,2026-02-13,Oceania,mobile,30
+651,2024-11-25,Asia,mobile,475
+652,2025-01-08,Asia,mobile,431
+653,2025-09-28,Africa,desktop,168
+654,2025-02-28,Africa,mobile,380
+655,2026-01-23,Europe,mobile,51
+656,2025-11-10,Asia,desktop,125
+657,2024-10-24,North America,mobile,507
+658,2025-06-16,Asia,desktop,272
+659,2025-09-09,South America,mobile,187
+660,2025-02-27,South America,mobile,381
+661,2025-04-08,Oceania,mobile,341
+662,2024-10-18,Europe,desktop,513
+663,2025-09-23,North America,mobile,173
+664,2025-07-15,Asia,mobile,243
+665,2025-04-17,Oceania,desktop,332
+666,2025-06-05,North America,desktop,283
+667,2026-01-24,Europe,mobile,50
+668,2025-02-14,Europe,desktop,393
+669,2025-04-06,Europe,mobile,343
+670,2026-02-25,Oceania,desktop,18
+671,2025-10-22,Africa,mobile,144
+672,2024-10-26,North America,mobile,505
+673,2025-02-19,North America,mobile,388
+674,2025-04-26,Africa,tablet,323
+675,2025-09-18,Asia,tablet,178
+676,2025-09-03,Africa,mobile,193
+677,2025-01-01,North America,mobile,438
+678,2026-03-02,Europe,mobile,13
+679,2025-11-08,Europe,mobile,127
+680,2025-07-27,Asia,mobile,231
+681,2025-02-14,Oceania,desktop,394
+682,2026-03-06,Asia,desktop,9
+683,2025-03-04,Africa,desktop,376
+684,2025-02-04,Europe,mobile,404
+685,2024-12-31,Africa,tablet,439
+686,2025-08-07,Oceania,tablet,220
+687,2025-04-05,South America,tablet,344
+688,2025-07-12,Africa,tablet,246
+689,2026-03-09,Asia,desktop,6
+690,2025-06-02,Europe,mobile,286
+691,2025-10-25,Africa,mobile,141
+692,2025-06-07,North America,mobile,281
+693,2025-04-30,South America,mobile,319
+694,2024-12-07,North America,mobile,463
+695,2025-04-06,Oceania,mobile,343
+696,2025-11-26,Africa,desktop,109
+697,2026-03-01,Asia,mobile,14
+698,2025-04-22,Europe,mobile,327
+699,2025-02-25,Africa,mobile,383
+700,2025-09-02,Asia,mobile,194
+701,2025-04-18,Europe,desktop,331
+702,2024-10-22,South America,desktop,509
+703,2025-08-06,Oceania,mobile,221
+704,2026-02-07,South America,desktop,36
+705,2024-10-18,Europe,desktop,513
+706,2026-01-09,Africa,mobile,65
+707,2024-12-06,Europe,desktop,464
+708,2024-11-20,Africa,mobile,480
+709,2024-11-14,Africa,tablet,486
+710,2025-12-30,Europe,mobile,74
+711,2025-02-02,Oceania,mobile,406
+712,2024-10-26,Africa,mobile,505
+713,2025-04-06,North America,tablet,343
+714,2025-03-09,Asia,desktop,371
+715,2026-03-05,North America,tablet,10
+716,2025-05-27,Africa,mobile,292
+717,2025-03-27,Oceania,mobile,353
+718,2025-06-09,Africa,desktop,279
+719,2024-11-09,Europe,mobile,491
+720,2025-05-15,Oceania,mobile,304
+721,2026-02-07,North America,mobile,35
+722,2026-02-20,North America,mobile,23
+723,2025-01-12,Asia,desktop,427
+724,2024-10-11,South America,mobile,520
+725,2024-11-22,North America,mobile,478
+726,2025-02-08,Asia,mobile,400
+727,2025-09-22,North America,mobile,174
+728,2026-01-30,Europe,mobile,44
+729,2024-10-13,South America,mobile,518
+730,2024-11-29,South America,desktop,471
+731,2025-07-27,Europe,mobile,231
+732,2024-10-11,North America,mobile,520
+733,2025-03-05,North America,mobile,375
+734,2024-11-03,Oceania,mobile,497
+735,2025-06-08,South America,mobile,280
+736,2025-08-30,Asia,desktop,197
+737,2026-01-17,Africa,mobile,57
+738,2025-04-26,Europe,desktop,323
+739,2025-04-08,North America,desktop,341
+740,2025-05-30,North America,mobile,289
+741,2025-04-22,Oceania,desktop,327
+742,2025-04-17,Oceania,mobile,332
+743,2026-03-10,Oceania,mobile,5
+744,2026-01-02,Africa,mobile,72
+745,2025-02-18,Europe,mobile,389
+746,2025-11-22,Africa,desktop,113
+747,2025-06-19,Oceania,mobile,269
+748,2024-11-23,Oceania,desktop,477
+749,2025-03-30,North America,mobile,350
+750,2025-09-17,Europe,mobile,179
+751,2026-03-14,Asia,mobile,1
+752,2026-01-24,Africa,mobile,50
+753,2025-01-29,Europe,tablet,410
+754,2025-05-02,North America,mobile,317
+755,2026-02-28,Oceania,desktop,15
+756,2025-12-15,Africa,desktop,90
+757,2025-11-28,Europe,mobile,107
+758,2025-05-20,South America,mobile,299
+759,2026-01-23,Europe,mobile,51
+760,2025-05-04,South America,tablet,314
+761,2026-01-23,Oceania,tablet,51
+762,2026-02-17,Africa,mobile,25
+763,2025-08-01,Asia,mobile,226
+764,2025-02-04,Africa,mobile,404
+765,2025-04-11,South America,mobile,338
+766,2025-12-15,Europe,mobile,90
+767,2025-10-16,Asia,mobile,150
+768,2025-07-23,Africa,mobile,235
+769,2024-12-19,North America,mobile,451
+770,2026-02-17,Africa,desktop,26
+771,2025-09-18,Asia,tablet,177
+772,2025-05-07,Oceania,tablet,312
+773,2025-04-08,Europe,desktop,340
+774,2024-10-05,Oceania,mobile,526
+775,2025-12-18,North America,mobile,87
+776,2025-01-29,Europe,desktop,410
+777,2024-12-01,Oceania,desktop,469
+778,2025-06-23,Africa,mobile,265
+779,2024-10-17,North America,mobile,514
+780,2025-07-12,Africa,mobile,246
+781,2025-12-24,Africa,desktop,81
+782,2025-04-27,Asia,mobile,322
+783,2026-01-06,Africa,tablet,68
+784,2025-11-29,South America,mobile,105
+785,2025-03-25,North America,mobile,355
+786,2025-09-11,Europe,desktop,185
+787,2025-08-18,Africa,desktop,209
+788,2025-08-02,Africa,mobile,225
+789,2025-12-02,Asia,mobile,103
+790,2024-11-30,Asia,mobile,470
+791,2026-01-18,Oceania,mobile,56
+792,2026-01-05,Africa,mobile,69
+793,2025-07-18,Asia,tablet,240
+794,2025-09-25,Africa,desktop,171
+795,2026-02-07,South America,mobile,35
+796,2025-11-05,Asia,mobile,130
+797,2025-12-02,North America,desktop,103
+798,2025-08-27,North America,mobile,200
+799,2026-03-05,Oceania,tablet,10
+800,2026-02-15,North America,desktop,28
+801,2025-03-25,Asia,desktop,355
+802,2024-10-19,North America,mobile,512
+803,2025-10-27,North America,mobile,139
+804,2025-01-22,Oceania,mobile,417
+805,2024-11-03,Africa,mobile,497
+806,2025-09-05,South America,desktop,191
+807,2024-11-20,South America,mobile,480
+808,2026-01-03,Asia,desktop,71
+809,2025-07-18,Oceania,mobile,240
+810,2025-09-29,North America,mobile,167
+811,2024-09-22,Oceania,desktop,539
+812,2024-11-30,Asia,tablet,470
+813,2025-03-16,Africa,mobile,364
+814,2025-04-21,South America,tablet,328
+815,2025-01-06,Africa,desktop,433
+816,2025-07-16,South America,mobile,242
+817,2026-02-12,Africa,mobile,31
+818,2025-08-08,Africa,tablet,219
+819,2025-08-23,South America,mobile,204
+820,2025-10-06,Europe,mobile,160
+821,2024-12-01,Europe,tablet,469
+822,2024-09-24,Africa,mobile,537
+823,2025-11-17,Oceania,desktop,118
+824,2025-05-30,Europe,desktop,289
+825,2026-01-22,Africa,desktop,52
+826,2025-05-07,Africa,mobile,312
+827,2025-10-16,Africa,desktop,150
+828,2026-01-05,Asia,mobile,69
+829,2026-03-12,North America,desktop,3
+830,2026-01-04,Europe,mobile,70
+831,2025-05-27,South America,desktop,292
+832,2025-08-19,Oceania,mobile,208
+833,2026-01-19,Africa,mobile,55
+834,2025-06-09,Europe,mobile,279
+835,2025-04-02,North America,tablet,347
+836,2025-12-07,South America,mobile,98
+837,2025-12-05,North America,mobile,100
+838,2025-03-21,North America,mobile,359
+839,2026-01-12,Africa,mobile,61
+840,2025-08-28,Asia,mobile,199
+841,2026-01-08,Africa,desktop,66
+842,2025-06-14,Africa,mobile,274
+843,2025-12-15,Oceania,mobile,90
+844,2025-01-01,South America,mobile,438
+845,2025-05-25,Oceania,desktop,294
+846,2025-12-15,Europe,desktop,90
+847,2025-03-15,Europe,mobile,365
+848,2025-04-15,North America,desktop,334
+849,2024-12-30,Oceania,mobile,440
+850,2025-09-13,Oceania,mobile,183
+851,2025-05-23,Europe,desktop,296
+852,2024-09-25,Europe,mobile,536
+853,2026-01-02,Africa,mobile,72
+854,2025-01-15,North America,desktop,424
+855,2025-12-01,North America,mobile,104
+856,2024-10-20,Asia,mobile,511
+857,2025-02-20,North America,desktop,387
+858,2024-10-25,Asia,desktop,506
+859,2025-02-21,Oceania,mobile,387
+860,2026-01-29,Europe,mobile,45
+861,2025-10-02,North America,desktop,164
+862,2025-05-11,Europe,desktop,308
+863,2025-03-05,Oceania,desktop,375
+864,2026-02-25,Oceania,mobile,18
+865,2025-05-14,Africa,mobile,305
+866,2024-10-29,Asia,tablet,502
+867,2025-09-09,North America,mobile,187
+868,2025-12-31,Oceania,mobile,74
+869,2025-06-14,South America,mobile,274
+870,2024-12-17,South America,desktop,453
+871,2024-09-27,South America,mobile,534
+872,2025-05-04,Oceania,tablet,315
+873,2025-12-20,North America,mobile,85
+874,2024-10-12,Asia,mobile,519
+875,2024-11-17,South America,mobile,483
+876,2026-02-08,South America,mobile,35
+877,2025-06-01,Europe,desktop,287
+878,2025-07-10,North America,desktop,248
+879,2025-11-03,South America,mobile,132
+880,2025-03-25,Oceania,mobile,355
+881,2025-03-22,North America,desktop,358
+882,2025-07-21,Africa,mobile,237
+883,2024-10-15,Africa,tablet,516
+884,2025-03-10,Europe,tablet,370
+885,2025-11-23,Africa,mobile,112
+886,2025-01-22,Europe,desktop,417
+887,2025-04-08,South America,tablet,341
+888,2026-02-06,Europe,mobile,37
+889,2025-10-25,Oceania,desktop,141
+890,2025-06-23,Africa,mobile,265
+891,2025-10-27,North America,mobile,139
+892,2024-09-24,North America,mobile,537
+893,2025-07-04,Asia,desktop,254
+894,2025-10-10,Oceania,mobile,156
+895,2026-02-21,Africa,desktop,21
+896,2026-02-21,Oceania,desktop,22
+897,2026-03-14,Oceania,mobile,1
+898,2025-01-11,North America,desktop,428
+899,2025-08-15,North America,mobile,212
+900,2024-12-06,Oceania,mobile,464
+901,2026-02-27,Asia,desktop,16
+902,2025-04-24,North America,mobile,325
+903,2024-10-08,Europe,mobile,523
+904,2026-03-11,Europe,desktop,4
+905,2025-05-29,Europe,desktop,289
+906,2024-12-14,Asia,mobile,456
+907,2025-12-28,Oceania,mobile,77
+908,2025-12-11,Oceania,mobile,94
+909,2025-03-28,South America,mobile,352
+910,2025-07-01,Oceania,mobile,257
+911,2025-04-14,North America,desktop,335
+912,2025-08-19,Oceania,mobile,208
+913,2024-12-21,Asia,mobile,449
+914,2025-11-25,South America,mobile,110
+915,2025-09-03,Oceania,desktop,193
+916,2024-09-30,Europe,mobile,531
+917,2025-06-24,South America,mobile,264
+918,2025-11-18,Africa,mobile,117
+919,2024-09-24,Europe,mobile,537
+920,2025-07-30,South America,desktop,228
+921,2025-02-22,Africa,desktop,386
+922,2025-05-10,Asia,mobile,309
+923,2025-01-31,Europe,desktop,408
+924,2025-12-14,Europe,desktop,91
+925,2025-11-20,Asia,desktop,115
+926,2025-02-21,Africa,desktop,387
+927,2025-03-25,Africa,desktop,355
+928,2026-02-12,Europe,mobile,31
+929,2025-08-19,South America,desktop,208
+930,2024-12-23,Africa,desktop,447
+931,2024-12-08,Africa,mobile,462
+932,2025-11-11,Oceania,desktop,124
+933,2025-08-15,Europe,desktop,212
+934,2025-12-19,South America,mobile,86
+935,2025-08-30,Oceania,mobile,197
+936,2025-10-05,North America,desktop,161
+937,2025-04-03,Europe,mobile,346
+938,2024-10-21,South America,desktop,510
+939,2025-07-26,Africa,tablet,232
+940,2024-11-15,Europe,desktop,485
+941,2026-02-17,South America,desktop,26
+942,2025-12-10,Asia,tablet,95
+943,2024-11-13,Oceania,mobile,487
+944,2025-12-21,Oceania,mobile,84
+945,2026-01-02,North America,mobile,71
+946,2025-10-16,Africa,mobile,150
+947,2025-08-08,Oceania,mobile,219
+948,2025-12-22,North America,mobile,83
+949,2025-12-10,North America,mobile,95
+950,2024-12-03,Asia,mobile,467
+951,2025-04-07,Europe,mobile,342
+952,2026-02-26,Asia,mobile,17
+953,2024-11-22,Oceania,desktop,478
+954,2025-09-17,Oceania,desktop,179
+955,2025-11-14,North America,mobile,121
+956,2025-10-29,Asia,mobile,137
+957,2026-01-14,Asia,mobile,60
+958,2025-04-14,Oceania,desktop,335
+959,2024-11-08,North America,mobile,492
+960,2025-03-02,Africa,mobile,378
+961,2024-10-23,Asia,tablet,508
+962,2026-01-15,Asia,mobile,59
+963,2026-03-01,South America,tablet,14
+964,2025-10-17,Africa,mobile,149
+965,2025-02-28,North America,desktop,380
+966,2026-03-11,Europe,mobile,4
+967,2026-01-07,South America,mobile,67
+968,2025-11-25,Oceania,desktop,110
+969,2025-09-17,Oceania,mobile,178
+970,2024-12-14,Oceania,desktop,456
+971,2026-02-16,Europe,desktop,27
+972,2025-02-05,Asia,desktop,403
+973,2025-11-29,Africa,mobile,106
+974,2024-12-19,North America,mobile,451
+975,2025-10-02,Africa,mobile,164
+976,2025-04-26,Oceania,mobile,323
+977,2025-02-03,North America,tablet,405
+978,2024-11-02,Africa,mobile,498
+979,2025-11-01,Africa,desktop,133
+980,2025-02-01,South America,desktop,407
+981,2025-04-06,South America,mobile,343
+982,2025-05-30,Africa,desktop,289
+983,2026-02-04,Oceania,desktop,39
+984,2025-03-31,North America,mobile,348
+985,2025-07-03,Europe,mobile,255
+986,2025-04-24,South America,desktop,325
+987,2025-08-16,Africa,desktop,211
+988,2025-12-14,South America,desktop,91
+989,2025-06-26,Oceania,mobile,262
+990,2026-03-08,Asia,desktop,7
+991,2025-01-23,Africa,tablet,416
+992,2025-07-11,Oceania,mobile,247
+993,2024-12-06,Oceania,mobile,464
+994,2024-12-20,North America,desktop,450
+995,2025-11-28,Oceania,mobile,107
+996,2026-01-31,Africa,mobile,42
+997,2024-11-24,Oceania,desktop,476
+998,2026-03-11,Oceania,desktop,4
+999,2025-09-17,Africa,mobile,179
+1000,2024-11-09,Asia,mobile,491
+1001,2025-05-16,Asia,mobile,303
+1002,2025-11-21,Europe,desktop,114
+1003,2025-12-20,Oceania,mobile,85
+1004,2025-08-30,Europe,desktop,197
+1005,2025-02-27,Oceania,tablet,380
+1006,2024-12-17,Europe,desktop,453
+1007,2025-05-17,Asia,mobile,302
+1008,2025-02-25,Europe,mobile,383
+1009,2025-05-26,South America,mobile,293
+1010,2025-12-16,Europe,mobile,89
+1011,2025-10-15,Africa,desktop,151
+1012,2025-11-12,Europe,mobile,123
+1013,2024-10-22,Asia,mobile,509
+1014,2026-02-21,South America,mobile,22
+1015,2025-04-09,Oceania,mobile,340
+1016,2025-04-19,Oceania,mobile,330
+1017,2025-03-23,Europe,mobile,357
+1018,2026-01-06,North America,mobile,67
+1019,2026-01-13,Asia,mobile,60
+1020,2025-10-18,North America,desktop,148
+1021,2025-08-24,Oceania,tablet,203
+1022,2024-10-18,South America,desktop,513
+1023,2025-06-05,Asia,tablet,283
+1024,2025-01-08,Europe,tablet,431
+1025,2026-01-04,Europe,desktop,69
+1026,2026-02-15,North America,tablet,28
+1027,2024-12-21,Asia,desktop,449
+1028,2025-08-19,Oceania,mobile,208
+1029,2024-11-19,North America,desktop,481
+1030,2026-01-31,South America,mobile,43
+1031,2026-02-22,Europe,mobile,21
+1032,2025-05-14,North America,desktop,305
+1033,2025-06-08,Europe,tablet,280
+1034,2025-09-25,Oceania,mobile,171
+1035,2025-05-28,South America,desktop,291
+1036,2025-05-04,South America,tablet,315
+1037,2024-10-10,North America,desktop,521
+1038,2025-06-23,Europe,desktop,265
+1039,2025-06-12,North America,desktop,276
+1040,2024-11-15,Asia,tablet,485
+1041,2025-09-03,Oceania,mobile,193
+1042,2025-08-29,Oceania,desktop,198
+1043,2024-11-17,North America,mobile,483
+1044,2025-05-15,Asia,mobile,304
+1045,2024-12-24,Africa,desktop,446
+1046,2025-12-21,South America,mobile,84
+1047,2025-07-09,South America,mobile,249
+1048,2025-09-16,South America,desktop,180
+1049,2025-12-03,Africa,mobile,102
+1050,2025-06-04,North America,mobile,284
+1051,2025-12-18,South America,mobile,87
+1052,2025-02-04,Oceania,desktop,404
+1053,2025-06-14,Europe,mobile,273
+1054,2025-01-27,Europe,tablet,412
+1055,2025-09-12,Africa,tablet,184
+1056,2024-12-11,Asia,mobile,459
+1057,2024-11-09,North America,mobile,491
+1058,2025-05-28,Europe,tablet,291
+1059,2025-11-18,Africa,tablet,117
+1060,2025-12-05,Africa,mobile,100
+1061,2025-08-19,Europe,desktop,208
+1062,2025-09-08,Africa,tablet,188
+1063,2025-02-18,Europe,mobile,390
+1064,2025-11-14,North America,mobile,121
+1065,2025-10-17,North America,desktop,149
+1066,2025-05-29,Africa,desktop,290
+1067,2024-12-12,Oceania,mobile,458
+1068,2025-01-22,Africa,mobile,417
+1069,2025-08-03,Africa,mobile,224
+1070,2025-12-23,Africa,mobile,82
+1071,2025-02-11,Asia,mobile,397
+1072,2025-03-26,North America,tablet,354
+1073,2024-09-25,North America,desktop,536
+1074,2025-11-17,South America,mobile,118
+1075,2025-08-03,Africa,desktop,224
+1076,2025-11-08,South America,mobile,127
+1077,2025-03-20,Oceania,desktop,360
+1078,2025-05-17,Europe,mobile,302
+1079,2024-12-20,Europe,mobile,450
+1080,2025-08-15,South America,tablet,212
+1081,2025-03-01,Africa,mobile,379
+1082,2025-07-22,South America,mobile,236
+1083,2025-05-17,North America,mobile,301
+1084,2025-08-14,South America,mobile,213
+1085,2025-05-31,Africa,mobile,287
+1086,2026-03-06,North America,mobile,9
+1087,2025-11-05,Oceania,desktop,130
+1088,2025-08-21,North America,desktop,206
+1089,2025-08-12,Asia,mobile,215
+1090,2025-04-09,Asia,desktop,340
+1091,2025-06-07,Asia,desktop,281
+1092,2025-08-24,Asia,mobile,203
+1093,2025-11-23,South America,mobile,112
+1094,2026-01-16,Africa,tablet,58
+1095,2024-12-11,Oceania,mobile,459
+1096,2025-10-11,North America,desktop,155
+1097,2026-03-13,Europe,desktop,2
+1098,2025-07-21,Europe,mobile,237
+1099,2025-12-30,South America,mobile,74
+1100,2025-01-18,Oceania,desktop,421
+1101,2024-12-23,South America,desktop,447
+1102,2026-01-12,Oceania,mobile,61
+1103,2025-01-13,Africa,mobile,426
+1104,2026-01-18,Africa,tablet,56
+1105,2025-01-06,Europe,mobile,433
+1106,2024-12-05,Europe,desktop,465
+1107,2025-09-02,Africa,desktop,194
+1108,2025-08-26,South America,tablet,201
+1109,2025-12-25,Europe,desktop,80
+1110,2025-02-06,Asia,mobile,402
+1111,2025-08-07,North America,mobile,220
+1112,2026-02-09,South America,mobile,34
+1113,2025-11-15,South America,mobile,120
+1114,2025-02-09,Asia,mobile,399
+1115,2025-04-14,South America,mobile,335
+1116,2025-08-17,Europe,tablet,210
+1117,2025-05-08,South America,mobile,311
+1118,2026-01-04,Asia,mobile,70
+1119,2025-05-31,Africa,mobile,288
+1120,2025-04-21,South America,desktop,328
+1121,2026-01-09,Europe,desktop,65
+1122,2025-07-27,North America,mobile,231
+1123,2025-04-24,South America,desktop,325
+1124,2025-02-18,Asia,desktop,390
+1125,2025-01-04,South America,desktop,435
+1126,2025-05-21,South America,mobile,298
+1127,2025-12-07,South America,desktop,98
+1128,2025-08-26,Oceania,desktop,201
+1129,2025-10-21,South America,desktop,145
+1130,2025-05-20,Africa,mobile,298
+1131,2025-04-30,Africa,mobile,319
+1132,2025-08-12,Africa,desktop,215
+1133,2025-11-24,Africa,desktop,111
+1134,2025-01-29,South America,mobile,410
+1135,2026-02-24,Europe,mobile,19
+1136,2025-03-08,Africa,tablet,372
+1137,2024-10-12,Asia,desktop,519
+1138,2025-10-16,Oceania,mobile,150
+1139,2025-03-02,Africa,mobile,378
+1140,2026-01-30,Africa,mobile,44
+1141,2025-09-02,Oceania,mobile,194
+1142,2025-05-29,South America,mobile,290
+1143,2024-12-26,Oceania,desktop,444
+1144,2025-09-16,Europe,mobile,180
+1145,2025-02-27,Asia,mobile,381
+1146,2025-05-31,North America,mobile,288
+1147,2025-01-25,Asia,desktop,414
+1148,2025-06-07,Africa,tablet,281
+1149,2025-06-04,Europe,desktop,284
+1150,2025-10-07,Oceania,desktop,159
+1151,2025-06-02,Africa,mobile,285
+1152,2025-12-01,South America,mobile,103
+1153,2024-12-18,South America,mobile,452
+1154,2025-05-07,Africa,tablet,312
+1155,2026-02-22,Europe,mobile,21
+1156,2025-09-06,North America,tablet,190
+1157,2024-10-20,Europe,desktop,511
+1158,2025-11-18,Oceania,mobile,117
+1159,2025-06-29,North America,desktop,259
+1160,2025-02-01,Africa,mobile,407
+1161,2026-01-04,Europe,mobile,70
+1162,2024-12-02,Africa,mobile,468
+1163,2025-11-04,Asia,mobile,131
+1164,2025-01-28,Asia,mobile,411
+1165,2025-12-04,Oceania,desktop,101
+1166,2025-08-05,Europe,mobile,222
+1167,2024-11-14,Europe,desktop,486
+1168,2024-10-06,Asia,mobile,525
+1169,2024-12-11,Oceania,mobile,459
+1170,2025-11-15,Europe,desktop,120
+1171,2024-11-10,Asia,tablet,490
+1172,2025-09-27,Africa,desktop,169
+1173,2025-04-05,Asia,desktop,343
+1174,2025-12-06,South America,mobile,99
+1175,2025-04-04,Europe,desktop,345
+1176,2025-05-28,Africa,desktop,291
+1177,2025-11-04,Asia,mobile,131
+1178,2026-02-01,Oceania,tablet,42
+1179,2024-12-16,North America,mobile,454
+1180,2025-01-24,North America,desktop,415
+1181,2025-09-10,Africa,mobile,186
+1182,2025-08-01,South America,desktop,226
+1183,2025-03-07,South America,desktop,373
+1184,2026-01-09,North America,mobile,64
+1185,2025-10-15,Europe,desktop,151
+1186,2025-08-09,South America,mobile,218
+1187,2026-02-10,North America,tablet,33
+1188,2025-12-07,Africa,mobile,98
+1189,2025-12-06,North America,tablet,99
+1190,2025-06-06,Europe,desktop,282
+1191,2024-12-14,North America,tablet,456
+1192,2025-05-13,Asia,desktop,306
+1193,2024-10-24,South America,mobile,507
+1194,2024-11-23,Asia,mobile,477
+1195,2025-02-14,Asia,tablet,394
+1196,2025-09-10,Oceania,desktop,186
+1197,2025-09-08,Oceania,mobile,188
+1198,2026-01-24,Oceania,mobile,50
+1199,2026-03-02,Africa,desktop,13
+1200,2025-03-16,Africa,mobile,364
+1201,2025-03-21,Oceania,desktop,359
+1202,2025-03-15,Europe,mobile,365
+1203,2025-11-07,North America,mobile,128
+1204,2025-01-03,South America,mobile,436
+1205,2025-02-20,Africa,mobile,388
+1206,2024-11-06,South America,desktop,494
+1207,2025-09-20,Africa,desktop,176
+1208,2026-01-13,Europe,desktop,61
+1209,2024-11-23,North America,tablet,477
+1210,2025-09-25,Europe,mobile,171
+1211,2025-02-27,Europe,mobile,381
+1212,2025-09-06,South America,desktop,190
+1213,2025-12-23,Asia,mobile,82
+1214,2024-10-01,Asia,tablet,530
+1215,2025-12-02,Oceania,mobile,103
+1216,2026-01-16,Europe,mobile,58
+1217,2024-12-04,Europe,mobile,466
+1218,2026-02-22,Africa,mobile,21
+1219,2025-02-05,Oceania,mobile,403
+1220,2025-09-15,Europe,tablet,181
+1221,2025-12-05,Europe,desktop,100
+1222,2025-11-08,Oceania,desktop,127
+1223,2025-05-29,Africa,tablet,290
+1224,2024-11-07,Asia,desktop,493
+1225,2024-09-22,Asia,mobile,539
+1226,2024-12-08,North America,desktop,462
+1227,2025-08-31,North America,mobile,196
+1228,2025-06-14,Asia,desktop,274
+1229,2025-09-21,South America,desktop,175
+1230,2025-08-17,South America,mobile,210
+1231,2024-09-26,North America,mobile,535
+1232,2025-11-30,Europe,mobile,105
+1233,2026-03-05,Oceania,desktop,10
+1234,2024-12-18,Africa,mobile,452
+1235,2025-03-01,Africa,mobile,379
+1236,2026-03-09,North America,mobile,6
+1237,2024-12-20,Asia,desktop,450
+1238,2024-12-03,Africa,mobile,467
+1239,2024-12-24,Oceania,desktop,446
+1240,2025-01-03,Asia,desktop,436
+1241,2025-09-21,Asia,mobile,175
+1242,2025-04-29,Africa,mobile,320
+1243,2025-03-27,North America,desktop,353
+1244,2025-09-03,Oceania,desktop,193
+1245,2024-12-15,North America,mobile,455
+1246,2025-10-15,South America,mobile,151
+1247,2025-03-18,Africa,desktop,362
+1248,2025-12-08,Europe,mobile,97
+1249,2024-12-11,South America,desktop,459
+1250,2025-11-22,Africa,tablet,113
+1251,2025-04-26,South America,desktop,323
+1252,2025-07-14,Oceania,mobile,244
+1253,2025-04-16,Europe,desktop,333
+1254,2025-11-18,Africa,desktop,117
+1255,2025-02-23,North America,mobile,385
+1256,2025-08-13,South America,mobile,214
+1257,2024-11-26,Africa,desktop,474
+1258,2025-06-30,Europe,desktop,258
+1259,2026-02-17,Africa,mobile,26
+1260,2025-09-16,North America,desktop,179
+1261,2026-01-17,Africa,mobile,57
+1262,2025-01-06,Oceania,mobile,433
+1263,2025-08-30,Asia,mobile,197
+1264,2026-03-10,Europe,mobile,5
+1265,2024-11-10,Asia,mobile,490
+1266,2025-10-31,South America,desktop,135
+1267,2025-11-18,Europe,mobile,117
+1268,2026-03-09,Asia,desktop,6
+1269,2025-06-08,North America,desktop,280
+1270,2025-03-31,North America,desktop,349
+1271,2025-12-25,North America,desktop,80
+1272,2025-08-23,Africa,mobile,203
+1273,2025-12-05,Asia,mobile,100
+1274,2024-11-26,Oceania,desktop,474
+1275,2025-02-05,Africa,mobile,403
+1276,2026-02-24,North America,desktop,19
+1277,2024-10-17,North America,desktop,514
+1278,2024-09-28,Europe,mobile,533
+1279,2025-01-21,Europe,mobile,418
+1280,2025-11-09,Oceania,mobile,126
+1281,2026-01-05,South America,desktop,68
+1282,2025-11-12,South America,tablet,123
+1283,2025-10-29,Europe,desktop,137
+1284,2025-05-21,North America,desktop,298
+1285,2025-11-06,South America,tablet,129
+1286,2025-07-17,Oceania,mobile,241
+1287,2025-03-18,Europe,mobile,362
+1288,2025-04-23,North America,mobile,326
+1289,2025-06-05,Asia,mobile,283
+1290,2025-01-09,Africa,tablet,430
+1291,2025-03-03,Europe,desktop,377
+1292,2025-06-20,Africa,mobile,268
+1293,2025-08-10,Europe,mobile,217
+1294,2025-07-05,North America,desktop,253
+1295,2026-01-19,Asia,mobile,55
+1296,2025-11-09,North America,desktop,126
+1297,2024-10-16,Africa,mobile,515
+1298,2025-11-24,Asia,mobile,111
+1299,2025-05-02,Asia,tablet,317
+1300,2026-01-29,South America,mobile,44
+1301,2025-05-05,Europe,desktop,314
+1302,2025-07-16,South America,desktop,242
+1303,2026-01-10,South America,mobile,64
+1304,2025-05-02,Africa,mobile,317
+1305,2025-04-25,Oceania,mobile,324
+1306,2025-06-23,Asia,tablet,265
+1307,2026-02-17,Oceania,desktop,26
+1308,2026-02-01,South America,desktop,42
+1309,2026-03-08,Africa,mobile,7
+1310,2026-01-25,Africa,mobile,49
+1311,2025-08-01,Oceania,mobile,226
+1312,2025-04-03,Asia,mobile,346
+1313,2025-08-23,Asia,mobile,204
+1314,2026-01-30,Oceania,desktop,44
+1315,2025-04-28,Asia,mobile,321
+1316,2025-03-25,Oceania,desktop,355
+1317,2024-12-12,Europe,mobile,458
+1318,2025-05-09,North America,desktop,310
+1319,2025-03-22,South America,desktop,358
+1320,2024-10-30,Oceania,desktop,501
+1321,2025-02-21,North America,desktop,387
+1322,2025-11-28,Africa,desktop,106
+1323,2025-09-29,North America,mobile,167
+1324,2026-02-02,Africa,desktop,41
+1325,2024-11-05,Africa,mobile,495
+1326,2024-09-29,Oceania,mobile,532
+1327,2026-01-09,South America,mobile,64
+1328,2025-09-27,Oceania,mobile,169
+1329,2025-02-21,Oceania,desktop,386
+1330,2024-11-14,Africa,desktop,486
+1331,2025-02-25,Asia,desktop,383
+1332,2025-05-28,Africa,mobile,291
+1333,2025-06-17,Asia,mobile,271
+1334,2025-01-20,Asia,mobile,419
+1335,2025-01-07,Europe,mobile,432
+1336,2026-01-14,Europe,mobile,60
+1337,2024-10-18,Africa,mobile,513
+1338,2025-11-20,South America,mobile,115
+1339,2025-11-04,South America,mobile,131
+1340,2024-10-01,Oceania,mobile,530
+1341,2026-02-20,South America,mobile,23
+1342,2025-11-18,North America,desktop,117
+1343,2025-02-10,North America,mobile,398
+1344,2026-01-27,South America,desktop,47
+1345,2025-05-04,South America,mobile,315
+1346,2025-07-17,Europe,desktop,241
+1347,2025-01-13,Europe,mobile,426
+1348,2025-08-28,Oceania,tablet,199
+1349,2026-01-30,Asia,mobile,43
+1350,2026-02-16,North America,desktop,27
+1351,2025-10-14,Europe,mobile,152
+1352,2025-06-09,Asia,desktop,279
+1353,2026-01-11,North America,mobile,63
+1354,2025-06-19,North America,desktop,269
+1355,2025-04-19,North America,mobile,330
+1356,2026-01-13,Africa,mobile,61
+1357,2025-02-10,North America,mobile,398
+1358,2025-03-12,South America,mobile,368
+1359,2025-01-16,Oceania,desktop,423
+1360,2026-02-06,South America,mobile,37
+1361,2025-06-03,South America,desktop,285
+1362,2025-08-22,South America,mobile,205
+1363,2025-10-28,North America,tablet,137
+1364,2025-01-04,Asia,desktop,435
+1365,2025-12-10,Asia,desktop,95
+1366,2025-06-28,Asia,desktop,260
+1367,2025-05-01,North America,desktop,317
+1368,2024-09-26,North America,mobile,535
+1369,2025-10-06,North America,mobile,160
+1370,2026-02-05,Africa,mobile,38
+1371,2025-05-09,North America,mobile,310
+1372,2025-03-19,Africa,mobile,361
+1373,2026-01-10,Europe,mobile,64
+1374,2025-10-28,South America,desktop,138
+1375,2025-06-17,Europe,mobile,271
+1376,2025-02-18,Europe,desktop,390
+1377,2024-10-16,Asia,mobile,515
+1378,2025-04-22,North America,tablet,327
+1379,2026-01-07,North America,desktop,66
+1380,2025-01-12,Asia,tablet,427
+1381,2025-12-15,Asia,desktop,90
+1382,2024-10-08,Africa,tablet,523
+1383,2026-01-03,Asia,mobile,71
+1384,2025-08-02,Africa,desktop,225
+1385,2024-12-11,Asia,mobile,459
+1386,2026-02-26,Africa,mobile,17
+1387,2025-02-19,North America,desktop,389
+1388,2025-12-05,South America,mobile,100
+1389,2024-10-22,Europe,tablet,509
+1390,2025-10-30,Africa,desktop,136
+1391,2025-02-04,Europe,desktop,404
+1392,2025-10-21,North America,mobile,145
+1393,2024-11-25,Asia,tablet,475
+1394,2024-09-27,Europe,desktop,534
+1395,2025-07-25,Oceania,desktop,233
+1396,2025-09-06,South America,mobile,190
+1397,2025-02-24,Oceania,desktop,384
+1398,2026-03-08,South America,desktop,7
+1399,2024-12-06,Asia,desktop,464
+1400,2025-09-09,Oceania,tablet,187
+1401,2025-10-05,South America,desktop,161
+1402,2025-09-17,Africa,desktop,179
+1403,2025-06-15,Europe,mobile,273
+1404,2026-01-04,Africa,mobile,69
+1405,2025-11-16,Oceania,mobile,119
+1406,2024-10-28,Africa,mobile,503
+1407,2025-02-27,South America,mobile,381
+1408,2025-06-07,Africa,mobile,281
+1409,2024-09-26,Africa,mobile,535
+1410,2025-04-01,South America,mobile,347
+1411,2024-10-26,Europe,mobile,505
+1412,2025-05-08,Europe,mobile,311
+1413,2026-01-13,Africa,mobile,60
+1414,2025-11-30,Asia,mobile,105
+1415,2024-10-17,South America,mobile,514
+1416,2026-01-03,Oceania,mobile,71
+1417,2025-03-17,Oceania,desktop,363
+1418,2025-09-09,Oceania,tablet,187
+1419,2025-02-14,Europe,desktop,394
+1420,2026-03-05,Europe,desktop,10
+1421,2025-06-03,Asia,mobile,285
+1422,2026-02-04,Europe,mobile,39
+1423,2025-08-07,North America,mobile,220
+1424,2024-11-21,Oceania,desktop,479
+1425,2025-02-26,Africa,mobile,381
+1426,2024-10-05,Africa,mobile,526
+1427,2025-03-14,North America,mobile,366
+1428,2025-01-19,Europe,mobile,420
+1429,2025-05-14,Oceania,mobile,305
+1430,2024-11-30,North America,mobile,470
+1431,2024-10-11,Oceania,mobile,520
+1432,2025-03-28,South America,desktop,352
+1433,2025-10-29,Europe,mobile,137
+1434,2024-12-07,South America,desktop,463
+1435,2024-11-19,Oceania,desktop,481
+1436,2026-02-23,South America,mobile,20
+1437,2025-09-29,Asia,desktop,167
+1438,2024-09-28,South America,mobile,533
+1439,2025-05-19,South America,desktop,300
+1440,2024-11-30,Europe,mobile,470
+1441,2025-01-23,South America,mobile,416
+1442,2024-12-14,Europe,mobile,456
+1443,2025-02-12,Asia,mobile,396
+1444,2025-03-11,Africa,desktop,369
+1445,2026-02-06,Europe,mobile,37
+1446,2025-07-14,Oceania,desktop,244
+1447,2025-01-27,Oceania,desktop,412
+1448,2025-10-26,Europe,mobile,140
+1449,2025-12-05,Europe,mobile,99
+1450,2025-12-11,Asia,desktop,94
+1451,2025-10-07,South America,mobile,159
+1452,2025-01-19,Europe,mobile,420
+1453,2025-05-04,Africa,mobile,315
+1454,2025-07-15,North America,mobile,243
+1455,2025-02-25,Africa,desktop,383
+1456,2026-01-09,South America,mobile,64
+1457,2025-12-01,South America,tablet,104
+1458,2025-11-01,Asia,mobile,134
+1459,2025-01-26,Oceania,mobile,413
+1460,2025-04-08,Oceania,desktop,341
+1461,2026-02-08,Oceania,tablet,35
+1462,2025-02-19,Oceania,mobile,389
+1463,2026-03-13,Asia,mobile,2
+1464,2025-12-28,Europe,desktop,77
+1465,2024-10-23,Asia,tablet,508
+1466,2025-11-04,Oceania,mobile,131
+1467,2024-10-30,Oceania,desktop,501
+1468,2026-02-01,Europe,mobile,42
+1469,2026-01-01,Europe,mobile,73
+1470,2024-11-24,South America,mobile,476
+1471,2025-01-07,Oceania,desktop,432
+1472,2026-03-08,South America,mobile,7
+1473,2025-02-24,Africa,mobile,384
+1474,2025-09-03,Africa,mobile,193
+1475,2025-06-21,South America,mobile,267
+1476,2024-10-26,Oceania,desktop,505
+1477,2025-12-29,Europe,desktop,76
+1478,2025-04-05,South America,mobile,344
+1479,2024-10-13,North America,mobile,518
+1480,2025-03-15,Europe,desktop,365
+1481,2025-06-01,Asia,mobile,287
+1482,2025-01-08,North America,mobile,431
+1483,2025-01-06,Europe,mobile,433
+1484,2025-05-09,Asia,mobile,310
+1485,2025-09-20,North America,mobile,176
+1486,2025-06-20,Europe,desktop,268
+1487,2026-03-14,North America,desktop,1
+1488,2025-05-27,Africa,desktop,291
+1489,2025-04-22,Europe,desktop,327
+1490,2025-01-03,Africa,desktop,436
+1491,2025-12-31,Africa,mobile,74
+1492,2025-12-06,Asia,tablet,98
+1493,2025-01-05,Oceania,mobile,434
+1494,2025-08-16,South America,desktop,211
+1495,2025-06-03,Europe,mobile,285
+1496,2026-02-05,South America,tablet,38
+1497,2025-03-02,Europe,desktop,378
+1498,2026-01-05,Asia,mobile,68
+1499,2024-10-10,Africa,desktop,521
+1500,2026-02-15,South America,tablet,28
+1501,2025-07-04,Asia,desktop,254
+1502,2025-06-21,North America,mobile,267
+1503,2024-11-26,South America,tablet,474
+1504,2024-11-06,Asia,desktop,494
+1505,2025-01-20,Oceania,mobile,419
+1506,2025-11-03,North America,mobile,132
+1507,2025-05-20,North America,desktop,299
+1508,2026-02-17,Oceania,tablet,26
+1509,2025-04-28,Africa,desktop,321
+1510,2025-11-15,North America,tablet,120
+1511,2025-01-06,Europe,desktop,433
+1512,2024-12-28,South America,desktop,442
+1513,2024-11-28,South America,mobile,472
+1514,2026-03-03,South America,mobile,12
+1515,2025-02-28,Asia,mobile,380
+1516,2025-04-27,Africa,mobile,322
+1517,2025-12-06,South America,desktop,99
+1518,2025-10-26,South America,desktop,140
+1519,2025-06-22,Asia,tablet,266
+1520,2025-05-12,North America,mobile,307
+1521,2025-04-10,Asia,mobile,338
+1522,2025-01-09,Asia,mobile,430
+1523,2025-11-04,Europe,desktop,131
+1524,2025-07-07,Africa,mobile,251
+1525,2025-11-26,South America,mobile,109
+1526,2025-01-23,Africa,mobile,416
+1527,2024-11-08,North America,desktop,492
+1528,2025-08-11,Europe,desktop,216
+1529,2024-11-09,Europe,mobile,491
+1530,2025-02-10,South America,mobile,398
+1531,2025-09-25,Oceania,mobile,171
+1532,2025-07-12,North America,mobile,246
+1533,2025-04-22,Europe,mobile,327
+1534,2025-05-14,Africa,desktop,305
+1535,2024-10-23,North America,mobile,508
+1536,2024-10-09,North America,mobile,522
+1537,2025-10-09,South America,mobile,157
+1538,2025-07-13,South America,mobile,245
+1539,2026-01-14,Europe,desktop,60
+1540,2025-01-19,Oceania,mobile,420
+1541,2025-09-10,Europe,desktop,186
+1542,2025-11-02,Africa,mobile,133
+1543,2025-03-04,Africa,desktop,376
+1544,2026-01-17,North America,desktop,57
+1545,2026-01-05,Africa,tablet,69
+1546,2025-10-19,South America,desktop,147
+1547,2024-12-21,Africa,desktop,449
+1548,2024-12-02,North America,desktop,468
+1549,2024-12-04,Europe,desktop,466
+1550,2026-01-29,Africa,mobile,45
+1551,2025-02-12,Europe,mobile,396
+1552,2025-02-15,Oceania,desktop,393
+1553,2026-02-11,Asia,desktop,32
+1554,2025-11-06,Europe,desktop,129
+1555,2025-11-18,Europe,tablet,117
+1556,2025-07-10,North America,mobile,248
+1557,2025-11-24,North America,desktop,110
+1558,2024-11-12,North America,mobile,488
+1559,2025-09-07,Africa,desktop,189
+1560,2025-06-01,North America,mobile,287
+1561,2025-09-19,Africa,desktop,177
+1562,2024-11-23,Asia,desktop,477
+1563,2025-06-25,North America,mobile,263
+1564,2025-04-24,Europe,desktop,325
+1565,2025-04-09,Africa,desktop,340
+1566,2025-02-25,Asia,mobile,383
+1567,2026-02-21,Africa,mobile,22
+1568,2025-12-13,Oceania,mobile,92
+1569,2025-03-09,Africa,mobile,371
+1570,2025-09-28,Europe,desktop,168
+1571,2025-05-29,North America,desktop,290
+1572,2025-06-18,South America,desktop,270
+1573,2025-03-25,Asia,mobile,355
+1574,2025-06-04,South America,desktop,284
+1575,2024-12-17,Asia,mobile,453
+1576,2025-02-10,Oceania,desktop,398
+1577,2025-07-12,Oceania,mobile,246
+1578,2025-11-11,North America,tablet,124
+1579,2026-02-04,Asia,desktop,38
+1580,2025-02-20,North America,mobile,388
+1581,2025-02-13,Europe,desktop,395
+1582,2025-01-27,Europe,mobile,412
+1583,2026-01-11,North America,mobile,62
+1584,2025-11-07,Africa,mobile,128
+1585,2025-03-27,North America,mobile,353
+1586,2025-08-02,Africa,desktop,225
+1587,2025-05-19,Oceania,mobile,300
+1588,2025-04-12,Asia,tablet,337
+1589,2025-10-14,Africa,desktop,152
+1590,2024-10-29,Oceania,mobile,502
+1591,2024-11-15,Asia,mobile,485
+1592,2025-11-08,Africa,mobile,127
+1593,2025-04-25,Oceania,mobile,324
+1594,2026-02-24,South America,desktop,19
+1595,2024-12-22,Asia,mobile,448
+1596,2025-09-11,Africa,mobile,185
+1597,2024-11-08,Oceania,tablet,492
+1598,2025-04-08,North America,mobile,341
+1599,2025-04-24,North America,mobile,325
+1600,2025-02-05,Asia,desktop,403
+1601,2026-01-12,Asia,mobile,62
+1602,2025-10-10,South America,desktop,156
+1603,2025-05-29,South America,mobile,289
+1604,2026-01-11,Asia,mobile,63
+1605,2025-01-03,South America,mobile,436
+1606,2025-06-07,South America,mobile,281
+1607,2025-06-26,Asia,mobile,262
+1608,2025-12-08,North America,mobile,97
+1609,2025-11-16,South America,mobile,119
+1610,2025-11-04,Oceania,mobile,131
+1611,2025-07-19,Africa,mobile,239
+1612,2025-02-17,North America,mobile,391
+1613,2026-01-21,Oceania,mobile,53
+1614,2024-09-28,South America,mobile,533
+1615,2025-11-25,South America,mobile,109
+1616,2025-03-19,North America,mobile,361
+1617,2025-11-01,North America,desktop,134
+1618,2025-02-19,Europe,desktop,389
+1619,2025-08-21,Europe,mobile,206
+1620,2024-10-14,Africa,mobile,517
+1621,2025-07-19,Asia,desktop,239
+1622,2025-12-05,North America,desktop,100
+1623,2026-01-16,South America,mobile,58
+1624,2026-01-20,South America,desktop,54
+1625,2024-10-31,Oceania,mobile,500
+1626,2025-03-29,Oceania,mobile,351
+1627,2026-01-09,Oceania,mobile,65
+1628,2025-12-28,Oceania,tablet,77
+1629,2025-09-24,North America,mobile,172
+1630,2024-11-26,South America,tablet,474
+1631,2025-09-10,Europe,mobile,186
+1632,2026-01-09,Europe,tablet,65
+1633,2025-01-03,South America,desktop,436
+1634,2024-10-07,North America,mobile,524
+1635,2025-11-22,Europe,desktop,113
+1636,2026-01-27,Asia,desktop,47
+1637,2025-04-06,Oceania,mobile,343
+1638,2025-08-14,Europe,desktop,213
+1639,2024-11-10,Asia,mobile,490
+1640,2025-02-17,Africa,mobile,391
+1641,2025-09-05,Europe,mobile,191
+1642,2024-10-01,North America,mobile,530
+1643,2025-02-15,Oceania,mobile,393
+1644,2025-10-07,Africa,mobile,159
+1645,2025-11-29,South America,mobile,106
+1646,2025-08-14,North America,mobile,213
+1647,2025-09-02,South America,mobile,194
+1648,2025-12-24,Oceania,mobile,81
+1649,2025-02-09,Europe,mobile,399
+1650,2025-03-28,South America,mobile,352
+1651,2025-10-11,Europe,desktop,155
+1652,2026-01-28,Asia,desktop,46
+1653,2026-02-04,North America,desktop,39
+1654,2024-10-26,Europe,mobile,505
+1655,2025-03-17,Oceania,mobile,363
+1656,2024-11-15,South America,mobile,485
+1657,2025-08-24,North America,desktop,203
+1658,2025-10-16,South America,desktop,150
+1659,2025-08-24,Europe,mobile,203
+1660,2026-01-12,Asia,desktop,61
+1661,2025-05-20,Africa,mobile,299
+1662,2025-11-03,North America,desktop,132
+1663,2025-02-22,North America,mobile,386
+1664,2024-11-29,Asia,mobile,471
+1665,2025-02-03,Europe,mobile,405
+1666,2025-07-03,Oceania,desktop,255
+1667,2024-12-27,Asia,mobile,443
+1668,2025-06-22,Oceania,mobile,266
+1669,2025-08-06,South America,desktop,221
+1670,2026-01-16,Asia,desktop,58
+1671,2025-07-01,Oceania,mobile,257
+1672,2025-09-14,Africa,mobile,182
+1673,2025-04-13,South America,tablet,336
+1674,2025-06-12,Africa,desktop,276
+1675,2025-08-01,Oceania,desktop,226
+1676,2025-11-18,North America,mobile,117
+1677,2025-06-15,Africa,mobile,273
+1678,2025-03-02,Asia,mobile,378
+1679,2025-04-10,Europe,desktop,339
+1680,2025-10-26,Oceania,desktop,140
+1681,2026-02-03,North America,mobile,40
+1682,2024-12-02,Oceania,mobile,468
+1683,2026-01-14,North America,mobile,60
+1684,2025-01-18,Europe,desktop,421
+1685,2024-10-17,South America,mobile,514
+1686,2025-04-30,Africa,mobile,319
+1687,2025-11-30,Asia,tablet,105
+1688,2024-12-13,Asia,desktop,457
+1689,2024-11-22,Africa,desktop,478
+1690,2025-01-09,Africa,desktop,430
+1691,2025-03-26,Europe,desktop,354
+1692,2025-07-22,Europe,mobile,236
+1693,2025-08-23,Oceania,desktop,204
+1694,2026-01-20,Asia,desktop,54
+1695,2025-10-24,North America,mobile,142
+1696,2025-09-30,Asia,mobile,166
+1697,2025-05-16,Africa,desktop,303
+1698,2025-05-18,Africa,tablet,300
+1699,2025-03-15,Africa,mobile,365
+1700,2025-01-02,South America,mobile,437
+1701,2025-02-20,Oceania,mobile,387
+1702,2025-08-26,South America,mobile,201
+1703,2025-09-18,Oceania,mobile,178
+1704,2026-02-23,Asia,mobile,20
+1705,2024-10-08,South America,desktop,523
+1706,2025-09-19,North America,mobile,177
+1707,2024-11-28,Europe,mobile,472
+1708,2025-10-22,Asia,mobile,144
+1709,2025-02-24,Asia,desktop,384
+1710,2025-03-27,Europe,mobile,353
+1711,2024-12-14,Africa,mobile,456
+1712,2024-11-28,Asia,mobile,472
+1713,2025-04-01,Africa,mobile,348
+1714,2026-01-03,Africa,desktop,71
+1715,2025-12-29,North America,mobile,76
+1716,2024-10-17,North America,mobile,514
+1717,2026-02-07,South America,tablet,36
+1718,2025-04-03,Africa,desktop,346
+1719,2025-05-23,Asia,desktop,296
+1720,2024-11-15,Africa,mobile,485
+1721,2025-04-26,Oceania,desktop,323
+1722,2025-06-30,Oceania,desktop,258
+1723,2024-10-27,Asia,mobile,504
+1724,2025-06-19,Oceania,mobile,269
+1725,2025-10-26,Africa,tablet,140
+1726,2026-02-16,South America,mobile,26
+1727,2025-10-18,Europe,mobile,148
+1728,2025-11-05,Europe,mobile,130
+1729,2025-01-21,North America,mobile,418
+1730,2025-11-17,Oceania,mobile,118
+1731,2025-06-26,North America,mobile,262
+1732,2025-07-24,Asia,mobile,234
+1733,2025-08-03,Oceania,desktop,224
+1734,2025-11-16,Africa,desktop,119
+1735,2025-06-05,South America,mobile,283
+1736,2025-04-29,Africa,desktop,320
+1737,2026-02-28,North America,mobile,15
+1738,2025-09-17,Europe,mobile,179
+1739,2024-11-30,Europe,mobile,470
+1740,2025-08-16,North America,mobile,211
+1741,2025-12-02,Africa,tablet,103
+1742,2025-05-06,North America,desktop,313
+1743,2025-05-21,North America,mobile,298
+1744,2025-03-26,Oceania,mobile,354
+1745,2025-06-14,Europe,desktop,274
+1746,2024-11-29,North America,mobile,471
+1747,2025-03-17,Europe,mobile,363
+1748,2025-11-06,South America,desktop,129
+1749,2026-01-06,South America,desktop,67
+1750,2024-12-31,North America,tablet,439
+1751,2025-07-29,Oceania,mobile,229
+1752,2026-02-20,Africa,desktop,22
+1753,2025-03-04,Asia,desktop,376
+1754,2025-02-21,Europe,desktop,387
+1755,2024-12-27,North America,mobile,443
+1756,2024-11-24,Asia,mobile,476
+1757,2026-02-08,North America,mobile,35
+1758,2026-02-08,Africa,mobile,34
+1759,2024-10-08,Asia,desktop,523
+1760,2025-08-27,Asia,tablet,200
+1761,2025-10-28,Europe,mobile,137
+1762,2025-11-12,Africa,mobile,123
+1763,2025-03-14,North America,mobile,366
+1764,2026-01-17,Europe,mobile,57
+1765,2025-10-11,North America,mobile,155
+1766,2025-04-12,Africa,tablet,337
+1767,2025-01-28,Africa,mobile,411
+1768,2024-09-29,Europe,desktop,532
+1769,2025-03-15,Asia,desktop,365
+1770,2025-09-13,South America,desktop,182
+1771,2024-11-17,Oceania,desktop,483
+1772,2026-02-25,Africa,mobile,18
+1773,2025-01-29,Asia,tablet,410
+1774,2024-12-31,South America,desktop,439
+1775,2026-03-14,North America,desktop,1
+1776,2025-01-22,South America,mobile,417
+1777,2025-11-17,Europe,mobile,118
+1778,2025-03-11,Europe,mobile,369
+1779,2025-05-10,Europe,mobile,309
+1780,2025-10-02,Europe,mobile,164
+1781,2025-08-29,Asia,tablet,198
+1782,2025-07-26,Africa,desktop,232
+1783,2025-09-17,South America,mobile,178
+1784,2025-10-14,South America,desktop,152
+1785,2025-05-28,Africa,mobile,291
+1786,2025-09-05,South America,mobile,191
+1787,2025-04-05,North America,desktop,344
+1788,2025-08-15,Europe,mobile,212
+1789,2025-03-19,Africa,tablet,361
+1790,2025-05-08,Europe,mobile,311
+1791,2024-10-11,Europe,desktop,520
+1792,2025-04-18,Africa,desktop,331
+1793,2025-06-27,Asia,desktop,261
+1794,2026-02-23,Africa,mobile,19
+1795,2025-09-07,South America,desktop,189
+1796,2025-02-26,Europe,desktop,382
+1797,2024-10-27,North America,tablet,504
+1798,2025-01-09,Africa,desktop,430
+1799,2024-11-02,Oceania,mobile,498
+1800,2024-10-08,Oceania,desktop,523
+1801,2025-02-04,South America,mobile,404
+1802,2026-01-09,Asia,mobile,65
+1803,2026-01-15,South America,mobile,59
+1804,2025-10-20,South America,mobile,146
+1805,2025-08-04,Oceania,mobile,223
+1806,2025-02-21,Africa,mobile,387
+1807,2026-03-03,Europe,mobile,12
+1808,2025-06-03,Africa,mobile,285
+1809,2024-10-05,Africa,mobile,526
+1810,2025-12-01,Oceania,desktop,103
+1811,2024-10-10,Oceania,mobile,521
+1812,2025-04-07,South America,mobile,342
+1813,2025-10-06,Asia,mobile,160
+1814,2025-01-31,Africa,desktop,408
+1815,2025-07-01,Europe,tablet,257
+1816,2024-10-27,North America,mobile,504
+1817,2025-01-05,South America,mobile,434
+1818,2025-10-16,Africa,mobile,150
+1819,2025-10-23,South America,desktop,143
+1820,2025-01-26,Africa,mobile,413
+1821,2025-09-02,North America,desktop,194
+1822,2025-07-02,Asia,mobile,256
+1823,2025-09-19,South America,mobile,177
+1824,2025-04-11,Africa,mobile,338
+1825,2025-11-19,Africa,mobile,116
+1826,2025-05-22,Europe,desktop,297
+1827,2026-01-27,Oceania,desktop,47
+1828,2025-09-03,Europe,mobile,193
+1829,2025-01-21,South America,desktop,418
+1830,2024-12-13,Africa,desktop,457
+1831,2025-05-16,Oceania,mobile,303
+1832,2025-04-28,Europe,mobile,321
+1833,2025-10-10,Oceania,desktop,156
+1834,2025-09-05,Oceania,mobile,191
+1835,2025-05-04,Asia,desktop,315
+1836,2025-11-13,South America,mobile,122
+1837,2026-02-04,Africa,desktop,38
+1838,2026-03-08,South America,mobile,7
+1839,2025-02-23,North America,mobile,385
+1840,2025-05-09,Africa,desktop,310
+1841,2025-09-11,Africa,desktop,185
+1842,2024-11-06,North America,mobile,494
+1843,2024-11-29,Oceania,mobile,471
+1844,2025-01-24,Asia,desktop,415
+1845,2025-12-08,Oceania,desktop,97
+1846,2025-07-11,Asia,mobile,247
+1847,2025-09-24,Oceania,desktop,172
+1848,2025-01-14,Asia,tablet,425
+1849,2026-01-22,South America,desktop,52
+1850,2025-12-10,Africa,mobile,95
+1851,2025-10-21,South America,mobile,145
+1852,2025-07-14,Oceania,desktop,244
+1853,2025-09-27,South America,mobile,169
+1854,2024-10-26,Europe,mobile,505
+1855,2025-11-29,Africa,mobile,106
+1856,2025-08-03,Asia,desktop,224
+1857,2026-03-09,South America,desktop,6
+1858,2026-01-16,Asia,tablet,57
+1859,2025-07-14,Africa,mobile,244
+1860,2025-08-04,Europe,tablet,223
+1861,2025-04-20,Oceania,mobile,329
+1862,2025-07-01,Africa,desktop,257
+1863,2025-07-16,Europe,mobile,242
+1864,2025-04-07,North America,tablet,342
+1865,2025-10-16,North America,mobile,150
+1866,2025-06-07,Asia,mobile,281
+1867,2025-02-05,Europe,mobile,403
+1868,2025-05-07,Europe,mobile,312
+1869,2025-12-20,North America,mobile,85
+1870,2025-01-31,North America,desktop,408
+1871,2025-09-10,North America,mobile,186
+1872,2026-02-13,North America,desktop,30
+1873,2025-11-09,North America,mobile,126
+1874,2024-10-17,Europe,desktop,514
+1875,2025-12-13,Asia,tablet,92
+1876,2025-11-02,South America,desktop,133
+1877,2025-06-17,Africa,mobile,271
+1878,2025-10-11,Oceania,tablet,155
+1879,2024-11-14,Europe,desktop,486
+1880,2025-06-19,Europe,mobile,269
+1881,2025-02-17,South America,mobile,391
+1882,2025-07-13,Oceania,desktop,245
+1883,2026-02-07,South America,desktop,35
+1884,2025-10-29,South America,desktop,137
+1885,2025-10-22,Oceania,desktop,144
+1886,2025-02-11,South America,mobile,397
+1887,2025-04-25,Africa,desktop,324
+1888,2026-01-29,Africa,desktop,45
+1889,2025-08-02,North America,mobile,225
+1890,2025-04-14,Europe,mobile,335
+1891,2025-08-27,Africa,desktop,200
+1892,2025-06-23,Africa,mobile,265
+1893,2026-03-01,North America,desktop,14
+1894,2024-12-11,Africa,tablet,459
+1895,2025-10-27,North America,mobile,139
+1896,2025-09-26,Africa,desktop,170
+1897,2025-09-15,North America,mobile,181
+1898,2026-03-06,North America,desktop,9
+1899,2025-03-31,South America,tablet,349
+1900,2025-09-19,Africa,mobile,177
+1901,2025-04-15,Oceania,desktop,334
+1902,2025-09-15,Europe,mobile,181
+1903,2025-07-23,Europe,mobile,235
+1904,2024-10-28,South America,desktop,503
+1905,2025-04-15,South America,desktop,334
+1906,2025-12-17,Asia,desktop,88
+1907,2025-06-16,Oceania,mobile,272
+1908,2024-11-04,South America,mobile,496
+1909,2026-03-05,North America,mobile,10
+1910,2024-11-11,South America,desktop,489
+1911,2025-07-19,Asia,desktop,239
+1912,2025-12-07,South America,mobile,98
+1913,2025-03-16,Oceania,desktop,364
+1914,2026-01-23,North America,desktop,51
+1915,2025-07-31,North America,mobile,227
+1916,2024-11-01,Asia,mobile,499
+1917,2024-09-24,Oceania,mobile,537
+1918,2025-05-26,North America,mobile,293
+1919,2025-09-24,South America,desktop,172
+1920,2025-11-18,Oceania,mobile,117
+1921,2025-11-29,Europe,mobile,106
+1922,2025-06-04,Africa,desktop,284
+1923,2025-11-11,South America,mobile,124
+1924,2025-06-15,Europe,mobile,273
+1925,2025-07-26,Europe,desktop,232
+1926,2025-07-31,Oceania,mobile,227
+1927,2026-01-11,Asia,desktop,63
+1928,2024-11-14,Asia,mobile,486
+1929,2026-02-12,Europe,desktop,31
+1930,2026-02-02,Oceania,desktop,41
+1931,2024-12-23,Europe,mobile,447
+1932,2025-05-23,Oceania,mobile,296
+1933,2024-09-24,Asia,desktop,537
+1934,2025-03-04,Africa,tablet,376
+1935,2024-11-03,Asia,mobile,497
+1936,2025-08-23,North America,mobile,204
+1937,2025-09-20,North America,mobile,176
+1938,2025-08-18,Oceania,desktop,209
+1939,2024-10-19,North America,tablet,512
+1940,2024-12-04,Europe,mobile,466
+1941,2025-03-08,Europe,mobile,372
+1942,2025-10-07,Oceania,desktop,159
+1943,2026-02-25,Africa,desktop,17
+1944,2025-09-21,Africa,desktop,175
+1945,2024-12-04,Europe,tablet,466
+1946,2025-09-23,Asia,mobile,173
+1947,2026-01-15,North America,tablet,59
+1948,2025-06-14,Africa,mobile,274
+1949,2025-11-21,North America,mobile,114
+1950,2025-07-27,South America,mobile,231
+1951,2024-11-28,Asia,desktop,472
+1952,2026-01-12,Asia,mobile,62
+1953,2025-08-26,Oceania,desktop,201
+1954,2025-06-07,Europe,mobile,281
+1955,2025-08-14,Asia,tablet,213
+1956,2025-07-20,North America,mobile,238
+1957,2024-11-18,Africa,desktop,482
+1958,2024-09-26,Europe,mobile,535
+1959,2025-06-18,Europe,mobile,270
+1960,2025-06-03,Africa,mobile,285
+1961,2025-08-01,South America,desktop,226
+1962,2024-12-08,Asia,mobile,462
+1963,2025-01-16,Oceania,mobile,423
+1964,2026-01-09,Africa,desktop,65
+1965,2025-10-11,North America,mobile,155
+1966,2025-08-18,Africa,mobile,209
+1967,2024-12-11,Europe,desktop,459
+1968,2025-12-01,Oceania,desktop,103
+1969,2025-11-24,South America,mobile,111
+1970,2025-12-10,Oceania,desktop,95
+1971,2024-12-25,Africa,mobile,445
+1972,2025-03-17,Asia,mobile,363
+1973,2024-12-28,Oceania,desktop,442
+1974,2026-02-17,South America,desktop,26
+1975,2025-08-25,Africa,mobile,202
+1976,2024-09-27,Asia,mobile,534
+1977,2026-02-25,Oceania,tablet,17
+1978,2026-02-26,North America,mobile,17
+1979,2026-03-10,North America,mobile,5
+1980,2026-01-23,Africa,tablet,51
+1981,2025-10-23,North America,mobile,143
+1982,2024-12-05,Asia,mobile,465
+1983,2025-08-26,North America,mobile,201
+1984,2025-05-19,Oceania,mobile,300
+1985,2025-08-17,Europe,mobile,210
+1986,2024-10-12,Oceania,desktop,519
+1987,2025-06-25,Oceania,mobile,263
+1988,2025-12-21,North America,desktop,84
+1989,2024-10-17,Africa,mobile,514
+1990,2025-04-14,Oceania,mobile,335
+1991,2026-02-26,Africa,desktop,17
+1992,2025-01-24,South America,mobile,415
+1993,2026-01-18,Europe,desktop,56
+1994,2025-04-11,Asia,mobile,338
+1995,2025-03-24,Asia,desktop,356
+1996,2024-09-28,South America,mobile,533
+1997,2025-12-13,South America,desktop,92
+1998,2025-01-25,South America,mobile,414
+1999,2026-01-12,South America,tablet,61
+2000,2026-02-17,Europe,mobile,26
