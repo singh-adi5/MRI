@@ -4,8 +4,8 @@ import pandas as pd
 import numpy as np
 import networkx as nx
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DB_PATH = os.path.join(BASE_DIR, "marketplace.db")
+from mri.config import ROOT as BASE_DIR  # repository root
+DB_PATH = os.path.join(BASE_DIR, "data", "marketplace.db")
 OUTPUT_DIR = os.path.join(BASE_DIR, "outputs")
 OUTPUT_PATH = os.path.join(OUTPUT_DIR, "graph_risk_scores.csv")
 

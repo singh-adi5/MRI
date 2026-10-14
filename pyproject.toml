@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mri"
+version = "0.1.0"
+description = "Marketplace Risk Intelligence: multi-signal fraud and risk detection on synthetic marketplace data."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pandas",
+    "numpy",
+    "scikit-learn",
+    "networkx",
+    "streamlit",
+    "plotly",
+    "joblib",
+    "python-dateutil",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "bandit", "pip-audit"]
+
+[project.scripts]
+mri-pipeline = "mri.pipeline:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

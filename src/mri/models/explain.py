@@ -2,7 +2,7 @@ import os
 import pandas as pd
 import numpy as np
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+from mri.config import ROOT as BASE_DIR  # repository root
 ARTIFACT_DIR = os.path.join(BASE_DIR, "artifacts")
 OUTPUT_DIR = os.path.join(BASE_DIR, "outputs")
 

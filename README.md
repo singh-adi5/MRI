@@ -1,126 +1,85 @@
-# 🛡️ Marketplace Risk Intelligence Platform
+# MRI: Marketplace Risk Intelligence
 
-> Built and tested on synthetic marketplace data.
+> Built and tested on synthetic marketplace data. Not a live deployment.
 
-A full-stack, multi-layered fraud and risk intelligence platform engineered to detect adversarial behaviour within high-throughput online marketplace ecosystems. 
+Multi-signal fraud and risk intelligence pipeline for online marketplaces. Rule-based heuristics, supervised ML, unsupervised anomaly detection, graph analysis and temporal burst detection are fused into one calibrated, explainable risk score and surfaced in a Streamlit analyst workbench.
 
-Unlike standard standalone ML models, this system implements a production-style **Risk Fusion Engine**. It orchestrates rule-based heuristics, supervised machine learning, unsupervised anomaly detection, graph network intelligence, and temporal burst analysis into a single, cohesive analyst investigation interface.
-
----
-
-## 🏗️ System Architecture
-
-This platform processes signals through a multi-tiered pipeline, culminating in an Explainable AI (XAI) Analyst Workbench.
+## Architecture
 
 ```text
-Business Data Sources (Transactions, Refunds, Logins, Ratings, Device/Payment Signals)
-        ↓
-Data Validation & Feature Engineering Pipeline (Polars / Pandas)
-        ↓
-Feature Store / Analytical Extraction Layer
-        ↓
-Detection Layer
- ├─ V1: Rule Engine (Heuristic Weak Labels)
- ├─ V2: Supervised Risk Model (Random Forest / XGBoost Classifier)
- ├─ V2: Anomaly Detection Model (Isolation Forest)
- ├─ V3: Graph / Entity Link Analysis (NetworkX / Neo4j)
- └─ V4: Temporal Intelligence (Burst / Velocity Detection)
-        ↓
-Risk Fusion & Decision Engine (Multi-Signal Calibration)
-        ↓
-V5: Investigation Queue & Analyst Workbench (Streamlit)
-        ↓
-V6: Governance, Drift Monitoring, & Audit Logs
+Raw data (customers, sellers, orders, refunds, ratings, logins)   data/raw/*.csv
+        |
+SQLite hydration + feature engineering
+        |
+Detection layer
+  |- V1  Rule engine           heuristic weak labels
+  |- V2  Supervised model      Random Forest classifier
+  |- V2  Anomaly model         Isolation Forest
+  |- V3  Graph analysis        NetworkX entity-link / shared-device clusters
+  '- V4  Temporal analysis     login, order and refund bursts
+        |
+Risk fusion engine             weighted, calibrated, banded (Critical/High/Medium/Low)
+        |
+V5  Analyst workbench          Streamlit, per-entity explanations and evidence
+        |
+V6  Governance                 drift monitoring, pipeline health, model registry
 ```
 
-## Core Engineering Components
-1. Detection Vectors
-Rule Engine (V1): Catch-all heuristics for abnormal order spikes, login anomalies, and refund irregularities. Generates weak-supervision labels to bootstrap the ML models.
-
-Machine Learning Layer (V2): Ensembles an Isolation Forest (for zero-day anomaly detection) with a Random Forest classifier (for historic fraud patterns) to generate entity-level risk probabilities.
-
-Graph Intelligence (V3): Analyzes topological relationships to detect organized fraud rings. Computes graph centrality, shared devices/regions, and connected component clusters.
-
-Temporal Intelligence (V4): Detects behavioural bursts using time-windowed aggregates (e.g., login velocity, order bursts, and refund density).
-
-2. Multi-Layer Risk Fusion (V4.1)
-Signals from all detection layers are mathematically fused into a calibrated, final risk score. The baseline fusion algorithm applies the following weights:
-
-Final Risk = 0.40(ML Risk) + 0.25(Graph Risk) + 0.20(Temporal Risk) + 0.15(Anomaly Signal)
-
-Entities are then classified into operational risk bands: Critical, High, Medium, Low.
-
-3. Explainability & Investigation (V5)
-Every flagged entity includes an auto-generated narrative. The Streamlit-based Analyst Investigation Workbench provides SOC teams with:
-
-Real-time investigation queues
-
-Granular signal breakdown and engineered feature snapshots
-
-Graph and temporal evidence visualization
-
-Analyst action panels for immediate remediation
-
-4. MLOps Governance & Drift Control (V6)
-Operational safeguards ensure pipeline stability and model safety:
-
-Automated feature drift monitoring (v6_feature_drift.csv)
-
-Pipeline health reporting (v6_pipeline_health.json)
-
-Model registry and artifact tracking (ops_registry.db)
-
-## Repository Structure
+### Fusion
 
 ```text
-├── artifacts/                # Serialized models, feature columns, and importance matrices
-├── data/                     # Synthetic marketplace dataset
-├── models/                   # Pickled ML models (RF, Isolation Forest)
-├── outputs/                  # Final fused risk scores, explanations, and governance logs
-│
-├── create_database.py        # SQLite hydration layer
-├── generate_data.py          # Synthetic data generation (V1)
-├── feature_eng.py            # Feature engineering pipeline (V2)
-├── train_model.py            # Ensembled model training and evaluation
-├── risk_scoring.py           # Legacy heuristic scoring
-├── score_entities.py         # ML inference and risk fusion
-├── explain_entities.py       # XAI reason code generation
-├── intelligence_graph.py     # Graph network analysis (V3)
-├── temporal_intelligence.py  # Time-series burst detection (V4)
-├── risk_fusionv4.py          # Final signal calibration
-├── operation_v6.py           # MLOps drift and health monitoring
-├── v5_investigation_workbench.py # Streamlit Command Center
-│
-├── pipeline_run.py           # Master DAG/Orchestrator
-└── README.md
+Final Risk = 0.40 * ML + 0.25 * Graph + 0.20 * Temporal + 0.15 * Anomaly
 ```
 
-## Execution Guide
+## Repository layout
 
-### 1. Initialize the Environment
-Activate your Python virtual environment, then install dependencies:
+```text
+src/mri/
+  config.py            single source of truth for paths
+  pipeline.py          orchestrator (python -m mri.pipeline)
+  data/                generate.py (synthetic data), build_db.py (CSV -> SQLite)
+  detection/           rules.py, graph.py, temporal.py
+  features/            engineering.py
+  models/              train.py, score.py, explain.py
+  fusion/              fuse.py
+  governance/          ops.py (drift, health, registry)
+  app/                 workbench.py (Streamlit)
+data/raw/              committed synthetic CSVs
+docs/                  data_dictionary.md
+legacy/                superseded v1/v2 dashboards and v3 fusion, kept for reference
+tests/                 end-to-end smoke test
+```
+
+`data/marketplace.db`, `artifacts/`, `models/` and `outputs/` are generated by the pipeline and are not committed.
+
+## Quick start
 
 ```bash
-pip install -r requirements.txt
+python -m venv .venv
+source .venv/bin/activate        # Windows: .venv\Scripts\activate
+pip install -e .
+python -m mri.pipeline           # builds the DB, trains, scores, fuses (about 15 s)
+streamlit run src/mri/app/workbench.py
 ```
 
-### 2. Execute the Full Intelligence Pipeline
-Run the master orchestrator to hydrate the database, engineer features, train the models, run graph/temporal analysis, and output the fused risk reports:
+Regenerate the synthetic dataset (optional): `python -m mri.data.generate`
 
-```bash
-python pipeline_run.py
-```
+Run the tests: `pip install -e ".[dev]" && pytest`
 
-### 3. Launch the SOC Command Center
-Start the interactive analyst dashboard:
+## Governance outputs
 
-```bash
-streamlit run v5_investigation_workbench.py
-```
+- `outputs/v6_feature_drift.csv`: feature drift against the stored baseline
+- `outputs/v6_pipeline_health.json`: pipeline health report
+- `outputs/ops_registry.db`: model and artifact registry with SHA-256 hashes
 
-## Future Architecture Roadmap
+## Roadmap
 
-Data Layer: Refactor core ETL from Pandas to Polars for memory-safe, out-of-core vectorized processing.
-Algorithm Swap: Upgrade the Random Forest classifier to XGBoost/LightGBM for optimized sparse data handling and reduced memory footprint.
-Containerization: Wrap the entire architecture in a docker-compose.yml network (Feature Store, Inference API, and Streamlit UI) for deployment immutability.
-Generative AI Integration: Deploy a localized, quantized LLM (via Ollama) to automatically generate human-readable case summaries from tabular risk signals.
+- Move ETL from Pandas to Polars for out-of-core processing
+- Evaluate XGBoost / LightGBM in place of Random Forest
+- Containerise with docker-compose (feature store, inference API, UI)
+- Local quantised LLM (Ollama) for human-readable case summaries
+
+## Security notes
+
+- Synthetic data only; no real customer or transaction data.
+- Model files are loaded with `joblib`, which uses pickle: only load models you trained yourself.

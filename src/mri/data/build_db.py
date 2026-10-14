@@ -26,6 +26,8 @@ import os
 import sqlite3
 import pandas as pd
 
+from mri.config import DB_PATH, RAW_DATA_DIR
+
 
 def load_csv_to_sqlite(csv_path: str, conn: sqlite3.Connection, table_name: str):
     """Load a CSV file into a SQLite table."""
@@ -35,8 +37,8 @@ def load_csv_to_sqlite(csv_path: str, conn: sqlite3.Connection, table_name: str)
 
 
 def main():
-    base_dir = os.path.join(os.path.dirname(__file__), "data")
-    db_path = os.path.join(os.path.dirname(__file__), "marketplace.db")
+    base_dir = str(RAW_DATA_DIR)
+    db_path = str(DB_PATH)
 
     # Remove existing database file if it exists
     if os.path.exists(db_path):

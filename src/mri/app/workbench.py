@@ -10,7 +10,7 @@ st.set_page_config(
     layout="wide"
 )
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+from mri.config import ROOT as BASE_DIR  # repository root
 OUTPUT_DIR = os.path.join(BASE_DIR, "outputs")
 ARTIFACT_DIR = os.path.join(BASE_DIR, "artifacts")
 

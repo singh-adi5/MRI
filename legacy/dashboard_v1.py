@@ -10,9 +10,9 @@ st.set_page_config(
     page_icon="🛡️"
 )
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DB_PATH = os.path.join(BASE_DIR, "marketplace.db")
-FLAGGED_CSV = os.path.join(BASE_DIR, "flagged_entities.csv")
+from mri.config import ROOT as BASE_DIR  # repository root
+DB_PATH = os.path.join(BASE_DIR, "data", "marketplace.db")
+FLAGGED_CSV = os.path.join(BASE_DIR, "outputs", "flagged_entities.csv")
 
 
 @st.cache_data

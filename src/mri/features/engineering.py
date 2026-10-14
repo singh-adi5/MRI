@@ -3,9 +3,9 @@ import sqlite3
 import pandas as pd
 import numpy as np
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DB_PATH = os.path.join(BASE_DIR, "marketplace.db")
-FLAGGED_CSV = os.path.join(BASE_DIR, "flagged_entities.csv")
+from mri.config import ROOT as BASE_DIR  # repository root
+DB_PATH = os.path.join(BASE_DIR, "data", "marketplace.db")
+FLAGGED_CSV = os.path.join(BASE_DIR, "outputs", "flagged_entities.csv")
 ARTIFACT_DIR = os.path.join(BASE_DIR, "artifacts")
 OUTPUT_PATH = os.path.join(ARTIFACT_DIR, "entity_features.csv")
 

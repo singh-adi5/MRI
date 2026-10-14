@@ -8,7 +8,7 @@ import pandas as pd
 import numpy as np
 
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+from mri.config import ROOT as BASE_DIR  # repository root
 ARTIFACT_DIR = os.path.join(BASE_DIR, "artifacts")
 MODEL_DIR = os.path.join(BASE_DIR, "models")
 OUTPUT_DIR = os.path.join(BASE_DIR, "outputs")
@@ -28,7 +28,7 @@ RISK_MODEL_PATH = os.path.join(MODEL_DIR, "risk_classifier.pkl")
 ANOMALY_MODEL_PATH = os.path.join(MODEL_DIR, "anomaly_model.pkl")
 FEATURE_COLS_PATH = os.path.join(MODEL_DIR, "feature_columns.pkl")
 
-OPS_DB_PATH = os.path.join(BASE_DIR, "ops_registry.db")
+OPS_DB_PATH = os.path.join(BASE_DIR, "outputs", "ops_registry.db")
 PIPELINE_HEALTH_JSON = os.path.join(OUTPUT_DIR, "v6_pipeline_health.json")
 DRIFT_REPORT_CSV = os.path.join(OUTPUT_DIR, "v6_feature_drift.csv")
 

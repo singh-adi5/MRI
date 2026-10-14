@@ -57,6 +57,8 @@ from collections import defaultdict
 from datetime import datetime, timedelta
 import pandas as pd
 
+from mri.config import DB_PATH, OUTPUT_DIR
+
 
 def load_tables(db_path: str) -> dict:
     """Load relevant tables from the SQLite database into Pandas DataFrames."""
@@ -237,10 +239,10 @@ def write_flagged_entities(risk_scores: dict, output_path: str):
 
 
 def main():
-    db_path = os.path.join(os.path.dirname(__file__), "marketplace.db")
+    db_path = str(DB_PATH)
     if not os.path.exists(db_path):
         raise FileNotFoundError(
-            f"Database file not found at {db_path}. Please run create_database.py first."
+            f"Database file not found at {db_path}. Run `python -m mri.data.build_db` first."
         )
 
     tables = load_tables(db_path)
@@ -260,7 +262,8 @@ def main():
     combined = aggregate_scores(refund_scores, spike_scores, rating_scores, device_scores, failed_login_scores)
 
     # Write output
-    output_path = os.path.join(os.path.dirname(__file__), "flagged_entities.csv")
+    os.makedirs(OUTPUT_DIR, exist_ok=True)  # outputs/ is generated, may not exist yet
+    output_path = os.path.join(OUTPUT_DIR, "flagged_entities.csv")
     write_flagged_entities(combined, output_path)
 
 

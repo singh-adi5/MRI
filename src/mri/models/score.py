@@ -3,7 +3,7 @@ import joblib
 import pandas as pd
 import numpy as np
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+from mri.config import ROOT as BASE_DIR  # repository root
 FEATURE_PATH = os.path.join(BASE_DIR, "artifacts", "entity_features.csv")
 MODEL_DIR = os.path.join(BASE_DIR, "models")
 OUTPUT_DIR = os.path.join(BASE_DIR, "outputs")

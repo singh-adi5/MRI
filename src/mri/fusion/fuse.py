@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+from mri.config import ROOT as BASE_DIR  # repository root
 OUTPUT_DIR = os.path.join(BASE_DIR, "outputs")
 
 ML_RISK_PATH = os.path.join(OUTPUT_DIR, "final_risk_entities.csv")

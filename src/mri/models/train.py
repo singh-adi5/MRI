@@ -9,7 +9,7 @@ from sklearn.ensemble import RandomForestClassifier, IsolationForest
 from sklearn.metrics import classification_report, roc_auc_score, precision_recall_fscore_support
 
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+from mri.config import ROOT as BASE_DIR  # repository root
 FEATURE_PATH = os.path.join(BASE_DIR, "artifacts", "entity_features.csv")
 MODEL_DIR = os.path.join(BASE_DIR, "models")
 ARTIFACT_DIR = os.path.join(BASE_DIR, "artifacts")

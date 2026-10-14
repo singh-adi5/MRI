@@ -19,6 +19,8 @@ from datetime import datetime, timedelta
 
 import pandas as pd
 
+from mri.config import RAW_DATA_DIR
+
 
 def random_date(start: datetime, end: datetime) -> datetime:
     """Return a random datetime between ``start`` and ``end``."""
@@ -197,7 +199,7 @@ def main():
     NUM_RATINGS = 800
     NUM_LOGIN_RECORDS = 1000
 
-    base_dir = os.path.join(os.path.dirname(__file__), "data")
+    base_dir = str(RAW_DATA_DIR)
     os.makedirs(base_dir, exist_ok=True)
 
     # Generate each dataset
