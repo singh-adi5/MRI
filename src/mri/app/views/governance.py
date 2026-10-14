@@ -65,4 +65,3 @@ def render() -> None:
     runs = reg["pipeline_runs"][["run_ts", "status", "stage", "details"]]
     st.dataframe(runs, hide_index=True, use_container_width=True,
                  column_config={"run_ts": "Time (UTC)", "status": "Status", "stage": "Stage", "details": "Details"})
-    _ = pd  # keep pandas import explicit for column typing in registry frames
