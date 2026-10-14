@@ -267,7 +267,9 @@ def main():
         clf = joblib.load(CLF_PATH)
         contrib_arr, bias = forest_contributions(clf, X.to_numpy())
         reconstructed = bias + contrib_arr.sum(axis=1)
-        actual = clf.predict_proba(X.to_numpy())[:, 1]
+        # DataFrame here: the forest was fit with feature names, the individual
+        # trees were not. Mixing the two raises a sklearn warning for nothing.
+        actual = clf.predict_proba(X)[:, 1]
         max_err = float(np.max(np.abs(reconstructed - actual))) if len(actual) else 0.0
         log(f"Attribution check: max |bias + sum(contributions) - predict_proba| = {max_err:.2e}")
         if max_err > 1e-6:

@@ -12,7 +12,8 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 EntityType = Literal["customer", "seller"]
 DecisionValue = Literal["confirmed_fraud", "confirmed_good", "needs_info"]
-BandName = Literal["Low", "Medium", "High", "Critical"]
+# "Unknown" is a real band in mri.scoring: an entity no detector saw is not Low.
+BandName = Literal["Low", "Medium", "High", "Critical", "Unknown"]
 
 # Raw signals are produced on their own scales by upstream stages. ML, anomaly
 # and temporal are already 0-1; graph is a normalised centrality blend. The
@@ -32,18 +33,31 @@ EntityId = Annotated[
 
 
 class SignalInput(BaseModel):
-    """The four raw signals the fusion consumes, before normalisation."""
+    """The four RAW signals, exactly as mri.scoring.score_entity expects them.
+
+    `None` means "this detector did not see the entity". It is not zero: the
+    signal is dropped from the weighted mean and `coverage` falls, instead of
+    the entity being scored as low risk on evidence nobody gathered.
+    """
 
     model_config = ConfigDict(extra="forbid")
 
-    ml: RawSignal = Field(
-        0.0, description="Blended supervised + anomaly risk from mri.models.score."
+    ml: RawSignal | None = Field(
+        None, description="Supervised fraud probability in [0, 1] (mri.models.score)."
     )
-    graph: RawSignal = Field(0.0, description="Graph risk score from mri.detection.graph.")
-    temporal: RawSignal = Field(
-        0.0, description="Temporal burst score from mri.detection.temporal."
+    graph: RawSignal | None = Field(
+        None, description="Raw graph_risk_score (mri.detection.graph)."
     )
-    anomaly: RawSignal = Field(0.0, description="Isolation Forest anomaly score.")
+    temporal: RawSignal | None = Field(
+        None, description="Raw temporal_risk_score (mri.detection.temporal)."
+    )
+    anomaly: RawSignal | None = Field(
+        None,
+        description=(
+            "RAW anomaly score: -IsolationForest.score_samples. Not the calibrated "
+            "anomaly_score column, which the frozen reference has already transformed."
+        ),
+    )
 
 
 class ScoreRequest(BaseModel):
@@ -63,31 +77,46 @@ class ScoreRequest(BaseModel):
 
 
 class SignalContribution(BaseModel):
+    """One signal's share of the fused score. These sum to `fused_score`."""
+
     signal: str
     label: str
-    weight: float = Field(ge=0.0, le=1.0)
-    raw: float
-    normalised: float = Field(ge=0.0, le=1.0)
+    weight: float = Field(ge=0.0, le=1.0, description="Published weight from mri.scoring.WEIGHTS.")
+    effective_weight: float = Field(
+        ge=0.0, le=1.0, description="Weight after renormalising over the observed signals."
+    )
+    raw: float | None
+    calibrated: float | None = Field(
+        None, ge=0.0, le=1.0, description="Raw value mapped through the frozen reference."
+    )
+    observed: bool
     contribution: float = Field(ge=0.0, le=1.0)
     share_of_score: float = Field(ge=0.0, le=1.0)
 
 
 class CalibrationInfo(BaseModel):
-    source: str
-    built_from: str
-    population_rows: int
-    built_utc: str
-    out_of_range_signals: list[str] = Field(
-        default_factory=list,
-        description="Signals outside the frozen population range; their normalised value was clipped.",
+    """Provenance of the frozen reference the score was computed against."""
+
+    reference_path: str
+    signals: dict[str, str] = Field(
+        default_factory=dict, description="Signal -> calibration method (identity | quantile)."
+    )
+    frozen_on: dict[str, int] = Field(
+        default_factory=dict, description="Signal -> population size the reference was fitted on."
     )
 
 
 class ScoreResponse(BaseModel):
     entity_type: EntityType
     entity_id: str
-    fused_score: float = Field(ge=0.0, le=1.0)
+    fused_score: float | None = Field(
+        None, ge=0.0, le=1.0, description="Null when no signal was observed (coverage 0)."
+    )
     band: BandName
+    coverage: float = Field(
+        ge=0.0, le=1.0, description="Fraction of the total weight mass actually observed."
+    )
+    signals_missing: list[str]
     contributions: list[SignalContribution]
     explanation: str
     model_version: str
@@ -101,6 +130,8 @@ class EntityResponse(BaseModel):
     entity_id: str
     fused_score: float = Field(ge=0.0, le=1.0)
     band: BandName
+    coverage: float = Field(ge=0.0, le=1.0)
+    signals_missing: list[str]
     rank: int = Field(ge=1)
     population_size: int = Field(ge=0)
     contributions: list[SignalContribution]

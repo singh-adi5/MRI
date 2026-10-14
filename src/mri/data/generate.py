@@ -346,7 +346,7 @@ class MarketplaceGenerator:
             member_s = take_s(1)[0]
             ring_start = TODAY - timedelta(days=float(rng.integers(70, 141)))
             region = self._pick_rare_region()
-            devices = [self._new_device() for _ in range(int(rng.integers(2, 4)))]
+            devices = [self._new_device() for _ in range(int(rng.integers(1, 3)))]
             ring = {
                 "customers": members_c,
                 "seller": member_s,
@@ -440,7 +440,7 @@ class MarketplaceGenerator:
         """Heavy-tailed personal device ownership + a thin layer of real sharing."""
         rng = self.rng
         counts = [1, 2, 3, 4, 5]
-        probs = np.array([0.60, 0.27, 0.09, 0.03, 0.01])
+        probs = np.array([0.52, 0.28, 0.12, 0.05, 0.03])
 
         all_accounts = [self.customers[c] for c in sorted(self.customers)] + [
             self.sellers[s] for s in sorted(self.sellers)
@@ -888,9 +888,10 @@ class MarketplaceGenerator:
                     }
                 )
 
-            # Benign credential fumbling: ~7% of accounts have one bad day with
-            # 4-6 failed attempts, so "max_failed_attempts > 3" is not ATO-only.
-            if acct.fraud_pattern == "" and rng.random() < 0.07:
+            # Benign credential fumbling: ~12% of accounts have one bad day with
+            # 4-6 failed attempts, so "max_failed_attempts > 3" is not ATO-only -
+            # it stays a noisy heuristic rather than a label proxy.
+            if acct.fraud_pattern == "" and rng.random() < 0.12:
                 when = _jitter(rng, _between(rng, lo, hi))
                 self.logins.append(
                     {
@@ -919,7 +920,7 @@ class MarketplaceGenerator:
                         "login_date": when,
                         "ip_region": new_region,
                         "device_id": new_device,
-                        "failed_attempts": int(rng.integers(2, 6)),
+                        "failed_attempts": int(rng.integers(2, 5)),
                     }
                 )
             for _ in range(int(rng.integers(3, 10))):
