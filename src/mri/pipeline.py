@@ -17,6 +17,7 @@ PIPELINE_STEPS = [
     ("mri.detection.graph", "V3 graph / entity link analysis"),
     ("mri.detection.temporal", "V4 temporal burst detection"),
     ("mri.fusion.fuse", "V4.1 risk fusion"),
+    ("mri.evaluation", "Measure against ground truth (precision@k, lift, per-pattern recall)"),
     ("mri.governance.ops", "V6 governance, drift and registry"),
 ]
 WORKBENCH = ROOT / "src" / "mri" / "app" / "workbench.py"

@@ -92,7 +92,8 @@ FARM_ACCOUNTS = 10         # customer accounts per rating farm (+1 target seller
 N_BENIGN_HOUSEHOLDS = 18   # 3-4 related accounts sharing a device + region
 N_BENIGN_SHARED_DEVICES = 90
 N_BENIGN_NEW_RAMP_SELLERS = 12
-N_BENIGN_REPEAT_RATERS = 30
+N_BENIGN_POOR_QUALITY_SELLERS = 14
+N_BENIGN_REPEAT_RATERS = 70
 
 COARSE_REGIONS = ["Europe", "North America", "South America", "Asia", "Africa", "Oceania"]
 DEVICE_TYPES = ["mobile", "desktop", "tablet"]
@@ -158,7 +159,7 @@ def _build_region_vocabulary() -> list[str]:
     for continent, countries in blocks:
         for country in countries:
             # Larger markets get more distinct metro-level regions.
-            n_metro = 5 if country in ("US", "DE", "GB", "IN", "BR", "CN") else 3
+            n_metro = 9 if country in ("US", "DE", "GB", "IN", "BR", "CN") else 5
             for metro in range(1, n_metro + 1):
                 regions.append(f"{continent}-{country}-{metro:02d}")
     return regions
@@ -182,6 +183,7 @@ class Account:
     # behavioural knobs
     refund_propensity: float = 0.05
     rating_bias: str = "normal"    # normal | extreme_high | extreme_low
+    rating_rate: float = 0.26      # P(leaves a rating | order)
     n_orders: int = 0
     # pattern bookkeeping
     takeover_at: datetime | None = None
@@ -189,6 +191,9 @@ class Account:
     secondary_from: datetime | None = None
     active_until: datetime | None = None
     login_scale: float = 1.0
+    # bust-out timing (sellers only)
+    bust_day: int = 0
+    ramp_peak: float = 0.0
     # a device that only appears partway through the window
     late_device: str | None = None
     late_device_from: datetime | None = None
@@ -205,9 +210,10 @@ class MarketplaceGenerator:
     def __init__(self, seed: int = SEED) -> None:
         self.rng = np.random.default_rng(seed)
         self.regions = _build_region_vocabulary()
-        # Long-tailed region popularity: the biggest metro holds ~7% of accounts,
-        # the tail holds single-digit counts (which is where ring co-location shows up).
-        self.region_weights = _zipf_weights(len(self.regions), exponent=1.05, offset=2.0)
+        # Long-tailed region popularity: the biggest metros hold a few percent of
+        # accounts each, while the tail holds single-digit counts - which is where
+        # ring co-location actually shows up as a signal.
+        self.region_weights = _zipf_weights(len(self.regions), exponent=1.0, offset=9.0)
 
         self.customers: dict[int, Account] = {}
         self.sellers: dict[int, Account] = {}
@@ -258,8 +264,13 @@ class MarketplaceGenerator:
 
     def build_entities(self) -> None:
         rng = self.rng
+        # Account age is front-loaded (the marketplace is growing), not uniform.
+        # A uniform spread would make "account is only a few weeks old" a near
+        # perfect tell for rating-farm accounts; in reality young accounts are
+        # the single largest cohort.
         for cid in range(1, N_CUSTOMERS + 1):
-            signup = TODAY - timedelta(days=float(rng.integers(1, CUSTOMER_HISTORY_DAYS)))
+            age = 1.0 + float(rng.beta(0.85, 1.5)) * (CUSTOMER_HISTORY_DAYS - 1)
+            signup = TODAY - timedelta(days=age)
             self.customers[cid] = Account(
                 kind="customer",
                 eid=cid,
@@ -273,7 +284,9 @@ class MarketplaceGenerator:
                 refund_propensity=float(rng.beta(1.6, 18.0)),
             )
         for sid in range(1, N_SELLERS + 1):
-            join = TODAY - timedelta(days=float(rng.integers(1, SELLER_HISTORY_DAYS)))
+            join = TODAY - timedelta(
+                days=1.0 + float(rng.beta(0.9, 1.3)) * (SELLER_HISTORY_DAYS - 1)
+            )
             self.sellers[sid] = Account(
                 kind="seller",
                 eid=sid,
@@ -284,13 +297,17 @@ class MarketplaceGenerator:
                 refund_propensity=float(rng.beta(2.0, 20.0)),
             )
 
-        # Rating style: a sizeable benign minority only ever gives 5s (or 1s).
-        for cid, acct in self.customers.items():
+        # Rating style: a sizeable benign minority only ever gives 5s (or 1s),
+        # and ~9% are prolific reviewers who rate nearly everything they buy.
+        # Both cohorts overlap the rating farms on rating volume and extremity.
+        for cid in sorted(self.customers):
+            acct = self.customers[cid]
             r = rng.random()
             if r < 0.13:
                 acct.rating_bias = "extreme_high"
             elif r < 0.17:
                 acct.rating_bias = "extreme_low"
+            acct.rating_rate = 0.80 if rng.random() < 0.09 else float(rng.uniform(0.12, 0.34))
 
     # -- 2. fraud role assignment -----------------------------------------
 
@@ -307,13 +324,21 @@ class MarketplaceGenerator:
             out = [int(sell_pool.pop()) for _ in range(n)]
             return out
 
-        # bust-out sellers
+        # bust-out sellers. Timing is fixed here, before any orders are drawn,
+        # so that organic demand also respects the disappearance date.
         self.bust_out_sellers = take_s(N_BUST_OUT_SELLERS)
         for sid in self.bust_out_sellers:
             s = self.sellers[sid]
             s.fraud_pattern = "bust_out"
             s.signup = TODAY - timedelta(days=float(rng.integers(55, 96)))
             s.home_region = self._pick_region()
+            life = max((TODAY - s.signup).days, 20)
+            s.bust_day = int(life * rng.uniform(0.60, 0.75))
+            s.ramp_peak = float(rng.uniform(3.5, 8.0))
+            # goes dark a few days after the refund wave
+            s.active_until = min(
+                s.signup + timedelta(days=s.bust_day + float(rng.uniform(4, 11))), TODAY
+            )
 
         # collusive rings
         for _ in range(N_RINGS):
@@ -383,7 +408,13 @@ class MarketplaceGenerator:
             s.signup = TODAY - timedelta(days=float(rng.integers(45, 110)))
             # Genuinely poor-quality new sellers: refund rates that reach into
             # bust-out territory without any bust-out behaviour.
-            s.refund_propensity = float(rng.uniform(0.18, 0.36))
+            s.refund_propensity = float(rng.uniform(0.22, 0.48))
+
+        # Established but low-quality sellers (dropshippers, fragile goods).
+        # Without these the ">30% seller refund rate" rule would be a perfect
+        # fraud oracle instead of a noisy heuristic.
+        for sid in take_s(N_BENIGN_POOR_QUALITY_SELLERS):
+            self.sellers[sid].refund_propensity = float(rng.uniform(0.28, 0.55))
 
         self.repeat_raters = take_c(N_BENIGN_REPEAT_RATERS)
 
@@ -526,7 +557,11 @@ class MarketplaceGenerator:
         )
 
     def _refund_decision(self, customer: Account, seller: Account) -> bool:
-        p = 0.55 * customer.refund_propensity + 0.45 * seller.refund_propensity
+        # Noisy-OR rather than a weighted average: a genuinely bad seller drives
+        # its own refund rate instead of being diluted towards the mean by its
+        # customers. That is what puts honest low-quality sellers above the 30%
+        # rule threshold alongside the bust-out sellers.
+        p = 1.0 - (1.0 - 0.6 * customer.refund_propensity) * (1.0 - seller.refund_propensity)
         return bool(self.rng.random() < np.clip(p, 0.002, 0.95))
 
     def build_orders(self) -> None:
@@ -586,10 +621,8 @@ class MarketplaceGenerator:
         for sid in self.bust_out_sellers:
             s = self.sellers[sid]
             life = max((TODAY - s.signup).days, 20)
-            bust_day = int(life * rng.uniform(0.62, 0.78))
-            silent_from = s.signup + timedelta(days=bust_day + float(rng.uniform(5, 13)))
-            s.active_until = min(silent_from, TODAY)
-            peak = float(rng.uniform(3.5, 8.0))
+            bust_day = s.bust_day
+            peak = s.ramp_peak
             for d in range(0, min(bust_day + 12, life)):
                 day_dt = s.signup + timedelta(days=d)
                 if day_dt >= s.active_until:
@@ -704,9 +737,9 @@ class MarketplaceGenerator:
 
         # Organic post-purchase ratings.
         for row in orders_df.itertuples(index=False):
-            if rng.random() >= 0.26:
-                continue
             c = self.customers[int(row.customer_id)]
+            if rng.random() >= c.rating_rate:
+                continue
             when = row.order_date + timedelta(days=float(rng.uniform(1, 21)))
             if when > TODAY:
                 continue
@@ -724,7 +757,7 @@ class MarketplaceGenerator:
         for ring in self.rings:
             for cid in ring["customers"]:
                 c = self.customers[cid]
-                n = int(rng.integers(2, 6))
+                n = int(rng.integers(1, 4))
                 lo = max(c.signup, WINDOW_START)
                 for _ in range(n):
                     when = _jitter(rng, _between(rng, lo, TODAY))
@@ -811,20 +844,34 @@ class MarketplaceGenerator:
             # Every device an account owns must appear at least once, otherwise a
             # shared device is invisible in login_activity and device sharing
             # silently disappears as a signal.
-            n_logins = max(n_logins, len(acct.devices))
+            n_logins = max(n_logins, len(acct.devices) + (1 if acct.late_device else 0))
 
             primary = acct.devices[0]
-            # First len(devices) logins cover each device once; the rest skew to
-            # the primary handset.
-            device_plan = list(acct.devices)
-            for _ in range(n_logins - len(device_plan)):
-                if len(acct.devices) == 1 or rng.random() < 0.72:
-                    device_plan.append(primary)
-                else:
-                    device_plan.append(acct.devices[int(rng.integers(0, len(acct.devices)))])
+            times = sorted(_jitter(rng, _between(rng, lo, hi)) for _ in range(n_logins))
 
-            for device in device_plan:
-                when = _jitter(rng, _between(rng, lo, hi))
+            # Device assignment is chronological: the churn device cannot appear
+            # before the day it was bought.
+            plan: list[str | None] = [None] * n_logins
+            pending = list(acct.devices)          # must each be seen at least once
+            late_slots = [
+                i for i, t in enumerate(times)
+                if acct.late_device is not None
+                and acct.late_device_from is not None
+                and t >= acct.late_device_from
+            ]
+            for i in range(n_logins):
+                if pending and (n_logins - i) <= len(pending):
+                    plan[i] = pending.pop(0)      # reserve the tail for coverage
+                elif i in late_slots and rng.random() < 0.65:
+                    plan[i] = acct.late_device
+                elif len(acct.devices) == 1 or rng.random() < 0.72:
+                    plan[i] = primary
+                else:
+                    plan[i] = acct.devices[int(rng.integers(0, len(acct.devices)))]
+            if acct.late_device is not None and late_slots and acct.late_device not in plan:
+                plan[late_slots[-1]] = acct.late_device
+
+            for when, device in zip(times, plan):
                 region = acct.home_region
                 if acct.secondary_region is not None and acct.secondary_from is not None:
                     if when >= acct.secondary_from:
@@ -859,7 +906,7 @@ class MarketplaceGenerator:
         for acct in self._ato_accounts():
             if acct.takeover_at is None:
                 continue
-            new_device = acct.devices[-1]
+            new_device = acct.takeover_device or self._new_device()
             new_region = self._pick_region()
             while new_region == acct.home_region:
                 new_region = self._pick_region()

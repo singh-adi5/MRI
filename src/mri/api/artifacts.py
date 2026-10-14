@@ -1,8 +1,8 @@
 """Loads the batch artefacts the service serves, and reports what is missing.
 
-Everything here is read-only and loaded once at startup into memory. The dataset
-is a few thousand rows, so an index in a dict beats a query per request, and it
-keeps the API free of any write path to the pipeline's own stores.
+Everything here is read-only and loaded once at startup into memory. The
+population is a few thousand rows, so a dict index beats a query per request
+and it keeps the API free of any write path into the pipeline's own stores.
 """
 from __future__ import annotations
 
@@ -13,13 +13,14 @@ from pathlib import Path
 from typing import Any, Final
 
 from mri.api.scoring_adapter import (
-    SIGNAL_COLUMNS,
-    SIGNAL_KEYS,
-    CalibrationReference,
+    NORM_COLUMNS,
+    RAW_COLUMNS,
     ScoringDefinition,
     ScoringUnavailable,
-    load_reference,
+    ensure_reference,
     load_scoring,
+    raw_signals_from_row,
+    reference_path,
 )
 from mri.config import OUTPUT_DIR
 
@@ -32,6 +33,7 @@ HEALTH_PATH: Final[Path] = Path(OUTPUT_DIR) / "v6_pipeline_health.json"
 
 MODEL_VERSION: Final[str] = "mri-fusion-v4.1"
 
+# Investigator-facing evidence carried through from the detection stages.
 _EVIDENCE_COLUMNS: Final[tuple[str, ...]] = (
     "graph_degree",
     "degree_centrality",
@@ -46,6 +48,7 @@ _EVIDENCE_COLUMNS: Final[tuple[str, ...]] = (
     "failed_attempt_density",
     "seller_order_velocity_per_hour",
     "seller_order_burst_ratio",
+    "signal_coverage",
 )
 
 
@@ -61,8 +64,10 @@ class ScoredEntity:
     entity_id: str
     fused_score: float
     band: str
-    raw_signals: dict[str, float]
-    normalised_signals: dict[str, float]
+    coverage: float
+    signals_missing: list[str]
+    raw_signals: dict[str, float | None]
+    calibrated_signals: dict[str, float]
     contributions: dict[str, float]
     reason_codes: list[str]
     explanation: str
@@ -75,7 +80,7 @@ class ArtifactStore:
 
     def __init__(self) -> None:
         self.scoring: ScoringDefinition | None = None
-        self.reference: CalibrationReference | None = None
+        self.reference: Any | None = None
         self.entities: dict[str, ScoredEntity] = {}
         self.evaluation: dict[str, Any] | None = None
         self.health: dict[str, Any] | None = None
@@ -93,58 +98,77 @@ class ArtifactStore:
             self.scoring = None
 
         try:
-            self.reference = load_reference()
+            self.reference = ensure_reference()
         except ScoringUnavailable as exc:
             self.errors.append(f"calibration reference: {exc}")
             self.reference = None
 
         self._load_entities()
-        self._load_evaluation()
-        self._load_health()
+        self.evaluation = _read_json(EVALUATION_PATH)
+        self.health = _read_json(HEALTH_PATH)
         self.loaded = True
 
         if self.errors:
-            log.warning("artefact load finished with gaps: %s", "; ".join(self.errors))
+            log.warning("artefacts loaded with gaps", extra={"gaps": self.errors})
         else:
             log.info(
-                "artefacts loaded: %d entities, scoring_source=%s",
-                len(self.entities),
-                self.scoring.source if self.scoring else "none",
+                "artefacts loaded",
+                extra={
+                    "entities": len(self.entities),
+                    "reference_path": str(reference_path()),
+                    "evaluation_present": self.evaluation is not None,
+                },
             )
         return self
 
     def _load_entities(self) -> None:
+        if self.scoring is None:
+            return
         if not FUSED_PATH.exists():
             self.errors.append(f"batch scores missing: {FUSED_PATH}")
-            return
-        if self.scoring is None:
             return
 
         import pandas as pd
 
         frame = pd.read_csv(FUSED_PATH, dtype={"entity_id": str})
+        if "fused_risk_score" not in frame.columns:
+            self.errors.append(f"{FUSED_PATH} has no fused_risk_score column")
+            return
         frame = frame.sort_values("fused_risk_score", ascending=False).reset_index(drop=True)
 
         entities: dict[str, ScoredEntity] = {}
         band_counts: dict[str, int] = {band: 0 for band in self.scoring.bands}
 
         for rank, row in enumerate(frame.to_dict(orient="records"), start=1):
-            raw = {
-                key: _as_float(row.get(raw_col)) for key, (raw_col, _) in SIGNAL_COLUMNS.items()
+            calibrated = {
+                key: _as_float(row.get(column)) for key, column in NORM_COLUMNS.items()
             }
-            normalised = {
-                key: _as_float(row.get(norm_col)) for key, (_, norm_col) in SIGNAL_COLUMNS.items()
+            # The batch writes c_<signal>; recompute only if it did not.
+            contributions = {
+                key: _as_float(row.get(f"c_{key}")) for key in RAW_COLUMNS
             }
-            band = str(row.get("fused_risk_band", "Low"))
+            if not any(contributions.values()):
+                coverage_weight = sum(
+                    self.scoring.weights[k] for k, v in calibrated.items() if v == v
+                )
+                if coverage_weight > 0:
+                    contributions = {
+                        key: (self.scoring.weights[key] / coverage_weight) * value
+                        for key, value in calibrated.items()
+                    }
+
+            band = str(row.get("fused_risk_band") or "Unknown")
             entity = ScoredEntity(
                 entity_type=str(row.get("entity_type", "")).lower(),
                 entity_id=str(row.get("entity_id", "")),
                 fused_score=_as_float(row.get("fused_risk_score")),
                 band=band,
-                raw_signals=raw,
-                normalised_signals=normalised,
-                contributions=self.scoring.contributions(normalised),
-                reason_codes=_split_codes(row.get("top_reason_codes")),
+                coverage=_as_float(row.get("signal_coverage"), default=1.0),
+                signals_missing=_split(row.get("signals_missing"), ","),
+                raw_signals=raw_signals_from_row(row),
+                calibrated_signals=calibrated,
+                contributions=contributions,
+                reason_codes=_split(row.get("top_reason_codes"), "|"),
                 explanation=str(row.get("analyst_summary") or row.get("fusion_summary") or ""),
                 evidence={
                     col: _as_float(row.get(col)) for col in _EVIDENCE_COLUMNS if col in row
@@ -157,24 +181,16 @@ class ArtifactStore:
         self.entities = entities
         self.band_counts = band_counts
 
-    def _load_evaluation(self) -> None:
-        # Written by mri.evaluation, which is landing alongside this service.
-        self.evaluation = _read_json(EVALUATION_PATH)
-        if self.evaluation is None:
-            log.info("%s not present yet; /metrics will report evaluation as null", EVALUATION_PATH)
-
-    def _load_health(self) -> None:
-        self.health = _read_json(HEALTH_PATH)
-
     # -- readiness ---------------------------------------------------------
     def is_ready(self) -> bool:
-        return bool(self.loaded and self.scoring and self.reference and self.entities)
+        return bool(self.loaded and self.scoring and self.reference is not None and self.entities)
 
     def readiness_detail(self) -> dict[str, Any]:
         return {
             "scoring_definition": self.scoring is not None,
             "scoring_source": self.scoring.source if self.scoring else None,
             "calibration_reference": self.reference is not None,
+            "calibration_reference_path": str(reference_path()),
             "batch_scores": bool(self.entities),
             "entities_loaded": len(self.entities),
             "evaluation_present": self.evaluation is not None,
@@ -186,34 +202,48 @@ class ArtifactStore:
     def get(self, entity_type: str, entity_id: str) -> ScoredEntity | None:
         return self.entities.get(entity_key(entity_type, entity_id))
 
-    def alert_rate(self, alert_bands: tuple[str, ...] = ("High", "Critical")) -> float:
+    def alert_bands(self) -> tuple[str, ...]:
+        """Bands at or above the shipped alert threshold, from mri.scoring."""
+        if self.scoring is None:
+            return ("Critical",)
+        cut = self.scoring.alert_threshold
+        return tuple(
+            band
+            for band in self.scoring.bands
+            if self.scoring.band_thresholds.get(band, 0.0) >= cut
+        ) or ("Critical",)
+
+    def alert_rate(self) -> float:
         total = len(self.entities)
         if not total:
             return 0.0
-        alerts = sum(self.band_counts.get(band, 0) for band in alert_bands)
+        alerts = sum(self.band_counts.get(band, 0) for band in self.alert_bands())
         return round(alerts / total, 6)
 
     def top_decile_threshold(self) -> float | None:
         """Fused score at the 90th percentile of the scored population."""
-        if not self.entities:
+        scores = sorted(
+            (e.fused_score for e in self.entities.values() if e.fused_score == e.fused_score),
+            reverse=True,
+        )
+        if not scores:
             return None
-        scores = sorted((e.fused_score for e in self.entities.values()), reverse=True)
         cut = max(0, int(len(scores) * 0.10) - 1)
         return float(scores[cut])
 
 
-def _as_float(value: Any) -> float:
+def _as_float(value: Any, default: float = 0.0) -> float:
     try:
         number = float(value)
     except (TypeError, ValueError):
-        return 0.0
-    return 0.0 if number != number else number  # NaN -> 0.0
+        return default
+    return default if number != number else number  # NaN -> default
 
 
-def _split_codes(value: Any) -> list[str]:
+def _split(value: Any, separator: str) -> list[str]:
     if not isinstance(value, str) or not value.strip():
         return []
-    return [part.strip() for part in value.split("|") if part.strip()]
+    return [part.strip() for part in value.split(separator) if part.strip()]
 
 
 def _read_json(path: Path) -> dict[str, Any] | None:
@@ -232,7 +262,6 @@ __all__ = [
     "FUSED_PATH",
     "LIFT_CURVE_PATH",
     "MODEL_VERSION",
-    "SIGNAL_KEYS",
     "ArtifactStore",
     "ScoredEntity",
     "entity_key",

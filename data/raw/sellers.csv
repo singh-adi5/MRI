@@ -1,201 +1,201 @@
 seller_id,join_date,seller_region,category,risk_flag_history
-1,2026-03-09,Europe,sports,none
-2,2025-12-25,South America,books,none
-3,2024-11-08,Asia,beauty,none
-4,2026-01-26,Africa,books,none
-5,2024-03-29,Africa,books,none
-6,2026-03-06,South America,beauty,none
-7,2026-03-14,South America,fashion,none
-8,2024-07-13,North America,beauty,none
-9,2024-11-29,Europe,electronics,none
-10,2024-07-26,North America,beauty,major
-11,2024-06-08,Oceania,fashion,minor
-12,2026-01-12,North America,home,major
-13,2026-01-24,South America,beauty,none
-14,2025-11-20,Europe,books,none
-15,2025-01-24,South America,toys,none
-16,2026-01-15,North America,toys,none
-17,2024-12-24,Africa,home,none
-18,2024-06-10,North America,books,none
-19,2025-04-10,Oceania,books,none
-20,2025-06-21,Africa,home,none
-21,2025-07-15,Europe,toys,minor
-22,2024-10-26,Europe,sports,none
-23,2024-10-18,Africa,beauty,major
-24,2025-06-02,Asia,electronics,none
-25,2024-04-23,Asia,electronics,none
-26,2025-11-26,Asia,books,minor
-27,2024-04-15,Asia,fashion,minor
-28,2024-03-25,North America,books,none
-29,2025-01-23,Europe,books,none
-30,2026-01-16,Europe,toys,none
-31,2025-07-17,Oceania,home,none
-32,2025-08-03,South America,fashion,none
-33,2025-07-04,Europe,home,none
-34,2024-11-19,North America,electronics,none
-35,2025-04-02,North America,fashion,none
-36,2024-07-21,Asia,home,none
-37,2025-12-24,Asia,sports,minor
-38,2025-06-11,North America,toys,minor
-39,2025-12-14,South America,sports,none
-40,2024-05-09,Africa,home,none
-41,2024-10-16,Asia,fashion,none
-42,2025-03-10,Asia,electronics,none
-43,2024-09-16,South America,electronics,none
-44,2025-11-22,Africa,home,none
-45,2025-10-31,South America,fashion,none
-46,2025-07-21,Oceania,electronics,none
-47,2026-01-07,Europe,fashion,none
-48,2024-12-27,North America,fashion,none
-49,2025-05-29,Africa,sports,none
-50,2024-05-27,Asia,sports,none
-51,2024-04-13,Africa,sports,none
-52,2026-02-20,Asia,books,none
-53,2024-07-08,South America,beauty,none
-54,2025-07-13,Africa,books,none
-55,2026-01-16,Africa,beauty,none
-56,2024-11-06,Africa,electronics,none
-57,2024-07-06,North America,home,none
-58,2024-07-18,Oceania,sports,minor
-59,2024-05-02,Oceania,books,none
-60,2024-06-04,North America,fashion,none
-61,2025-08-18,Africa,electronics,minor
-62,2025-04-01,Africa,sports,minor
-63,2025-12-29,North America,toys,none
-64,2024-07-09,North America,toys,none
-65,2026-01-07,Asia,electronics,none
-66,2025-06-06,Oceania,books,minor
-67,2024-03-25,Europe,electronics,none
-68,2024-09-16,Asia,toys,none
-69,2024-12-21,Africa,electronics,none
-70,2025-07-16,South America,electronics,none
-71,2025-03-07,Europe,books,none
-72,2025-03-24,Africa,home,major
-73,2026-01-31,North America,beauty,none
-74,2025-12-14,Africa,beauty,none
-75,2025-08-12,North America,books,none
-76,2024-11-10,North America,home,none
-77,2025-12-14,North America,fashion,none
-78,2026-02-10,Europe,beauty,none
-79,2024-10-22,South America,home,none
-80,2024-07-22,South America,beauty,none
-81,2025-04-04,North America,toys,none
-82,2024-12-21,South America,sports,none
-83,2025-12-04,Oceania,toys,none
-84,2025-11-13,Oceania,fashion,none
-85,2024-03-25,Oceania,electronics,none
-86,2024-06-30,Oceania,sports,none
-87,2025-02-15,Africa,home,none
-88,2026-01-10,Asia,beauty,minor
-89,2026-01-21,Europe,home,none
-90,2025-10-13,Africa,home,none
-91,2026-01-23,South America,fashion,minor
-92,2025-01-16,Oceania,sports,none
-93,2025-01-05,Oceania,fashion,minor
-94,2025-03-31,Oceania,sports,none
-95,2025-04-01,Asia,beauty,none
-96,2026-01-13,South America,home,major
-97,2026-01-31,Europe,home,none
-98,2025-12-28,Africa,sports,none
-99,2026-01-27,South America,sports,none
-100,2024-12-07,Oceania,electronics,none
-101,2024-03-24,Africa,fashion,none
-102,2024-12-17,Asia,electronics,none
-103,2025-03-08,Europe,fashion,none
-104,2024-09-07,Oceania,toys,minor
-105,2025-05-11,Asia,electronics,none
-106,2025-09-11,Oceania,toys,none
-107,2024-11-24,Oceania,fashion,minor
-108,2024-06-03,South America,fashion,none
-109,2025-08-28,Europe,fashion,none
-110,2025-12-16,Europe,home,none
-111,2024-07-13,North America,electronics,none
-112,2025-03-21,North America,toys,minor
-113,2024-11-08,Asia,beauty,minor
-114,2025-10-16,South America,beauty,none
-115,2024-10-19,Oceania,home,major
-116,2025-11-19,South America,toys,none
-117,2024-08-29,Europe,electronics,none
-118,2024-03-17,South America,electronics,none
-119,2025-08-22,South America,books,none
-120,2025-12-13,Oceania,fashion,minor
-121,2024-08-22,Asia,electronics,none
-122,2025-05-27,Europe,beauty,none
-123,2025-11-19,Asia,books,none
-124,2024-09-11,Oceania,fashion,none
-125,2026-01-08,Europe,sports,none
-126,2024-11-21,Africa,fashion,none
-127,2025-04-12,Oceania,beauty,none
-128,2025-01-08,Africa,books,none
-129,2024-04-05,Europe,home,none
-130,2025-02-09,Africa,electronics,minor
-131,2025-06-20,Africa,sports,none
-132,2026-03-12,Africa,beauty,minor
-133,2025-12-16,South America,electronics,minor
-134,2026-02-23,North America,beauty,none
-135,2024-07-09,Oceania,beauty,none
-136,2024-06-18,Africa,home,none
-137,2024-03-23,Europe,books,none
-138,2024-11-12,Asia,home,none
-139,2025-02-25,South America,electronics,none
-140,2024-11-08,Asia,sports,none
-141,2024-03-20,Africa,sports,major
-142,2024-11-07,Oceania,beauty,none
-143,2024-08-26,Asia,home,minor
-144,2026-03-06,Africa,toys,none
-145,2025-12-12,Asia,beauty,none
-146,2024-10-13,Oceania,toys,none
-147,2025-09-04,Asia,fashion,none
-148,2025-10-08,Africa,electronics,major
-149,2025-12-16,South America,fashion,minor
-150,2026-03-11,Africa,books,none
-151,2026-01-04,South America,books,none
-152,2024-06-29,Oceania,beauty,none
-153,2024-06-08,Africa,home,none
-154,2025-04-15,Africa,home,none
-155,2024-09-15,Asia,home,none
-156,2024-04-27,North America,home,none
-157,2024-07-06,Asia,fashion,none
-158,2024-04-19,Europe,toys,none
-159,2024-10-26,Asia,electronics,none
-160,2024-12-23,Oceania,toys,minor
-161,2024-05-02,Oceania,electronics,none
-162,2024-11-15,North America,home,none
-163,2024-03-22,Europe,fashion,none
-164,2024-04-19,North America,sports,none
-165,2025-03-18,Europe,fashion,minor
-166,2024-11-16,South America,fashion,minor
-167,2025-11-30,Oceania,beauty,none
-168,2025-12-21,Oceania,beauty,minor
-169,2025-03-13,North America,electronics,none
-170,2025-12-27,Europe,toys,none
-171,2026-01-13,Africa,toys,none
-172,2025-05-09,South America,beauty,minor
-173,2025-08-01,South America,books,none
-174,2025-12-22,Oceania,toys,none
-175,2025-05-30,North America,fashion,none
-176,2024-03-23,North America,fashion,none
-177,2024-10-19,Oceania,home,none
-178,2024-11-15,South America,beauty,minor
-179,2025-05-27,South America,books,none
-180,2024-08-14,Oceania,sports,none
-181,2024-07-21,Oceania,electronics,minor
-182,2026-02-21,North America,sports,minor
-183,2024-07-30,Europe,toys,none
-184,2024-08-26,North America,electronics,none
-185,2025-03-25,Asia,beauty,none
-186,2026-01-06,Oceania,home,none
-187,2025-03-27,South America,fashion,minor
-188,2026-01-01,Oceania,electronics,none
-189,2025-07-05,Oceania,fashion,minor
-190,2025-02-27,Asia,sports,none
-191,2025-03-23,Africa,sports,none
-192,2024-10-10,South America,books,none
-193,2024-07-29,North America,toys,none
-194,2025-07-27,Oceania,books,none
-195,2025-10-24,Oceania,home,minor
-196,2026-02-16,North America,books,none
-197,2024-10-08,Europe,electronics,none
-198,2026-02-19,North America,fashion,minor
-199,2025-11-02,Europe,electronics,major
-200,2025-03-14,South America,toys,none
+1,2025-10-11,Asia,toys,none
+2,2025-11-26,Africa,home,none
+3,2025-02-25,Europe,books,none
+4,2025-02-20,Oceania,home,none
+5,2025-12-21,South America,sports,minor
+6,2024-10-25,Asia,home,none
+7,2026-02-28,North America,toys,major
+8,2026-03-13,South America,home,none
+9,2026-01-16,North America,fashion,minor
+10,2024-09-21,Europe,electronics,none
+11,2024-03-24,Asia,toys,none
+12,2025-12-20,Africa,fashion,none
+13,2024-07-26,Africa,books,none
+14,2024-08-20,Europe,sports,minor
+15,2024-08-08,Africa,toys,none
+16,2024-12-13,South America,fashion,none
+17,2025-11-27,South America,home,minor
+18,2026-01-12,Europe,books,none
+19,2024-12-19,Europe,books,minor
+20,2024-10-05,Asia,fashion,none
+21,2025-12-09,Asia,home,none
+22,2025-12-05,Europe,beauty,minor
+23,2024-12-21,North America,electronics,none
+24,2025-07-10,Oceania,toys,none
+25,2024-10-19,North America,sports,none
+26,2025-11-30,Asia,fashion,none
+27,2025-04-18,North America,home,minor
+28,2025-08-11,South America,electronics,none
+29,2026-01-10,Oceania,home,minor
+30,2026-01-04,Africa,books,none
+31,2025-12-02,Europe,electronics,none
+32,2025-09-21,North America,books,none
+33,2025-03-19,Asia,books,none
+34,2025-12-25,Oceania,beauty,minor
+35,2026-01-03,Asia,electronics,major
+36,2025-12-20,Asia,sports,none
+37,2026-03-11,North America,toys,major
+38,2025-09-07,North America,fashion,none
+39,2025-03-30,South America,beauty,none
+40,2025-05-29,North America,toys,none
+41,2026-01-06,Europe,fashion,none
+42,2024-12-02,North America,home,none
+43,2025-11-13,Africa,toys,none
+44,2026-02-01,Oceania,sports,none
+45,2026-01-26,Europe,sports,none
+46,2025-08-15,Oceania,toys,none
+47,2026-01-28,Oceania,fashion,minor
+48,2024-03-25,Asia,home,none
+49,2024-08-30,Oceania,books,none
+50,2025-10-06,Africa,beauty,minor
+51,2025-10-23,Asia,sports,none
+52,2026-02-08,Europe,fashion,minor
+53,2025-01-24,South America,toys,none
+54,2025-11-25,Oceania,home,none
+55,2025-10-26,Asia,fashion,none
+56,2026-01-14,Asia,books,none
+57,2026-01-05,Oceania,books,none
+58,2025-12-28,South America,books,minor
+59,2024-12-14,North America,electronics,none
+60,2025-01-19,South America,beauty,none
+61,2026-02-24,Africa,home,minor
+62,2025-05-13,Asia,home,none
+63,2025-04-13,Asia,home,major
+64,2025-12-05,Asia,fashion,none
+65,2025-03-21,North America,sports,none
+66,2025-12-27,Oceania,toys,none
+67,2024-06-05,Asia,fashion,minor
+68,2025-05-06,Africa,home,none
+69,2024-11-05,North America,home,none
+70,2025-06-07,Africa,home,major
+71,2024-11-30,South America,beauty,none
+72,2025-10-29,Asia,books,minor
+73,2025-09-30,Africa,toys,none
+74,2026-01-18,Oceania,electronics,minor
+75,2026-01-12,Asia,books,none
+76,2025-02-03,Africa,beauty,none
+77,2024-06-01,Europe,books,none
+78,2026-03-05,North America,toys,minor
+79,2024-07-02,Asia,books,none
+80,2025-05-16,Europe,books,none
+81,2025-10-07,Europe,electronics,none
+82,2026-01-03,North America,beauty,none
+83,2025-07-30,Oceania,home,minor
+84,2025-08-24,North America,books,none
+85,2025-08-01,Asia,home,major
+86,2025-01-10,North America,home,none
+87,2026-02-16,Oceania,home,none
+88,2026-02-28,Asia,sports,none
+89,2025-06-12,South America,toys,none
+90,2025-12-19,North America,toys,none
+91,2025-06-27,South America,sports,none
+92,2025-06-23,South America,home,none
+93,2026-02-20,Europe,fashion,none
+94,2025-12-11,Africa,sports,major
+95,2026-03-08,South America,fashion,none
+96,2026-01-15,Africa,fashion,none
+97,2024-05-05,North America,electronics,none
+98,2025-03-10,Oceania,books,none
+99,2025-09-09,North America,books,none
+100,2024-08-10,North America,beauty,none
+101,2025-03-15,Europe,books,minor
+102,2026-01-12,Oceania,fashion,none
+103,2025-03-26,North America,electronics,none
+104,2025-09-19,South America,electronics,none
+105,2025-12-28,South America,sports,none
+106,2024-09-26,Oceania,electronics,none
+107,2026-03-12,Asia,fashion,none
+108,2025-04-23,Europe,fashion,none
+109,2026-02-01,North America,electronics,none
+110,2026-01-18,Asia,beauty,none
+111,2025-06-17,South America,electronics,minor
+112,2024-08-28,Asia,beauty,none
+113,2025-11-05,Europe,fashion,none
+114,2025-01-07,Oceania,home,minor
+115,2024-07-15,Africa,beauty,none
+116,2025-08-06,South America,fashion,none
+117,2024-07-10,Europe,beauty,none
+118,2025-01-14,Asia,fashion,major
+119,2025-11-01,South America,electronics,none
+120,2025-08-14,Oceania,toys,none
+121,2025-07-17,Africa,beauty,none
+122,2025-02-12,North America,fashion,none
+123,2024-05-25,North America,electronics,none
+124,2025-10-18,Oceania,toys,minor
+125,2026-01-22,Asia,electronics,none
+126,2026-01-07,Oceania,books,minor
+127,2025-12-15,South America,books,minor
+128,2025-08-06,Asia,beauty,none
+129,2025-03-04,Oceania,toys,none
+130,2025-10-03,Oceania,electronics,minor
+131,2024-07-22,Africa,home,none
+132,2025-10-01,Europe,beauty,none
+133,2024-05-25,Europe,home,none
+134,2026-01-03,North America,sports,none
+135,2025-10-27,Africa,sports,none
+136,2025-04-12,South America,books,none
+137,2026-01-15,Africa,beauty,none
+138,2026-01-07,Asia,sports,none
+139,2024-11-12,Africa,electronics,none
+140,2024-08-18,Europe,fashion,none
+141,2024-07-28,Africa,home,none
+142,2025-06-14,Europe,books,none
+143,2024-08-17,Europe,books,none
+144,2026-01-10,South America,sports,minor
+145,2025-06-18,South America,home,minor
+146,2024-11-13,Asia,sports,none
+147,2025-11-08,Oceania,electronics,minor
+148,2024-09-18,South America,sports,minor
+149,2026-01-31,Africa,fashion,none
+150,2025-05-16,North America,sports,major
+151,2024-04-11,South America,books,major
+152,2025-08-16,Asia,beauty,none
+153,2024-09-04,Asia,books,none
+154,2025-12-07,Africa,sports,none
+155,2025-03-12,Oceania,beauty,major
+156,2025-06-16,Asia,books,none
+157,2026-02-24,Asia,books,none
+158,2026-01-21,Oceania,home,none
+159,2025-12-05,Europe,electronics,none
+160,2025-07-25,Africa,sports,minor
+161,2024-10-21,Oceania,toys,none
+162,2025-10-08,South America,fashion,none
+163,2026-02-18,Europe,home,minor
+164,2024-11-15,South America,home,none
+165,2025-06-28,Africa,beauty,none
+166,2025-05-18,North America,beauty,none
+167,2025-05-13,Europe,sports,none
+168,2024-10-19,North America,toys,none
+169,2024-12-03,Asia,electronics,major
+170,2026-01-27,Asia,beauty,none
+171,2024-08-15,Asia,toys,minor
+172,2024-04-24,South America,sports,none
+173,2026-02-01,South America,fashion,major
+174,2026-01-22,North America,home,none
+175,2026-02-10,Europe,books,none
+176,2025-12-11,South America,home,none
+177,2026-01-08,Asia,fashion,none
+178,2025-06-18,North America,beauty,none
+179,2024-12-14,Africa,sports,none
+180,2025-10-31,South America,sports,major
+181,2025-12-22,North America,electronics,minor
+182,2025-12-23,Africa,fashion,none
+183,2025-07-18,South America,sports,none
+184,2026-02-15,Africa,beauty,none
+185,2026-03-07,Oceania,electronics,major
+186,2025-10-04,North America,electronics,minor
+187,2025-10-17,South America,beauty,none
+188,2025-01-23,Europe,fashion,none
+189,2025-12-13,North America,books,none
+190,2025-02-10,Asia,toys,none
+191,2026-02-26,South America,beauty,none
+192,2024-07-17,Africa,toys,none
+193,2026-01-17,South America,toys,minor
+194,2024-03-29,Europe,sports,minor
+195,2026-02-25,Europe,books,none
+196,2025-02-08,Africa,home,none
+197,2025-07-17,Africa,toys,none
+198,2025-11-13,Asia,beauty,none
+199,2025-07-16,Oceania,electronics,none
+200,2025-12-18,Asia,fashion,minor

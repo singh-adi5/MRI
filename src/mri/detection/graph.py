@@ -143,6 +143,20 @@ def main():
 
     G = nx.Graph()
 
+    # Edge attributes are accumulated independently per pair before the graph
+    # is built. The previous code tagged each edge with a single ``edge_type``
+    # decided by whichever relationship happened to be seen first, so a
+    # shared device between a customer and a seller they also transact with --
+    # precisely the collusion pattern of interest -- was recorded as a plain
+    # transaction and never counted as a device link.
+    pair_attributes = defaultdict(
+        lambda: {"transactions": 0.0, "shared_devices": 0, "shared_regions": 0}
+    )
+    node_types = {}
+
+    def register(node: str, entity_type: str):
+        node_types[node] = entity_type
+
     # -------------------------
     # Add customer-seller interactions
     # -------------------------
@@ -151,26 +165,25 @@ def main():
         orders["customer_node"] = "customer_" + orders["customer_id"].astype(str)
         orders["seller_node"] = "seller_" + orders["seller_id"].astype(str)
 
+        for node in orders["customer_node"].unique():
+            register(node, "customer")
+        for node in orders["seller_node"].unique():
+            register(node, "seller")
+
         edge_counts = (
             orders.groupby(["customer_node", "seller_node"])
             .size()
             .reset_index(name="interaction_count")
         )
-
-        for _, row in edge_counts.iterrows():
-            G.add_node(row["customer_node"], entity_type="customer")
-            G.add_node(row["seller_node"], entity_type="seller")
-            G.add_edge(
-                row["customer_node"],
-                row["seller_node"],
-                edge_type="transaction",
-                weight=float(row["interaction_count"])
-            )
+        for customer_node, seller_node, count in edge_counts.itertuples(index=False):
+            key = (customer_node, seller_node) if customer_node < seller_node else (seller_node, customer_node)
+            pair_attributes[key]["transactions"] += float(count)
 
     # -------------------------
-    # Add shared-device relationships
+    # Add shared-device and shared-region relationships
     # -------------------------
-    log("Adding shared-device relationship edges...")
+    log("Adding shared-attribute relationship edges...")
+    group_diagnostics = {}
     if not login.empty:
         login["user_id"] = login["user_id"].astype(str)
         login["device_id"] = login["device_id"].astype(str)
@@ -184,46 +197,59 @@ def main():
             return f"unknown_{uid}"
 
         login["entity_node"] = login["user_id"].apply(map_user_node)
+        for node in login["entity_node"].unique():
+            register(node, node.split("_", 1)[0])
 
-        # Shared device edges
-        device_groups = login.groupby("device_id")["entity_node"].unique()
-        for device_id, members in device_groups.items():
-            members = list(set(members))
-            if len(members) > 1:
-                for i in range(len(members)):
-                    for j in range(i + 1, len(members)):
-                        u, v = members[i], members[j]
-                        if G.has_edge(u, v):
-                            if "shared_devices" not in G[u][v]:
-                                G[u][v]["shared_devices"] = 0
-                            G[u][v]["shared_devices"] += 1
-                        else:
-                            G.add_edge(
-                                u, v,
-                                edge_type="shared_device",
-                                weight=1.0,
-                                shared_devices=1
-                            )
+        # Population = every entity the graph knows about, so the
+        # informativeness threshold scales with the dataset.
+        population = len(set(node_types))
 
-        # Shared region edges
-        region_groups = login.groupby("ip_region")["entity_node"].unique()
-        for region, members in region_groups.items():
-            members = list(set(members))
-            if len(members) > 1 and len(members) <= 25:  # keep graph practical
-                for i in range(len(members)):
-                    for j in range(i + 1, len(members)):
-                        u, v = members[i], members[j]
-                        if G.has_edge(u, v):
-                            if "shared_regions" not in G[u][v]:
-                                G[u][v]["shared_regions"] = 0
-                            G[u][v]["shared_regions"] += 1
-                        else:
-                            G.add_edge(
-                                u, v,
-                                edge_type="shared_region",
-                                weight=0.5,
-                                shared_regions=1
-                            )
+        for attribute, column, attr_key in [
+            ("device", "device_id", "shared_devices"),
+            ("region", "ip_region", "shared_regions"),
+        ]:
+            groups = login.groupby(column)["entity_node"].unique()
+            kept, diagnostics = informative_groups(groups, population, attribute)
+            group_diagnostics[attribute] = diagnostics
+            log(
+                f"  {attribute}: {diagnostics['kept']}/{diagnostics['total']} groups informative "
+                f"(<= {diagnostics['max_members']} members of {population}); "
+                f"{diagnostics['too_common']} too common, {diagnostics['singleton']} singleton; "
+                f"largest group {diagnostics['largest']}; {diagnostics['pairs']} candidate pairs"
+            )
+            for _, members in kept:
+                for u, v in combinations(members, 2):
+                    key = (u, v) if u < v else (v, u)
+                    pair_attributes[key][attr_key] += 1
+
+    for node, entity_type in node_types.items():
+        G.add_node(node, entity_type=entity_type)
+
+    for (u, v), attributes in pair_attributes.items():
+        # edge_type is a frozenset of every relationship present on the edge;
+        # the per-attribute counters are what the features actually read, so no
+        # relationship can mask another.
+        edge_types = frozenset(
+            name for name, present in (
+                ("transaction", attributes["transactions"] > 0),
+                ("shared_device", attributes["shared_devices"] > 0),
+                ("shared_region", attributes["shared_regions"] > 0),
+            ) if present
+        )
+        G.add_edge(
+            u, v,
+            edge_type=edge_types,
+            transactions=attributes["transactions"],
+            shared_devices=attributes["shared_devices"],
+            shared_regions=attributes["shared_regions"],
+            # Relationship-weighted strength: transactions and shared devices
+            # count fully, a shared (rare) region counts half, as before.
+            weight=(
+                attributes["transactions"]
+                + attributes["shared_devices"]
+                + 0.5 * attributes["shared_regions"]
+            ),
+        )
 
     if G.number_of_nodes() == 0:
         raise ValueError("Graph has no nodes. Check source data.")
@@ -237,6 +263,14 @@ def main():
     degree_dict = dict(G.degree())
     degree_centrality = nx.degree_centrality(G)
     connected_components = list(nx.connected_components(G))
+    node_count = G.number_of_nodes()
+
+    # Raw component size is useless whenever the data forms one giant
+    # component (it is then the same constant for everyone). Local cohesion
+    # measures still separate a tight ring from a hub, so they are computed
+    # alongside it and the score uses the informative one.
+    core_numbers = nx.core_number(G)
+    clustering = nx.clustering(G)
 
     component_map = {}
     component_size_map = {}
@@ -260,17 +294,14 @@ def main():
             edge_data = G.get_edge_data(node, neighbor, default={})
             edge_weight_sum += float(edge_data.get("weight", 0))
 
-            if edge_data.get("edge_type") == "shared_device":
+            # Each relationship on the edge is counted on its own; one edge can
+            # legitimately be a transaction AND a shared-device link.
+            if edge_data.get("shared_devices", 0) > 0:
                 shared_device_links += 1
-            elif edge_data.get("edge_type") == "shared_region":
+            if edge_data.get("shared_regions", 0) > 0:
                 shared_region_links += 1
-            elif edge_data.get("edge_type") == "transaction":
+            if edge_data.get("transactions", 0) > 0:
                 transaction_links += 1
-            else:
-                if edge_data.get("shared_devices", 0) > 0:
-                    shared_device_links += 1
-                if edge_data.get("shared_regions", 0) > 0:
-                    shared_region_links += 1
 
         if node.startswith("customer_"):
             entity_type = "customer"
@@ -289,6 +320,9 @@ def main():
             "degree_centrality": degree_centrality.get(node, 0),
             "component_id": component_map.get(node, -1),
             "component_size": component_size_map.get(node, 1),
+            "component_size_ratio": component_size_map.get(node, 1) / node_count,
+            "core_number": core_numbers.get(node, 0),
+            "clustering_coefficient": clustering.get(node, 0.0),
             "shared_device_links": shared_device_links,
             "shared_region_links": shared_region_links,
             "transaction_links": transaction_links,
@@ -297,23 +331,51 @@ def main():
 
     graph_df = pd.DataFrame(rows)
 
+    # A shared-attribute feature whose groups were ALL uninformative was never
+    # measured; recording it as 0 would be indistinguishable from "measured and
+    # found nothing". NaN keeps the difference visible, and the scorer below
+    # excludes it from the weighted sum instead of multiplying a dead signal.
+    for attribute, column in [("device", "shared_device_links"),
+                              ("region", "shared_region_links")]:
+        diagnostics = group_diagnostics.get(attribute)
+        if diagnostics is not None and diagnostics["kept"] == 0:
+            log(f"  NOTE: no informative {attribute} group in this dataset "
+                f"(largest has {diagnostics['largest']} members, threshold "
+                f"{diagnostics['max_members']}); {column} is not measurable, recorded as NaN")
+            graph_df[column] = np.nan
+
     # -------------------------
     # Graph risk score fusion
     # -------------------------
     log("Computing graph risk score...")
     graph_df["norm_degree"] = normalize(graph_df["graph_degree"])
     graph_df["norm_component_size"] = normalize(graph_df["component_size"])
-    graph_df["norm_shared_device_links"] = normalize(graph_df["shared_device_links"])
-    graph_df["norm_shared_region_links"] = normalize(graph_df["shared_region_links"])
+    graph_df["norm_core_number"] = normalize(graph_df["core_number"])
+    graph_df["norm_clustering"] = normalize(graph_df["clustering_coefficient"])
+    graph_df["norm_shared_device_links"] = normalize(
+        pd.to_numeric(graph_df["shared_device_links"], errors="coerce"))
+    graph_df["norm_shared_region_links"] = normalize(
+        pd.to_numeric(graph_df["shared_region_links"], errors="coerce"))
     graph_df["norm_edge_weight_sum"] = normalize(graph_df["edge_weight_sum"])
 
-    graph_df["graph_risk_score"] = (
-        0.30 * graph_df["norm_degree"] +
-        0.25 * graph_df["norm_component_size"] +
-        0.25 * graph_df["norm_shared_device_links"] +
-        0.10 * graph_df["norm_shared_region_links"] +
-        0.10 * graph_df["norm_edge_weight_sum"]
+    # Most of the old 0.25 "component size" weight moves to k-core depth,
+    # which separates entities inside a dense mutually-connected ring from
+    # high-degree hubs and stays informative when the graph is one component.
+    # Component size is kept in the sum as a RATIO (comparable across dataset
+    # sizes) and is dropped automatically, with a log line, on the datasets
+    # where it is the same constant for every entity.
+    score_spec = [
+        ("graph_degree", 0.30),
+        ("core_number", 0.15),
+        ("component_size_ratio", 0.10),
+        ("shared_device_links", 0.25),
+        ("shared_region_links", 0.10),
+        ("edge_weight_sum", 0.10),
+    ]
+    graph_df["graph_risk_score"], used_features, dropped_features = weighted_risk_score(
+        graph_df, score_spec, log
     )
+    log(f"  graph risk score computed from {used_features}")
 
     graph_df["graph_risk_band"] = pd.cut(
         graph_df["graph_risk_score"],
