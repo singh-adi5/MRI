@@ -1,0 +1,9 @@
+# Runtime dependencies (used by Streamlit Community Cloud; mirrors pyproject.toml)
+pandas
+numpy
+scikit-learn
+networkx
+streamlit
+plotly
+joblib
+python-dateutil

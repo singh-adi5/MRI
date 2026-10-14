@@ -66,11 +66,26 @@ Regenerate the synthetic dataset (optional): `python -m mri.data.generate`
 
 Run the tests: `pip install -e ".[dev]" && pytest`
 
+## Screenshots
+
+Analyst workbench (`src/mri/app/workbench.py`):
+
+| Investigation queue | Case investigation |
+|---|---|
+| ![Queue overview](docs/screenshots/workbench-queue-overview.png) | ![Case investigation](docs/screenshots/workbench-case-investigation.png) |
+| ![Graph and temporal evidence](docs/screenshots/workbench-graph-temporal-evidence.png) | ![Analyst action panel](docs/screenshots/workbench-analyst-action-panel.png) |
+
+Earlier iterations (v1 command center, v2 hybrid scoring dashboard) are in [`docs/screenshots/`](docs/screenshots/).
+
 ## Governance outputs
 
 - `outputs/v6_feature_drift.csv`: feature drift against the stored baseline
 - `outputs/v6_pipeline_health.json`: pipeline health report
 - `outputs/ops_registry.db`: model and artifact registry with SHA-256 hashes
+
+## Deploy the dashboard
+
+GitHub hosts the code, not the running app. To get a public URL, deploy the workbench on [Streamlit Community Cloud](https://share.streamlit.io): connect this repository, set the main file to `src/mri/app/workbench.py`, and deploy. The app builds its dataset on first launch (about 15 s), so no committed data files are needed.
 
 ## Roadmap
 

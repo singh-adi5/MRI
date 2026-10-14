@@ -1,5 +1,12 @@
-import os
 import json
+import os
+import subprocess
+import sys
+from pathlib import Path
+
+# Make `mri` importable when launched via `streamlit run` (e.g. on Streamlit Community Cloud).
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
 import pandas as pd
 import streamlit as st
 import plotly.express as px
@@ -19,6 +26,22 @@ EXPLAIN_PATH = os.path.join(OUTPUT_DIR, "entity_explanations.csv")
 GRAPH_PATH = os.path.join(OUTPUT_DIR, "graph_risk_scores.csv")
 TEMPORAL_PATH = os.path.join(OUTPUT_DIR, "temporal_risk_scores.csv")
 FEATURE_PATH = os.path.join(ARTIFACT_DIR, "entity_features.csv")
+
+
+@st.cache_resource(show_spinner="First launch: building the dataset and scoring entities (about 15 s)...")
+def ensure_pipeline_outputs() -> bool:
+    """Generated files are not committed; run the pipeline once if they are missing."""
+    if not os.path.exists(FUSED_PATH):
+        env = {**os.environ, "PYTHONPATH": str(Path(BASE_DIR) / "src")}
+        # Fixed argv, no shell, no user input.
+        subprocess.run(
+            [sys.executable, "-m", "mri.pipeline", "--no-ui"],
+            cwd=BASE_DIR, env=env, check=True,
+        )
+    return True
+
+
+ensure_pipeline_outputs()
 
 
 @st.cache_data
@@ -46,7 +69,7 @@ st.markdown("**Multi-Layer Risk Intelligence Console** | Rules + ML + Anomaly + 
 st.markdown("---")
 
 if fused_df.empty:
-    st.error("No fused risk file found. Run `risk_fusion_v4.py` first.")
+    st.error("No fused risk file found. Run `python -m mri.pipeline` first.")
     st.stop()
 
 # =========================
