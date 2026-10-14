@@ -16,7 +16,7 @@ def render() -> None:
     flagged = int(health["drift_summary"]["features_flagged_for_drift"])
 
     st.html(
-        '<div class="mri-h1">Pipeline health and model governance</div>'
+        '<div class="crumb">Risk intelligence &rsaquo; Governance</div><div class="mri-h1">Pipeline health and model governance</div>'
         f'<p class="mri-lede">Pipeline status: <b>{esc(health["pipeline_status"])}</b>. Last run {esc(health["generated_at_utc"][:19].replace("T", " "))} UTC. '
         f'{len(health["registered_models"])} model files are registered with hashes, and {flagged} of '
         f'{health["drift_summary"]["features_checked"]} features are flagged for drift.</p>'
@@ -32,7 +32,7 @@ def render() -> None:
         note = f'<span class="up">{miss} missing</span>' if miss else '<span style="color:var(--ink3)">complete</span>'
         rows.append(
             f'<div class="contrib" style="grid-template-columns:10rem 1fr 9rem"><div class="nm"><b>{label}</b></div>'
-            f'<div class="track"><div class="seg" style="left:0;width:{c/total*100:.1f}%;background:#3A3A3C"></div></div>'
+            f'<div class="track"><div class="seg" style="left:0;width:{c/total*100:.1f}%;background:#00796B"></div></div>'
             f'<div class="eq num">{c} of {total}, {note}</div></div>'
         )
     st.html("".join(rows))

@@ -70,11 +70,11 @@ Run the tests: `pip install -e ".[dev]" && pytest`
 
 ## Screenshots
 
-Analyst workbench (`src/mri/app/workbench.py`), five pages: Overview, Investigate, Model lab, Governance, About.
+Analyst workspace (`src/mri/app/workbench.py`), five pages reached from the left rail: Risk queue, Case record, Model lab, Governance, About.
 
-| Overview: case board | Investigate: case file |
+| Risk queue: band mix and case board | Case record: score breakdown |
 |---|---|
-| ![Overview](docs/screenshots/app-overview.png) | ![Investigate](docs/screenshots/app-investigate.png) |
+| ![Risk queue](docs/screenshots/app-overview.png) | ![Case record](docs/screenshots/app-investigate.png) |
 | **Model lab: what-if scorer on the trained models** | **Governance: coverage, drift, model registry** |
 | ![Model lab](docs/screenshots/app-model-lab.png) | ![Governance](docs/screenshots/app-governance.png) |
 
@@ -97,7 +97,18 @@ GitHub hosts the code, not the running app. To get a public URL, deploy the work
 - Containerise with docker-compose (feature store, inference API, UI)
 - Local quantised LLM (Ollama) for human-readable case summaries
 
-## Security notes
+## Security
 
-- Synthetic data only; no real customer or transaction data.
-- Model files are loaded with `joblib`, which uses pickle: only load models you trained yourself.
+The app is a public, read-only demo: no accounts, no uploads, no visitor-writable
+store. [`SECURITY.md`](SECURITY.md) records how the OWASP Top 10 (2021) was applied.
+
+- **Injection.** Every write is parameterised; every read is a module-level literal
+  `SELECT`; a guard rejects anything that is not a single `SELECT`; UI filters run
+  in pandas (`regex=False`), never in SQL; the one subprocess call uses a fixed
+  `argv` with no shell; every interpolated value is HTML-escaped.
+- **Configuration.** `showErrorDetails = "none"` keeps tracebacks off the page,
+  XSRF protection is on, and uploads are disabled.
+- **Components.** CI runs `bandit -r src -ll` and `pip-audit` on every push.
+- **Data.** Synthetic only; no real customer or transaction data.
+- **Model files** are loaded with `joblib`, which uses pickle, so the app only ever
+  loads models its own pipeline wrote in the same container.

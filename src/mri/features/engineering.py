@@ -14,9 +14,18 @@ def log(msg: str):
     print(f"[feature_eng] {msg}")
 
 
+def _check_query(query: str) -> str:
+    """Accept only a single literal SELECT. Queries in this module are constants;
+    this guard keeps that true if a caller is ever changed."""
+    q = query.strip().rstrip(";")
+    if ";" in q or not q.upper().startswith("SELECT"):
+        raise ValueError("only a single SELECT statement is allowed")
+    return q
+
+
 def load_table(query: str) -> pd.DataFrame:
     with sqlite3.connect(DB_PATH) as conn:
-        return pd.read_sql_query(query, conn)
+        return pd.read_sql_query(_check_query(query), conn)
 
 
 def ensure_columns(df: pd.DataFrame, required_cols: list, default_value=0) -> pd.DataFrame:

@@ -21,6 +21,12 @@ REPORT_PATH = ARTIFACT_DIR / "model_report.json"
 HEALTH_PATH = OUTPUT_DIR / "v6_pipeline_health.json"
 DRIFT_PATH = OUTPUT_DIR / "v6_feature_drift.csv"
 REGISTRY_DB = OUTPUT_DIR / "ops_registry.db"
+# Literal statements only: no identifier or value is ever interpolated into SQL here.
+REGISTRY_QUERIES = {
+    "model_registry": "SELECT * FROM model_registry",
+    "pipeline_runs": "SELECT * FROM pipeline_runs",
+    "governance_artifacts": "SELECT * FROM governance_artifacts",
+}
 
 # Fusion definition, mirrored from mri.fusion.fuse (weights) and mri.models.score (ML blend).
 ML_SUPERVISED_WEIGHT = 0.70
@@ -98,8 +104,8 @@ def load_registry() -> dict[str, pd.DataFrame]:
     """Read-only view of the governance registry."""
     out: dict[str, pd.DataFrame] = {}
     with sqlite3.connect(f"file:{REGISTRY_DB}?mode=ro", uri=True) as conn:
-        for table in ("model_registry", "pipeline_runs", "governance_artifacts"):
-            out[table] = pd.read_sql_query(f"SELECT * FROM {table}", conn)  # nosec B608 (fixed table names)
+        for table, query in REGISTRY_QUERIES.items():
+            out[table] = pd.read_sql_query(query, conn)
     return out
 
 

@@ -23,7 +23,7 @@ def render() -> None:
     rep = data.load_report()
     keyed = df.set_index("key")
 
-    st.html('<div class="mri-h1">What the model relies on, and how far to trust it</div>'
+    st.html('<div class="crumb">Risk intelligence &rsaquo; Model lab</div><div class="mri-h1">What the model relies on, and how far to trust it</div>'
             '<p class="mri-lede">The scorer below runs the trained Random Forest and Isolation Forest on any feature values you set, '
             "so you can see which inputs move a score.</p>")
 

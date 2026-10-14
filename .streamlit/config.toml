@@ -1,13 +1,22 @@
 [server]
 headless = true
+# Cross-site request forgery protection for the websocket/upload endpoints.
+enableXsrfProtection = true
+# No file-upload surface in this app.
+maxUploadSize = 1
 
 [browser]
 gatherUsageStats = false
 
+[client]
+# Never render tracebacks or local paths to a visitor; errors go to the server log.
+showErrorDetails = "none"
+toolbarMode = "minimal"
+
 [theme]
 base = "light"
-primaryColor = "#0066CC"
-backgroundColor = "#F5F5F7"
-secondaryBackgroundColor = "#EEEEF1"
-textColor = "#1D1D1F"
+primaryColor = "#00796B"
+backgroundColor = "#EFF3F4"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#0F2A30"
 font = "sans serif"

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 from datetime import datetime, timezone
 
 import streamlit as st
@@ -10,6 +11,12 @@ from mri.app import data, theme
 from mri.app.theme import esc
 
 PROFILE_FEATURES = 6
+_SAFE_NAME = re.compile(r"[^A-Za-z0-9_-]")
+
+
+def _safe_name(value: str) -> str:
+    """Keep a download filename to a known-safe character set (no path separators)."""
+    return _SAFE_NAME.sub("_", str(value))[:64] or "entity"
 
 
 def _percentile_rows(key: str, etype: str) -> str:
@@ -35,6 +42,12 @@ def _percentile_rows(key: str, etype: str) -> str:
 
 def render() -> None:
     df = data.load_fused()
+
+    st.html(
+        '<div class="crumb">Risk intelligence &rsaquo; Case record</div>'
+        '<div class="mri-h1">Case record</div>'
+        '<p class="mri-lede">Filter the queue, open an entity, and read the evidence behind its score.</p>'
+    )
 
     f1, f2, f3 = st.columns([1.3, 2.4, 1.3], vertical_alignment="bottom")
     etype = f1.segmented_control("Entity type", ["All", "Customer", "Seller"], default="All", key="f_type") or "All"
@@ -133,4 +146,4 @@ def render() -> None:
         "status": status, "action": action, "priority": priority, "notes": notes,
         "recorded_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
-    st.download_button("Download case note", data=json.dumps(payload, indent=2), file_name=f"case_{key}.json", mime="application/json")
+    st.download_button("Download case note", data=json.dumps(payload, indent=2), file_name=f"case_{_safe_name(key)}.json", mime="application/json")

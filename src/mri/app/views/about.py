@@ -10,7 +10,7 @@ REPO = "https://github.com/singh-adi5/MRI"
 
 def render() -> None:
     st.html(
-        '<div class="mri-h1">Marketplace Risk Intelligence</div>'
+        '<div class="crumb">Risk intelligence &rsaquo; About</div><div class="mri-h1">Marketplace Risk Intelligence</div>'
         '<p class="mri-lede">A fraud and risk pipeline for online marketplaces. It scores sellers and customers with four independent signals, '
         "fuses them into one explainable score, and gives an analyst the evidence behind each case.</p>"
         + theme.signal_legend()
