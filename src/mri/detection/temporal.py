@@ -13,6 +13,40 @@ def log(msg: str):
     print(f"[temporal_intelligence] {msg}")
 
 
+# ---------------------------------------------------------------------------
+# Velocity measurability thresholds
+# ---------------------------------------------------------------------------
+# A rate needs an interval. An entity with a single event has an observation
+# window of zero hours, and dividing by a 1-hour floor (the previous
+# ``.replace(0, 1)``) handed it the MAXIMUM possible velocity -- a sign
+# inversion that ranked one-order accounts above genuine bursts.
+#
+# Rules now applied to every velocity feature:
+#   * fewer than MIN_EVENTS_FOR_VELOCITY timestamps -> velocity is NaN
+#     (not measurable; recorded as such, and contributes nothing to the score)
+#   * at least MIN_EVENTS_FOR_VELOCITY timestamps -> divide by the observed
+#     window floored at MIN_OBSERVATION_HOURS, so simultaneous/near-simultaneous
+#     events stay a bounded high value instead of diverging.
+MIN_EVENTS_FOR_VELOCITY = 2
+MIN_OBSERVATION_HOURS = 1.0
+
+
+def velocity_per_hour(event_count: pd.Series, active_hours: pd.Series) -> pd.Series:
+    """Events per hour, or NaN where the observation window cannot support a rate."""
+    count = pd.to_numeric(event_count, errors="coerce")
+    hours = pd.to_numeric(active_hours, errors="coerce")
+    denominator = hours.clip(lower=MIN_OBSERVATION_HOURS)
+    velocity = count / denominator
+    measurable = count >= MIN_EVENTS_FOR_VELOCITY
+    return velocity.where(measurable, other=np.nan)
+
+
+def hours_between(start: pd.Series, end: pd.Series) -> pd.Series:
+    """Vectorised observation window in hours (negative/NaT -> 0.0)."""
+    delta = (pd.to_datetime(end) - pd.to_datetime(start)).dt.total_seconds() / 3600.0
+    return delta.fillna(0.0).clip(lower=0.0)
+
+
 def _check_query(query: str) -> str:
     """Accept only a single literal SELECT. Queries in this module are constants;
     this guard keeps that true if a caller is ever changed."""
@@ -71,13 +105,11 @@ def compute_order_temporal_features(orders: pd.DataFrame) -> pd.DataFrame:
         .reset_index()
     )
 
-    customer_order_stats["order_active_hours"] = customer_order_stats.apply(
-        lambda row: safe_hours_between(row["first_order"], row["last_order"]),
-        axis=1
+    customer_order_stats["order_active_hours"] = hours_between(
+        customer_order_stats["first_order"], customer_order_stats["last_order"]
     )
-    customer_order_stats["order_velocity_per_hour"] = (
-        customer_order_stats["order_count"] /
-        customer_order_stats["order_active_hours"].replace(0, 1)
+    customer_order_stats["order_velocity_per_hour"] = velocity_per_hour(
+        customer_order_stats["order_count"], customer_order_stats["order_active_hours"]
     )
 
     orders["order_day"] = orders["order_date"].dt.date
@@ -95,9 +127,11 @@ def compute_order_temporal_features(orders: pd.DataFrame) -> pd.DataFrame:
         )
         .reset_index()
     )
+    # avg_orders_per_day is a mean over observed days, so it is > 0 by
+    # construction; NaN (rather than 1) is the honest result if it ever is not.
     customer_burst["order_burst_ratio"] = (
         customer_burst["max_orders_in_day"] /
-        customer_burst["avg_orders_per_day"].replace(0, 1)
+        customer_burst["avg_orders_per_day"].replace(0, np.nan)
     )
 
     customer_temporal = customer_order_stats.merge(customer_burst, on="customer_id", how="left")
@@ -137,13 +171,11 @@ def compute_refund_temporal_features(refunds: pd.DataFrame, orders: pd.DataFrame
         .reset_index()
     )
 
-    customer_refund_stats["refund_active_hours"] = customer_refund_stats.apply(
-        lambda row: safe_hours_between(row["first_refund"], row["last_refund"]),
-        axis=1
+    customer_refund_stats["refund_active_hours"] = hours_between(
+        customer_refund_stats["first_refund"], customer_refund_stats["last_refund"]
     )
-    customer_refund_stats["refund_velocity_per_hour"] = (
-        customer_refund_stats["refund_count"] /
-        customer_refund_stats["refund_active_hours"].replace(0, 1)
+    customer_refund_stats["refund_velocity_per_hour"] = velocity_per_hour(
+        customer_refund_stats["refund_count"], customer_refund_stats["refund_active_hours"]
     )
 
     customer_refund_stats["entity_id"] = customer_refund_stats["customer_id"].astype(str)
@@ -184,17 +216,17 @@ def compute_login_temporal_features(login: pd.DataFrame) -> pd.DataFrame:
         .reset_index()
     )
 
-    login_stats["login_active_hours"] = login_stats.apply(
-        lambda row: safe_hours_between(row["first_login"], row["last_login"]),
-        axis=1
+    login_stats["login_active_hours"] = hours_between(
+        login_stats["first_login"], login_stats["last_login"]
     )
-    login_stats["login_velocity_per_hour"] = (
-        login_stats["login_count"] /
-        login_stats["login_active_hours"].replace(0, 1)
+    login_stats["login_velocity_per_hour"] = velocity_per_hour(
+        login_stats["login_count"], login_stats["login_active_hours"]
     )
+    # Density is a per-event average, not a rate: one login is enough to
+    # measure it, so only a genuinely absent denominator yields NaN.
     login_stats["failed_attempt_density"] = (
         login_stats["total_failed_attempts"] /
-        login_stats["login_count"].replace(0, 1)
+        login_stats["login_count"].replace(0, np.nan)
     )
 
     return login_stats[[
@@ -227,13 +259,11 @@ def compute_seller_order_temporal_features(orders: pd.DataFrame) -> pd.DataFrame
         .reset_index()
     )
 
-    seller_stats["seller_active_hours"] = seller_stats.apply(
-        lambda row: safe_hours_between(row["first_order"], row["last_order"]),
-        axis=1
+    seller_stats["seller_active_hours"] = hours_between(
+        seller_stats["first_order"], seller_stats["last_order"]
     )
-    seller_stats["seller_order_velocity_per_hour"] = (
-        seller_stats["seller_order_count"] /
-        seller_stats["seller_active_hours"].replace(0, 1)
+    seller_stats["seller_order_velocity_per_hour"] = velocity_per_hour(
+        seller_stats["seller_order_count"], seller_stats["seller_active_hours"]
     )
 
     orders["order_day"] = orders["order_date"].dt.date
@@ -254,7 +284,7 @@ def compute_seller_order_temporal_features(orders: pd.DataFrame) -> pd.DataFrame
 
     seller_burst["seller_order_burst_ratio"] = (
         seller_burst["seller_max_orders_in_day"] /
-        seller_burst["seller_avg_orders_per_day"].replace(0, 1)
+        seller_burst["seller_avg_orders_per_day"].replace(0, np.nan)
     )
 
     seller_temporal = seller_stats.merge(seller_burst, on="seller_id", how="left")

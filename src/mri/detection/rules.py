@@ -52,12 +52,76 @@ before running this script.
 """
 
 import os
+import re
 import sqlite3
 from collections import defaultdict
 from datetime import datetime, timedelta
 import pandas as pd
 
 from mri.config import DB_PATH, OUTPUT_DIR
+
+
+# ---------------------------------------------------------------------------
+# Canonical entity keys
+# ---------------------------------------------------------------------------
+# Scorers draw IDs from two different shapes of source data:
+#   * orders/refunds/ratings carry a numeric seller_id (e.g. 17)
+#   * login_activity carries a prefixed user_id (e.g. "S17", "C225")
+# Mixing those in one dict silently splits an entity in two, because
+# 17 != "S17" as dict keys. Every scorer therefore emits the SAME canonical
+# key -- "<TYPE-PREFIX><numeric id>", e.g. "S17" -- and aggregation rejects
+# anything else, so a future scorer cannot reintroduce the collision quietly.
+
+CUSTOMER_PREFIX = "C"
+SELLER_PREFIX = "S"
+UNKNOWN_PREFIX = "X"
+
+_CANONICAL_RE = re.compile(r"^[CS][0-9]+$")
+_PREFIXED_RE = re.compile(r"^([A-Za-z])\s*([0-9]+)$")
+
+
+def entity_key(raw, entity_type: str = None) -> str:
+    """Return the canonical key for an entity ID coming from any source table.
+
+    ``raw`` may be an int (17), a numeric string ("17") or an already prefixed
+    string ("S17" / "s17"). ``entity_type`` ("seller"/"customer") is required
+    when ``raw`` carries no prefix of its own.
+
+    Unrecognised IDs are preserved under an explicit "X" namespace rather than
+    being coerced into a seller/customer bucket -- an unknown entity must stay
+    visible, not be silently mislabelled.
+    """
+    text = str(raw).strip()
+    if not text:
+        raise ValueError("empty entity id")
+
+    prefix_by_type = {"customer": CUSTOMER_PREFIX, "seller": SELLER_PREFIX}
+
+    if text.isdigit():
+        if entity_type not in prefix_by_type:
+            raise ValueError(
+                f"numeric entity id {text!r} needs entity_type in {sorted(prefix_by_type)}"
+            )
+        return f"{prefix_by_type[entity_type]}{int(text)}"
+
+    match = _PREFIXED_RE.match(text)
+    if match:
+        prefix, digits = match.group(1).upper(), match.group(2)
+        if prefix in (CUSTOMER_PREFIX, SELLER_PREFIX):
+            # int() drops any zero padding so "S017" and 17 land on one key.
+            return f"{prefix}{int(digits)}"
+
+    return f"{UNKNOWN_PREFIX}:{text}"
+
+
+def split_entity_key(key: str):
+    """Inverse of :func:`entity_key`: canonical key -> (entity_id, entity_type)."""
+    if _CANONICAL_RE.match(key):
+        entity_type = "customer" if key[0] == CUSTOMER_PREFIX else "seller"
+        return key[1:], entity_type
+    if key.startswith(f"{UNKNOWN_PREFIX}:"):
+        return key[len(UNKNOWN_PREFIX) + 1:], "unknown"
+    raise ValueError(f"not a canonical entity key: {key!r}")
 
 
 def load_tables(db_path: str) -> dict:
@@ -94,7 +158,8 @@ def compute_refund_rate_scores(orders: pd.DataFrame, refunds: pd.DataFrame) -> d
         num_refunds = refunds_per_seller.get(seller_id, 0)
         refund_rate = num_refunds / total_orders if total_orders > 0 else 0
         if refund_rate > 0.3:
-            risk_scores[seller_id] = {
+            # canonical key: orders.seller_id is numeric, login user_id is "S17"
+            risk_scores[entity_key(seller_id, "seller")] = {
                 "score": 2,
                 "reasons": [
                     f"High refund rate ({num_refunds}/{total_orders} = {refund_rate:.2%})"
@@ -120,7 +185,7 @@ def compute_order_spike_scores(orders: pd.DataFrame) -> dict:
         seller_counts = daily_counts[daily_counts["seller_id"] == seller_id]
         if any(seller_counts["count"] > 3 * avg_count):
             max_count = seller_counts["count"].max()
-            risk_scores[seller_id] = {
+            risk_scores[entity_key(seller_id, "seller")] = {
                 "score": 2,
                 "reasons": [
                     f"Order spike detected (max {max_count} orders vs average {avg_count:.2f} per day)"
@@ -147,9 +212,10 @@ def compute_rating_manipulation_scores(ratings: pd.DataFrame) -> dict:
             window_count = ((group["rating_date"] >= start_date) & (group["rating_date"] <= end_date)).sum()
             if window_count > 3:
                 # mark seller once
-                risk_scores.setdefault(seller_id, {"score": 0, "reasons": []})
-                risk_scores[seller_id]["score"] += 2
-                risk_scores[seller_id]["reasons"].append(
+                key = entity_key(seller_id, "seller")
+                risk_scores.setdefault(key, {"score": 0, "reasons": []})
+                risk_scores[key]["score"] += 2
+                risk_scores[key]["reasons"].append(
                     f"Rating manipulation (customer {customer_id} submitted {window_count} ratings within 30 days)"
                 )
                 break  # break after first detection for this pair
@@ -166,9 +232,12 @@ def compute_device_sharing_scores(login: pd.DataFrame) -> dict:
     for device_id in flagged_devices:
         users_on_device = login[login["device_id"] == device_id]["user_id"].unique()
         for user_id in users_on_device:
-            risk_scores.setdefault(user_id, {"score": 0, "reasons": []})
-            risk_scores[user_id]["score"] += 3
-            risk_scores[user_id]["reasons"].append(
+            # login user_ids are already prefixed ("S17"); normalise anyway so
+            # padding/case variants cannot split one entity across two keys.
+            key = entity_key(user_id)
+            risk_scores.setdefault(key, {"score": 0, "reasons": []})
+            risk_scores[key]["score"] += 3
+            risk_scores[key]["reasons"].append(
                 f"Device sharing: device {device_id} used by {user_counts_by_device[device_id]} accounts"
             )
     return risk_scores
@@ -180,7 +249,7 @@ def compute_failed_login_scores(login: pd.DataFrame) -> dict:
     # Identify users with >3 failed attempts in any login record
     high_failed = login[login["failed_attempts"] > 3]["user_id"].unique()
     for user_id in high_failed:
-        risk_scores[user_id] = {
+        risk_scores[entity_key(user_id)] = {
             "score": 1,
             "reasons": ["Multiple failed login attempts (>3)"],
         }
@@ -190,13 +259,23 @@ def compute_failed_login_scores(login: pd.DataFrame) -> dict:
 def aggregate_scores(*score_dicts) -> dict:
     """Combine multiple risk score dictionaries into a single dictionary.
 
-    Each dictionary should map an entity ID to a dict with ``score`` and
-    ``reasons`` keys. Scores and reasons will be summed and extended
-    respectively for overlapping entities.
+    Each dictionary must map a CANONICAL entity key (see :func:`entity_key`)
+    to a dict with ``score`` and ``reasons`` keys. Scores and reasons are
+    summed and extended respectively for overlapping entities.
+
+    The key shape is asserted here rather than coerced: a scorer that emits a
+    raw numeric ID would otherwise aggregate into its own separate entity and
+    halve both rows' scores, which is exactly the defect this guard prevents.
     """
     combined = defaultdict(lambda: {"score": 0, "reasons": []})
     for score_dict in score_dicts:
         for entity_id, info in score_dict.items():
+            if not isinstance(entity_id, str):
+                raise TypeError(
+                    f"non-canonical entity key {entity_id!r} ({type(entity_id).__name__}); "
+                    "scorers must emit entity_key(...) output"
+                )
+            split_entity_key(entity_id)  # raises on a malformed key
             combined[entity_id]["score"] += info["score"]
             combined[entity_id]["reasons"].extend(info["reasons"])
     return combined
@@ -205,25 +284,14 @@ def aggregate_scores(*score_dicts) -> dict:
 def write_flagged_entities(risk_scores: dict, output_path: str):
     """Write the risk scores to a CSV file, including entity type and reasons."""
     rows = []
-    for entity_id, info in risk_scores.items():
+    unknown = 0
+    for key, info in risk_scores.items():
         if info["score"] <= 0:
             continue
-        # Determine type from prefix (C for customer, S for seller) if present
-        # Otherwise treat numeric IDs as sellers (orders etc.)
-        if isinstance(entity_id, str):
-            if entity_id.startswith("C"):
-                entity_type = "customer"
-                numeric_id = entity_id[1:]
-            elif entity_id.startswith("S"):
-                entity_type = "seller"
-                numeric_id = entity_id[1:]
-            else:
-                entity_type = "unknown"
-                numeric_id = entity_id
-        else:
-            # numeric ID for seller
-            entity_type = "seller"
-            numeric_id = str(entity_id)
+        # Keys are canonical by construction; the writer only unpacks them.
+        numeric_id, entity_type = split_entity_key(key)
+        if entity_type == "unknown":
+            unknown += 1
         rows.append(
             {
                 "entity_id": numeric_id,
@@ -232,10 +300,22 @@ def write_flagged_entities(risk_scores: dict, output_path: str):
                 "reasons": "; ".join(info["reasons"]),
             }
         )
-    df = pd.DataFrame(rows)
+    df = pd.DataFrame(rows, columns=["entity_id", "entity_type", "risk_score", "reasons"])
+
+    # One row per entity is a hard invariant of this report: downstream weak
+    # labelling joins on (entity_id, entity_type), so a split entity both
+    # under-scores the entity and double-counts it in the label set.
+    dupes = df.duplicated(subset=["entity_id", "entity_type"]).sum()
+    if dupes:
+        raise ValueError(f"{dupes} duplicate (entity_id, entity_type) rows in risk report")
+
+    if unknown:
+        print(f"WARNING: {unknown} flagged entities could not be typed (entity_type=unknown)")
+
     df = df.sort_values(by="risk_score", ascending=False)
     df.to_csv(output_path, index=False)
-    print(f"Risk report written to: {output_path}")
+    counts = df["entity_type"].value_counts().to_dict()
+    print(f"Risk report written to: {output_path} ({len(df)} rows: {counts})")
 
 
 def main():
