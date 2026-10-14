@@ -1,0 +1,51 @@
+seller_id,join_date,seller_region,category,risk_flag_history
+1,2024-12-31,Africa,toys,none
+2,2024-10-04,Oceania,beauty,minor
+3,2025-09-11,Asia,sports,minor
+4,2025-01-11,Oceania,beauty,major
+5,2025-12-11,Europe,toys,minor
+6,2024-05-28,North America,home,major
+7,2024-03-30,Europe,beauty,major
+8,2025-01-11,Africa,fashion,none
+9,2024-08-07,Europe,beauty,minor
+10,2024-08-14,Oceania,home,minor
+11,2025-10-22,Oceania,toys,minor
+12,2025-02-02,Europe,electronics,minor
+13,2025-02-12,Europe,beauty,none
+14,2025-10-02,Asia,toys,major
+15,2024-12-07,Oceania,sports,none
+16,2024-05-02,North America,beauty,minor
+17,2024-07-30,Asia,beauty,minor
+18,2026-02-02,Africa,electronics,none
+19,2025-05-13,North America,beauty,minor
+20,2024-08-31,Asia,sports,none
+21,2025-08-10,Oceania,books,minor
+22,2025-08-08,South America,fashion,major
+23,2024-11-28,Europe,beauty,major
+24,2025-06-03,Asia,toys,major
+25,2025-10-13,North America,home,none
+26,2025-02-19,Africa,beauty,none
+27,2025-02-05,Asia,beauty,major
+28,2025-05-29,Europe,toys,minor
+29,2025-10-30,Oceania,toys,major
+30,2024-07-03,Asia,fashion,minor
+31,2025-01-20,North America,sports,major
+32,2024-11-29,South America,fashion,major
+33,2025-09-29,Oceania,sports,minor
+34,2026-01-21,Africa,beauty,none
+35,2024-12-05,Africa,sports,major
+36,2025-06-25,Oceania,electronics,minor
+37,2025-12-10,Asia,electronics,major
+38,2025-04-02,Asia,beauty,major
+39,2026-01-02,Europe,electronics,major
+40,2026-02-28,Europe,electronics,major
+41,2025-05-18,Africa,toys,minor
+42,2024-12-19,North America,fashion,major
+43,2025-10-19,Europe,beauty,none
+44,2025-10-20,Africa,toys,major
+45,2025-06-29,Africa,sports,none
+46,2024-04-17,Oceania,toys,major
+47,2025-10-01,Africa,beauty,none
+48,2025-01-07,South America,electronics,major
+49,2025-06-03,South America,home,none
+50,2025-11-13,South America,sports,major
