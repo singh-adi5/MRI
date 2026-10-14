@@ -25,12 +25,28 @@ def render() -> None:
         f'<p class="mri-lede">{n} entities scored ({sellers} sellers, {customers} customers). Every score is the sum of four signals, '
         "so each case shows which signal pushed it up. All data in this demo is synthetic.</p>"
     )
+    tiles = []
+    for b, cls in (("Critical", " crit"), ("High", ""), ("Medium", ""), ("Low", "")):
+        c = int(counts.get(b, 0))
+        tiles.append(
+            f'<div class="kpi{cls}"><div class="v num">{c}</div>'
+            f'<div class="l">{theme.band_chip(b)}</div>'
+            f'<div class="s num">{c / n * 100:.0f}% of entities</div></div>'
+        )
+    st.html('<div class="kpis">' + "".join(tiles) + "</div>")
     st.html(theme.band_strip({str(k): int(v) for k, v in counts.items()}))
 
     st.html('<div class="mri-h2">Case board</div>'
             '<p class="mri-note">Entities ranked by fused score. Each bar is the score itself, split by what each signal contributed. '
             "Dashed lines mark the Medium, High and Critical thresholds.</p>")
-    top_n = st.slider("Entities shown", min_value=10, max_value=60, value=25, step=5)
+    with st.container(key="panel_board"):
+        top_n = st.slider("Entities shown", min_value=10, max_value=60, value=25, step=5)
+        _board(df, top_n)
+
+    _tail(df)
+
+
+def _board(df, top_n) -> None:
 
     rows = []
     for _, r in df.head(top_n).iterrows():
@@ -51,6 +67,9 @@ def render() -> None:
         + "".join(rows) + "</div>"
     )
 
+
+
+def _tail(df) -> None:
     st.html('<div class="mri-h2">Open a case</div>')
     c1, c2 = st.columns([3, 1], vertical_alignment="bottom")
     options = df["key"].tolist()
@@ -64,14 +83,9 @@ def render() -> None:
     st.html('<div class="mri-h2">How the score is built</div>'
             '<p class="mri-note">Each signal is rescaled to 0 to 1 across the population, multiplied by its weight, and added. '
             "Weights are set by hand in <code>mri.fusion.fuse</code>, not learned.</p>")
-    cells = "".join(
-        f'<div style="width:{s["weight"]*100:.0f}%;background:{s["color"]}"></div>' for s in theme.SIGNALS
-    )
-    st.html(f'<div class="strip" style="height:1.1rem">{cells}</div>')
     cols = st.columns(4)
-    for col, s in zip(cols, theme.SIGNALS):
+    for col, s_ in zip(cols, theme.SIGNALS):
         col.html(
-            f'<div style="border-top:3px solid {s["color"]};padding-top:.5rem">'
-            f'<b style="font-size:1rem">{esc(s["name"])}</b> <span class="num" style="color:var(--ink3)">{int(s["weight"]*100)}%</span>'
-            f'<p class="mri-note" style="margin:.3rem 0 0">{esc(s["blurb"])}</p></div>'
+            f'<div class="sig"><span class="dot" style="background:{s_["color"]}"></span><b>{esc(s_["name"])}</b>'
+            f'<span class="w num">{int(s_["weight"] * 100)}%</span><p>{esc(s_["blurb"])}</p></div>'
         )

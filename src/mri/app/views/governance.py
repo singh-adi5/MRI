@@ -32,7 +32,7 @@ def render() -> None:
         note = f'<span class="up">{miss} missing</span>' if miss else '<span style="color:var(--ink3)">complete</span>'
         rows.append(
             f'<div class="contrib" style="grid-template-columns:10rem 1fr 9rem"><div class="nm"><b>{label}</b></div>'
-            f'<div class="track"><div class="seg" style="left:0;width:{c/total*100:.1f}%;background:#44567A"></div></div>'
+            f'<div class="track"><div class="seg" style="left:0;width:{c/total*100:.1f}%;background:#3A3A3C"></div></div>'
             f'<div class="eq num">{c} of {total}, {note}</div></div>'
         )
     st.html("".join(rows))

@@ -29,7 +29,11 @@ def render() -> None:
 
     # ---- what-if scorer
     st.html('<div class="mri-h2" style="margin-top:.4rem">What-if scorer</div>')
-    default_key = st.session_state.get("case_key", df.iloc[0]["key"])
+    # Open on a case whose score responds to the sliders: the supervised model is saturated at ~1.0 for most
+    # top-ranked entities, so those show no change. Pick the first High-band entity with headroom.
+    room = df[(df["fused_risk_band"] == "High") & (df["supervised_score"] < 0.99) & (df["anomaly_score"] < 0.6)]
+    fallback = (room.iloc[0] if len(room) else df.iloc[0])["key"]
+    default_key = st.session_state.get("case_key", fallback)
     keys = df["key"].tolist()
     key = st.selectbox("Entity", keys, index=keys.index(default_key) if default_key in keys else 0,
                        format_func=lambda k: keyed.loc[k, "label_text"])
