@@ -45,7 +45,7 @@ src/mri/
   models/              train.py, score.py, explain.py
   fusion/              fuse.py
   governance/          ops.py (drift, health, registry)
-  app/                 workbench.py (Streamlit)
+  app/                 workbench.py (router), data.py, theme.py, views/ (Streamlit)
 data/raw/              committed synthetic CSVs
 docs/                  data_dictionary.md
 legacy/                superseded v1/v2 dashboards and v3 fusion, kept for reference
@@ -70,14 +70,15 @@ Run the tests: `pip install -e ".[dev]" && pytest`
 
 ## Screenshots
 
-Analyst workbench (`src/mri/app/workbench.py`):
+Analyst workbench (`src/mri/app/workbench.py`), five pages: Overview, Investigate, Model lab, Governance, About.
 
-| Investigation queue | Case investigation |
+| Overview: case board | Investigate: case file |
 |---|---|
-| ![Queue overview](docs/screenshots/workbench-queue-overview.png) | ![Case investigation](docs/screenshots/workbench-case-investigation.png) |
-| ![Graph and temporal evidence](docs/screenshots/workbench-graph-temporal-evidence.png) | ![Analyst action panel](docs/screenshots/workbench-analyst-action-panel.png) |
+| ![Overview](docs/screenshots/app-overview.png) | ![Investigate](docs/screenshots/app-investigate.png) |
+| **Model lab: what-if scorer on the trained models** | **Governance: coverage, drift, model registry** |
+| ![Model lab](docs/screenshots/app-model-lab.png) | ![Governance](docs/screenshots/app-governance.png) |
 
-Earlier iterations (v1 command center, v2 hybrid scoring dashboard) are in [`docs/screenshots/`](docs/screenshots/).
+Earlier iterations (v1 command center, v2 hybrid scoring dashboard, first workbench) are in [`docs/screenshots/`](docs/screenshots/).
 
 ## Governance outputs
 

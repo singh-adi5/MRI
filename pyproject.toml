@@ -13,7 +13,7 @@ dependencies = [
     "numpy",
     "scikit-learn",
     "networkx",
-    "streamlit",
+    "streamlit>=1.46",
     "plotly",
     "joblib",
     "python-dateutil",
