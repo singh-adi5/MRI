@@ -1,6 +1,8 @@
 # MRI: Marketplace Risk Intelligence
 
 > Built and tested on synthetic marketplace data. Not a live deployment.
+>
+> **Live demo:** https://mri-risk-intelligence.streamlit.app/ (may take about 30 s to wake up if idle)
 
 Multi-signal fraud and risk intelligence pipeline for online marketplaces. Rule-based heuristics, supervised ML, unsupervised anomaly detection, graph analysis and temporal burst detection are fused into one calibrated, explainable risk score and surfaced in a Streamlit analyst workbench.
 
